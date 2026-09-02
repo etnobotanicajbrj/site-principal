@@ -5,44 +5,49 @@ description: >-
   eventos e a Coleção Viva de plantas medicinais.
 lang: pt-BR
 
-# ATENÇÃO: troque pela URL real quando o GitHub Pages estiver ativo
 url: "https://etnobotanicajbrj.github.io"
 baseurl: "/site-principal"
 
 markdown: kramdown
 permalink: pretty
 
-collections:
-  publicacoes:
-    output: true
-    permalink: /publicacoes/:path/
-  eventos:
-    output: true
-    permalink: /eventos/:path/
-  plantas:
-    output: true
-    permalink: /colecoes/ctpm/colecao-viva/:path/
+menu:
+  - title: "Página Inicial"
+    url: "/"
 
-defaults:
-  - scope:
-      path: ""
-      type: "publicacoes"
-    values:
-      layout: "publicacao"
-  - scope:
-      path: ""
-      type: "eventos"
-    values:
-      layout: "publicacao"
-  - scope:
-      path: ""
-      type: "plantas"
-    values:
-      layout: "planta"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+  - title: "Coleções"
+    url: "/colecoes/"
+    submenu:
+      - title: "Coleção Temática de Plantas Medicinais"
+        url: "/colecoes/ctpm/"
+        submenu:
+          - title: "Plantas da Coleção Viva"
+            url: "/colecoes/ctpm/colecao-viva/"
+          - title: "Visite a Coleção"
+            url: "/colecoes/ctpm/visite/"
+      - title: "Coleção de Etnobotânica (RBetno)"
+        url: "/colecoes/rbetno/"
+
+  - title: "Publicações"
+    url: "/publicacoes/"
+
+  - title: "Eventos e Visitas"
+    url: "/eventos/"
+
+  - title: "Quem Somos"
+    url: "/quem-somos/"
+    submenu:
+      - title: "Grupo de Pesquisa"
+        url: "/quem-somos/grupo-pesquisa/"
+      - title: "Programa de Extensão"
+        url: "/quem-somos/programa/"
+      - title: "Nossa Equipe"
+        url: "/quem-somos/equipe/"
+      - title: "Compromissos"
+        url: "/quem-somos/compromissos/"
+
+  - title: "Contato e Visitas"
+    url: "/contato/"
 
 exclude:
   - Gemfile
