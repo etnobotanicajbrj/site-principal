@@ -1,0 +1,121 @@
+// ===========================================================
+// Estilo base do site — cores, tipografia, layout geral.
+// Isto é o que faltava: o _colecoes.scss só estiliza componentes
+// específicos (badges, cards), não a base visual da página.
+// ===========================================================
+
+// --- Paleta institucional -----------------------------------
+$cor-fundo: #FBFAF7;
+$cor-texto: #1F2A1E;
+$cor-texto-suave: #5B6B58;
+$cor-primaria: #2F6B4F;      // verde institucional JBRJ
+$cor-primaria-escura: #204A37;
+$cor-borda: #E3E0D8;
+$cor-link: #2F6B4F;
+$cor-link-hover: #204A37;
+
+// --- Reset básico ---------------------------------------------
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: $cor-fundo;
+  color: $cor-texto;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+// --- Tipografia -------------------------------------------------
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: $cor-primaria-escura;
+  line-height: 1.25;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2rem; margin-top: 0; }
+h2 { font-size: 1.5rem; border-bottom: 1px solid $cor-borda; padding-bottom: 6px; }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: $cor-link;
+  text-decoration: none;
+
+  &:hover { color: $cor-link-hover; text-decoration: underline; }
+}
+
+// --- Contêiner central --------------------------------------
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+// --- Cabeçalho -------------------------------------------------
+.cabecalho-site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid $cor-borda;
+  background: #fff;
+}
+
+.logo-link {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $cor-primaria-escura;
+
+  &:hover { text-decoration: none; color: $cor-primaria; }
+}
+
+.menu-principal a,
+.menu-principal span {
+  color: $cor-texto;
+  font-size: 0.95rem;
+}
+
+.menu-principal a:hover { color: $cor-primaria; }
+
+// --- Rodapé (ajuste fino sobre o que já existia em _colecoes.scss) ---
+.rodape-site {
+  background: #fff;
+  border-top: 1px solid $cor-borda;
+
+  a { color: $cor-primaria; }
+}
+
+// --- Botões / links de destaque (uso geral no site) -----------
+.botao {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: $cor-primaria;
+  color: #fff !important;
+  font-weight: 500;
+
+  &:hover { background: $cor-primaria-escura; text-decoration: none; }
+}
+
+.aviso-vazio {
+  color: $cor-texto-suave;
+  font-style: italic;
+}
+
+// Ajuste fino: títulos dentro dos cards de coleção não devem herdar
+// a margem grande dos h3 gerais da página.
+.card-colecao h3 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
