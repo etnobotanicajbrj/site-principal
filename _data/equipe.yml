@@ -1,0 +1,42 @@
+# Uma entrada por pessoa. Sem página individual — lida direto na
+# seção "Nossa Equipe" dentro de quem-somos/index.md.
+
+- nome: "Dra. Viviane Fonseca Kruel"
+  funcao: "Orientadora"
+  colecoes: [ctpm, rbetno]
+  foto: /assets/images/equipe/viviane.jpg
+
+- nome: "Luisa"
+  funcao: "Mestranda — arquitetura geral do site"
+  colecoes: [ctpm, rbetno]
+  foto: /assets/images/equipe/luisa.jpg
+
+- nome: "Karen"
+  funcao: "Coleção Temática de Plantas Medicinais"
+  colecoes: [ctpm]
+  foto: /assets/images/equipe/karen.jpg
+
+- nome: "Catarina"
+  funcao: "Coleção Temática de Plantas Medicinais"
+  colecoes: [ctpm]
+  foto: /assets/images/equipe/catarina.jpg
+
+- nome: "Maria Paula"
+  funcao: "Coleção de Etnobotânica"
+  colecoes: [rbetno]
+  foto: /assets/images/equipe/maria-paula.jpg
+
+- nome: "Kaique"
+  funcao: "Extensão (EPA e visitas técnicas)"
+  colecoes: [ctpm, rbetno]
+  foto: /assets/images/equipe/kaique.jpg
+
+- nome: "Camila"
+  funcao: "Grupo de Pesquisa CNPq"
+  colecoes: [ctpm, rbetno]
+  foto: /assets/images/equipe/camila.jpg
+
+- nome: "Thalita"
+  funcao: "Apoio à extensão e registro de atividades"
+  colecoes: [ctpm, rbetno]
+  foto: /assets/images/equipe/thalita.jpg
