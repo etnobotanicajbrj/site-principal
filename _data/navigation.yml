@@ -1,11 +1,21 @@
 main:
-  - title: "Home"
+  - title: "Página Inicial"
     url: /
 
   - title: "Coleções"
     children:
       - title: "Coleção Temática de Plantas Medicinais (CTPM)"
         url: /colecoes/ctpm/
+          children:
+          - title: "Sobre a Coleção"
+            url: /colecoes/ctpm/index
+          children:
+          - title: "Visite a Coleção"
+            url: /colecoes/ctpm/visite
+          children:
+          - title: "Plantas da Coleção Viva"
+            url: /colecoes/ctpm/colecao-viva
+            
       - title: "Coleção de Etnobotânica (RBetno)"
         url: /colecoes/rbetno/
 
@@ -18,13 +28,13 @@ main:
   - title: "Quem Somos"
     children:
       - title: "O Grupo de Pesquisa"
-        url: /quem-somos/#grupo-pesquisa
+        url: /quem-somos/grupo-pesquisa
       - title: "O Programa"
-        url: /quem-somos/#programa
+        url: /quem-somos/programa
       - title: "Nossa Equipe"
-        url: /quem-somos/#equipe
+        url: /quem-somos/equipe
       - title: "Compromissos"
-        url: /quem-somos/#compromissos
+        url: /quem-somos/compromissos
 
   - title: "Contato e Visita"
     url: /contato/
