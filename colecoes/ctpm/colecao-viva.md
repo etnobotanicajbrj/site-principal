@@ -1,7 +1,7 @@
 ---
 title: "Coleção Viva"
 layout: default
-permalink: /colecoes/ctpm/
+permalink: /colecoes/ctpm/colecao-viva
 ---
 
 <!-- Responsáveis: Karen e Catarina -->
