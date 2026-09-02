@@ -1,0 +1,20 @@
+<header class="cabecalho-site">
+  <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
+
+  <nav class="menu-principal">
+    {% for item in site.data.navigation.main %}
+      {% if item.children %}
+        <div class="menu-item-dropdown">
+          <span>{{ item.title }}</span>
+          <div class="submenu">
+            {% for filho in item.children %}
+              <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</header>
