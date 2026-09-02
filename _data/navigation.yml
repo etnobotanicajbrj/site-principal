@@ -6,16 +6,14 @@ main:
     children:
       - title: "Coleção Temática de Plantas Medicinais (CTPM)"
         url: /colecoes/ctpm/
-          children:
+        children:                    # ← UM ÚNICO children, com a indentação correta
           - title: "Sobre a Coleção"
             url: /colecoes/ctpm/index
-          children:
           - title: "Visite a Coleção"
             url: /colecoes/ctpm/visite
-          children:
           - title: "Plantas da Coleção Viva"
             url: /colecoes/ctpm/colecao-viva
-            
+      
       - title: "Coleção de Etnobotânica (RBetno)"
         url: /colecoes/rbetno/
 
