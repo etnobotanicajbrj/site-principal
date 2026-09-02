@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="pagina-planta">
+  <img src="{{ page.foto | relative_url }}" alt="{{ page.nome_popular }}" class="foto-planta">
+
+  <h1>{{ page.nome_popular }}</h1>
+  <p class="nome-cientifico"><em>{{ page.nome_cientifico }}</em></p>
+  {% if page.familia %}<p class="familia-planta">Família: {{ page.familia }}</p>{% endif %}
+
+  <div class="badges-uso">
+    {% include badge-uso.html usos=page.usos %}
+  </div>
+
+  {% if page.renisus %}
+    <p class="selo-renisus">Presente na RENISUS</p>
+  {% endif %}
+
+  <div class="historia-planta">
+    {{ content }}
+  </div>
+
+  {% if page.audio %}
+    <audio controls src="{{ page.audio | relative_url }}">
+      Seu navegador não suporta a tag de áudio.
+    </audio>
+  {% endif %}
+</article>
