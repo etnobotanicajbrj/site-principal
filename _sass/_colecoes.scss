@@ -76,17 +76,33 @@ $cor-rbetno-texto: #04342C;
 
     .submenu {
       display: none;
+      flex-direction: column;
       position: absolute;
+      top: 100%;
+      left: 0;
       background: #fff;
-      border: 1px solid #ddd;
+      border: 1px solid $cor-borda;
       border-radius: 8px;
       padding: 8px;
-      min-width: 220px;
+      min-width: 260px;
       z-index: 10;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+      a {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+
+        &:hover {
+          background: $cor-fundo;
+          text-decoration: none;
+        }
+      }
     }
 
     &:hover .submenu,
-    &:focus-within .submenu { display: block; }
+    &:focus-within .submenu { display: flex; }
   }
 }
 
