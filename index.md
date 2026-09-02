@@ -1,6 +1,6 @@
 ---
 
-title: "Home"
+title: "Página Inicial"
 permalink: /
 ---
 
@@ -10,11 +10,11 @@ permalink: /
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
   <a href="{{ '/colecoes/ctpm/' | relative\_url }}" class="card-colecao card-ctpm" style="text-decoration:none;">
-    <p class="sigla">CTPM \.; Dicat</p>
+    <p class="sigla">CTPM \. Dicat</p>
     <h3>Coleção Temática de Plantas Medicinais</h3>
   </a>
   <a href="{{ '/colecoes/rbetno/' | relative\_url }}" class="card-colecao card-rbetno" style="text-decoration:none;">
-    <p class="sigla">RBetno \.; Dipeq</p>
+    <p class="sigla">RBetno \. Dipeq</p>
     <h3>Coleção de Etnobotânica</h3>
   </a>
 </div>
