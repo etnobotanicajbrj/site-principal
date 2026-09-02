@@ -6,7 +6,7 @@ layout: default
 ---
 
 <nav class="sumario-grupo-pesquisa">
-  <a href="#grupo-pesquisa">O Grupo de Pesquisa</a> ·
+  <a href="#sobre">O Grupo de Pesquisa</a> ·
   <a href="#objetivos">Objetivos</a> ·
   <a href="#linhas-pesquisa">Linhas de Pesquisa</a> ·
   <a href="#historia">História do Grupo de Pesquisa</a>
