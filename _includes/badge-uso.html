@@ -1,0 +1,6 @@
+{% comment %}
+  Uso: {% include badge-uso.html usos=page.usos %}
+{% endcomment %}
+{% for uso in include.usos %}
+  <span class="badge-uso">{{ uso | capitalize }}</span>
+{% endfor %}

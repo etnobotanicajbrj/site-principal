@@ -1,0 +1,10 @@
+{% comment %}
+  Uso: {% include badge-colecao.html colecoes=page.colecoes %}
+{% endcomment %}
+{% for c in include.colecoes %}
+  {% if c == "ctpm" %}
+    <span class="badge-colecao badge-ctpm">CTPM</span>
+  {% elsif c == "rbetno" %}
+    <span class="badge-colecao badge-rbetno">RBetno</span>
+  {% endif %}
+{% endfor %}
