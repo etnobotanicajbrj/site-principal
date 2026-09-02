@@ -1,0 +1,54 @@
+title: "Grupo de Estudos em Etnobotânica — JBRJ"
+description: >-
+  Site do Grupo de Estudos em Etnobotânica do Instituto de Pesquisas
+  Jardim Botânico do Rio de Janeiro (JBRJ) — coleções, publicações,
+  eventos e a Coleção Viva de plantas medicinais.
+lang: pt-BR
+
+# ATENÇÃO: troque pela URL real quando o GitHub Pages estiver ativo
+url: "https://etnobotanicajbrj.github.io"
+baseurl: "/site-principal"
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  publicacoes:
+    output: true
+    permalink: /publicacoes/:path/
+  eventos:
+    output: true
+    permalink: /eventos/:path/
+  plantas:
+    output: true
+    permalink: /colecoes/ctpm/colecao-viva/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "publicacoes"
+    values:
+      layout: "publicacao"
+  - scope:
+      path: ""
+      type: "eventos"
+    values:
+      layout: "publicacao"
+  - scope:
+      path: ""
+      type: "plantas"
+    values:
+      layout: "planta"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - licencas/
+  - estrutura-site-etnobotanica.md
+  - quadro-kanban-github-projects.md
+  - vendor/
