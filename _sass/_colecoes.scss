@@ -1,0 +1,99 @@
+// Identidade visual das duas coleções + badges de uso das plantas.
+// Ajuste os valores hexadecimais se decidirem outra paleta.
+
+$cor-ctpm-fundo: #FAECE7;
+$cor-ctpm-borda: #F0997B;
+$cor-ctpm-texto: #712B13;
+
+$cor-rbetno-fundo: #E1F5EE;
+$cor-rbetno-borda: #5DCAA5;
+$cor-rbetno-texto: #04342C;
+
+.badge-colecao {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-right: 4px;
+
+  &.badge-ctpm { background: $cor-ctpm-fundo; color: $cor-ctpm-texto; }
+  &.badge-rbetno { background: $cor-rbetno-fundo; color: $cor-rbetno-texto; }
+}
+
+.badge-uso {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-right: 4px;
+  background: $cor-ctpm-fundo;
+  color: $cor-ctpm-texto;
+}
+
+.card-colecao {
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+
+  &.card-ctpm { background: $cor-ctpm-fundo; border: 1px solid $cor-ctpm-borda; color: $cor-ctpm-texto; }
+  &.card-rbetno { background: $cor-rbetno-fundo; border: 1px solid $cor-rbetno-borda; color: $cor-rbetno-texto; }
+}
+
+.grade-plantas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.card-planta {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  text-decoration: none;
+  color: inherit;
+
+  img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
+  .nome-popular { font-weight: 500; margin: 0; }
+  .nome-cientifico { color: #666; margin: 2px 0 6px; }
+}
+
+.busca-plantas input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+}
+
+.menu-principal {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  .menu-item-dropdown {
+    position: relative;
+
+    .submenu {
+      display: none;
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 220px;
+      z-index: 10;
+    }
+
+    &:hover .submenu,
+    &:focus-within .submenu { display: block; }
+  }
+}
+
+.rodape-site {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+  color: #666;
+}
