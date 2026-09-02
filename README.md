@@ -1,17 +1,8 @@
-# site-principal
+# Site Principal do Grupo de Etnobotânica do JBRJ
 
 Nova versão 2.0 do site do **Grupo de Estudos em Etnobotânica**, Instituto de Pesquisas Jardim Botânico do Rio de Janeiro (JBRJ).
 
 O repositório anterior (`medicinais_jbrj.github.io`) permanece publicado como memória histórica do projeto; este repositório é o ponto de partida da nova estrutura.
-
-## Rodando o site localmente
-
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-O site fica disponível em `http://localhost:4000`.
 
 ## Estrutura do repositório
 
