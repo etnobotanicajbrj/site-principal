@@ -5,13 +5,14 @@ permalink: /
 
 <!-- ===========================================================
      BANNER / INTRODUÇÃO
-     Breve apresentação do grupo
      =========================================================== -->
 
-<div class="banner-descricao">
+<div class="banner-home">
+  <h2>Site do Grupo de Estudos em Etnobotânica — JBRJ</h2>
+  <p class="banner-descricao">
     Pesquisa, curadoria e extensão em etnobotânica no 
     <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>.
-    Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição à céu aberto Saberes e Olhares Diversos.
+    Conheça nossas coleções, publicações e eventos.
   </p>
 </div>
 
@@ -20,7 +21,7 @@ permalink: /
      Cards com imagens em rotação e descrição
      =========================================================== -->
 
-<h2>🌱 Coleções</h2>
+<h2>🪴 Coleções Biológicas</h2>
 
 <div class="colecoes-grid">
   
@@ -51,7 +52,8 @@ permalink: /
       <span class="sigla">CTPM . Dicat</span>
       <h3>Coleção Temática de Plantas Medicinais</h3>
       <p class="descricao-colecao">
-        Acervo vivo com cerca de 170 espécies medicinais, entre nativas e exóticas.
+        Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição
+          <strong>Saberes e Olhares Diversos</strong>. 
       </p>
       <span class="botao-card">Saiba mais →</span>
     </div>
@@ -82,7 +84,7 @@ permalink: /
       <span class="sigla">RBetno . Dipeq</span>
       <h3>Coleção de Etnobotânica</h3>
       <p class="descricao-colecao">
-        Acervo de plantas úteis, bem como pertences e materias com informações relacionadas com ao seu uso.
+        Acervo de plantas úteis, como pertences e materias com informações relacionadas com ao seu uso.
       </p>
       <span class="botao-card">Saiba mais →</span>
     </div>
