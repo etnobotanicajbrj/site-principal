@@ -1,46 +1,33 @@
-<header>
-  <div class="container">
-    <div class="logo">
-      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-      {% if site.subtitle %}
-      <p class="subtitle">{{ site.subtitle }}</p>
-      {% endif %}
-    </div>
+<header class="cabecalho-site">
+  <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
 
-    <button class="menu-toggle" aria-label="Menu">
-      ☰
-    </button>
-
-    <nav class="main-nav">
-      <ul class="menu">
-        {% for item in site.data.navigation.main %}
-        <li class="menu-item {% if item.children %}has-submenu{% endif %}">
-          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-
-          {% if item.children %}
-          <ul class="submenu">
-            {% for subitem in item.children %}
-            <li class="submenu-item {% if subitem.children %}has-sub-submenu{% endif %}">
-              <a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a>
-
-              {% if subitem.children %}
-              <ul class="sub-submenu">
-                {% for subsubitem in subitem.children %}
-                <li>
-                  <a href="{{ subsubitem.url | relative_url }}">{{ subsubitem.title }}</a>
-                </li>
-                {% endfor %}
-              </ul>
+  <nav class="menu-principal">
+    {% for item in site.data.navigation.main %}
+      {% if item.children %}
+        <div class="menu-item-dropdown">
+          <span>{{ item.title }}</span>
+          <div class="submenu">
+            {% for filho in item.children %}
+              {% if filho.children %}
+                <!-- Item com sub-submenu (nível 3) -->
+                <div class="submenu-item-dropdown">
+                  <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
+                  <div class="sub-submenu">
+                    {% for neto in filho.children %}
+                      <a href="{{ neto.url | relative_url }}">{{ neto.title }}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <!-- Item sem sub-submenu (nível 2) -->
+                <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
               {% endif %}
-
-            </li>
             {% endfor %}
-          </ul>
-          {% endif %}
-
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
+          </div>
+        </div>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
 </header>
