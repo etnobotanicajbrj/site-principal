@@ -114,3 +114,23 @@ $cor-rbetno-texto: #04342C;
   color: #666;
 }
 
+// ===========================================================
+// BADGES DE USO (para plantas nas coleções)
+// ===========================================================
+
+.badge-uso {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 3px 12px;
+  border-radius: 12px;
+  margin-right: 4px;
+  background: $cor-fundo;
+  color: $cor-texto-suave;
+  border: 1px solid $cor-borda;
+
+  &.uso-medicinal { background: #E8F5E9; color: #2E7D32; }
+  &.uso-alimenticio { background: #FFF3E0; color: #E65100; }
+  &.uso-ritualistico { background: #F3E5F5; color: #6A1B9A; }
+  &.uso-artesanal { background: #E3F2FD; color: #0D47A1; }
+  &.uso-construtivo { background: #FBE9E7; color: #BF360C; }
+}
