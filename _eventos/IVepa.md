@@ -9,5 +9,5 @@ link: "/eventos/IVepa/"
 fotos:
   - "/assets/images/eventos/iv-epa-1.jpg"
   - "/assets/images/eventos/iv-epa-2.jpg"
-  - "/assets/images/eventos/iv-epa-3.jpg"
+  - "/assets/images/eventos/iv-epa-3.jpeg"
 ---
