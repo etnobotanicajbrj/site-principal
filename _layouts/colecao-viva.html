@@ -1,0 +1,277 @@
+---
+layout: default
+---
+
+<!-- ===========================================================
+     PÁGINA DA COLEÇÃO VIVA
+     Layout com banner da CTPM + grade de plantas com busca
+     =========================================================== -->
+
+{% if page.cor == "ctpm" %}
+  {% assign cor_fundo = "#FAECE7" %}
+  {% assign cor_borda = "#F0997B" %}
+  {% assign cor_texto = "#712B13" %}
+  {% assign cor_badge = "#712B13" %}
+{% elsif page.cor == "rbetno" %}
+  {% assign cor_fundo = "#E1F5EE" %}
+  {% assign cor_borda = "#5DCAA5" %}
+  {% assign cor_texto = "#04342C" %}
+  {% assign cor_badge = "#04342C" %}
+{% else %}
+  {% assign cor_fundo = "#FBFAF7" %}
+  {% assign cor_borda = "#2F6B4F" %}
+  {% assign cor_texto = "#204A37" %}
+  {% assign cor_badge = "#2F6B4F" %}
+{% endif %}
+
+<style>
+  /* ===========================================================
+     BANNER DA COLEÇÃO (mesmo estilo das outras páginas)
+     =========================================================== */
+  .banner-colecao {
+    background: {{ cor_fundo }};
+    border: 2px solid {{ cor_borda }};
+    border-radius: 16px;
+    padding: 32px 40px;
+    margin: 16px 0 32px 0;
+    text-align: center;
+  }
+
+  .banner-colecao .diretoria {
+    font-size: 0.85rem;
+    color: {{ cor_texto }};
+    opacity: 0.6;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-colecao .sigla-diretoria {
+    opacity: 0.5;
+  }
+
+  .banner-colecao h1 {
+    color: {{ cor_texto }};
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    border-bottom: none;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .banner-colecao .sigla-colecao {
+    font-size: 0.9rem;
+    color: {{ cor_texto }};
+    opacity: 0.5;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  .banner-colecao .sigla-significado {
+    opacity: 0.6;
+  }
+
+  .banner-colecao .descricao {
+    font-size: 1.05rem;
+    color: {{ cor_texto }};
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .banner-colecao .botao-banner {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    background: {{ cor_texto }};
+    color: #fff !important;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .banner-colecao .botao-banner:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  /* ===========================================================
+     BUSCA DE PLANTAS
+     =========================================================== */
+  .busca-plantas {
+    margin: 24px 0 16px 0;
+  }
+
+  .busca-plantas input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 2px solid {{ cor_borda }};
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: {{ cor_texto }};
+  }
+
+  .busca-plantas input:focus {
+    outline: none;
+    border-color: {{ cor_texto }};
+    box-shadow: 0 0 0 4px rgba({{ cor_texto | remove: '#' | slice: 0, 2 }}, {{ cor_texto | remove: '#' | slice: 2, 2 }}, {{ cor_texto | remove: '#' | slice: 4, 2 }}, 0.10);
+  }
+
+  .busca-plantas input::placeholder {
+    color: {{ cor_texto }};
+    opacity: 0.5;
+  }
+
+  /* ===========================================================
+     GRADE DE PLANTAS
+     =========================================================== */
+  .grade-plantas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 16px 0 32px 0;
+  }
+
+  .card-planta {
+    display: block;
+    border: 1px solid {{ cor_borda }};
+    border-radius: 12px;
+    padding: 16px;
+    text-decoration: none;
+    color: {{ cor_texto }};
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+  }
+
+  .card-planta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    border-color: {{ cor_texto }};
+  }
+
+  .card-planta img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: {{ cor_fundo }};
+  }
+
+  .card-planta .sem-foto {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: {{ cor_fundo }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: {{ cor_borda }};
+  }
+
+  .card-planta .nome-popular {
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.95rem;
+    color: {{ cor_texto }};
+  }
+
+  .card-planta .nome-cientifico {
+    color: {{ cor_texto }};
+    opacity: 0.6;
+    margin: 2px 0 6px;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  .card-planta .badges-uso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .card-planta .badge-uso {
+    font-size: 0.65rem;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: {{ cor_fundo }};
+    color: {{ cor_texto }};
+    border: 1px solid {{ cor_borda }};
+    opacity: 0.7;
+  }
+
+  /* ===========================================================
+     SEM RESULTADO
+     =========================================================== */
+  #sem-resultado {
+    text-align: center;
+    padding: 40px 20px;
+    color: {{ cor_texto }};
+    opacity: 0.6;
+    font-size: 1.1rem;
+  }
+
+  /* ===========================================================
+     RESPONSIVO
+     =========================================================== */
+  @media (max-width: 600px) {
+    .grade-plantas {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .banner-colecao {
+      padding: 20px 16px;
+    }
+
+    .banner-colecao h1 {
+      font-size: 1.4rem;
+    }
+
+    .banner-colecao .descricao {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<!-- ===========================================================
+     BANNER DA COLEÇÃO
+     =========================================================== -->
+
+<article class="banner-colecao">
+  <p class="diretoria">
+    {{ page.diretoria_nome | default: page.diretoria | default: "Diretoria" }}
+    {% if page.sigla_diretoria %}
+    <span class="sigla-diretoria">— {{ page.sigla_diretoria }}</span>
+    {% endif %}
+  </p>
+
+  <h1>{{ page.title }}</h1>
+
+  <p class="sigla-colecao">
+    {{ page.sigla | downcase }}
+    {% if page.sigla_significado %}
+    <span class="sigla-significado">· {{ page.sigla_significado }}</span>
+    {% endif %}
+  </p>
+
+  <p class="descricao">{{ page.descricao | default: "Explore o acervo vivo da coleção." }}</p>
+
+  {% if page.botao_texto and page.botao_link %}
+  <a href="{{ page.botao_link | relative_url }}" class="botao-banner">{{ page.botao_texto }}</a>
+  {% endif %}
+</article>
+
+<!-- ===========================================================
+     CONTEÚDO PRINCIPAL (busca + grade de plantas)
+     =========================================================== -->
+
+{{ content }}
