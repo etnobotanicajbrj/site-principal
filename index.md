@@ -8,12 +8,9 @@ permalink: /
      Breve apresentação do grupo
      =========================================================== -->
 
-<div class="banner-home">
-  <h1>🌿 Grupo de Estudos em Etnobotânica — JBRJ</h1>
-  <p class="banner-descricao">
-    Pesquisa, curadoria e extensão em etnobotânica no 
-    <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>.
-    Conheça nossas coleções, publicações e eventos.
+<div class="banner-descricao">
+      Pesquisa, curadoria e extensão em etnobotânica no 
+    <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>. Conheça nossas coleções, publicações e eventos.
   </p>
 </div>
 
@@ -22,7 +19,7 @@ permalink: /
      Cards com imagens em rotação e descrição
      =========================================================== -->
 
-<h2>Coleções Biológicas</h2>
+<h2>🪴Coleções Biológicas</h2>
 
 <div class="colecoes-grid">
   
@@ -53,7 +50,7 @@ permalink: /
       <span class="sigla">CTPM . Dicat</span>
       <h3>Coleção Temática de Plantas Medicinais</h3>
       <p class="descricao-colecao">
-        Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição à céu aberto _Saberes e Olhares Diversos_.
+        Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição à céu aberto  <i>Saberes e Olhares Diversos<i>.
       </p>
       <span class="botao-card">Saiba mais →</span>
     </div>
@@ -64,13 +61,13 @@ permalink: /
     <div class="imagem-colecao-slider" data-carousel="rbetno">
       <img 
         src="{{ '/assets/images/colecoes/rbetno-1.jpg' | relative_url }}" 
-        alt="Rede de Etnobotânica - imagem 1"
+        alt="RBetno - imagem 1"
         class="ativa"
         loading="lazy"
       >
       <img 
         src="{{ '/assets/images/colecoes/rbetno-2.jpg' | relative_url }}" 
-        alt="Rede de Etnobotânica - imagem 2"
+        alt="RBetno - imagem 2"
         loading="lazy"
       >
       <img 
