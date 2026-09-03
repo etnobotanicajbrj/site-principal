@@ -1227,7 +1227,7 @@ img {
 .home-evento-item {
   display: flex;
   gap: 16px;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   border-radius: 10px;
   border: 1px solid #E3E0D8;
@@ -1240,6 +1240,7 @@ img {
   }
 }
 
+// --- Data do evento ---
 .home-evento-data {
   display: flex;
   flex-direction: column;
@@ -1265,8 +1266,12 @@ img {
   letter-spacing: 0.5px;
 }
 
+// --- Informações do evento ---
 .home-evento-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .home-evento-titulo {
@@ -1279,11 +1284,18 @@ img {
   a {
     color: #204A37;
     text-decoration: none;
+    transition: color 0.2s ease;
 
     &:hover {
       color: #2F6B4F;
       text-decoration: underline;
     }
+  }
+
+  .icone-externo {
+    font-size: 0.7rem;
+    opacity: 0.5;
+    margin-left: 2px;
   }
 }
 
@@ -1291,4 +1303,75 @@ img {
   font-size: 0.85rem;
   color: #5B6B58;
   margin: 2px 0 0 0;
+}
+
+// --- Ações do evento (botão + local) ---
+.home-evento-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 6px;
+}
+
+.home-evento-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 14px;
+  border-radius: 6px;
+  background: #2F6B4F;
+  color: #fff !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: #204A37;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  .icone-externo {
+    font-size: 0.6rem;
+    opacity: 0.7;
+  }
+}
+
+.home-evento-local {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.home-evento-palestrantes {
+  font-size: 0.85rem;
+  color: #2F6B4F;
+  margin: 2px 0 0 0;
+  font-weight: 500;
+
+  // Ícone de microfone
+  &::before {
+    content: "🎤 ";
+  }
+}
+
+// ===========================================================
+// LINK "VER TODOS"
+// ===========================================================
+
+.link-ver-todos {
+  margin-top: 8px;
+  text-align: right;
+
+  a {
+    font-weight: 500;
+    color: #2F6B4F;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
