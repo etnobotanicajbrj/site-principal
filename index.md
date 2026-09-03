@@ -93,22 +93,65 @@ permalink: /
 </div>
 
 <!-- ===========================================================
-     ÚLTIMAS PUBLICAÇÕES
+     ÚLTIMAS PUBLICAÇÕES (Home)
+     Mostra as 3 publicações mais recentes com autores e ano
      =========================================================== -->
 
 <h2>📄 Últimas publicações</h2>
 
-{% assign recentes = site.publicacoes | sort: "data" | reverse | limit: 3 %}
-{% if recentes.size > 0 %}
-  <ul class="lista-publicacoes">
-    {% for pub in recentes %}
-      <li>
-        <a href="{{ pub.url | relative_url }}">{{ pub.titulo }}</a>
-        <span class="data-publicacao">{{ pub.data | date: "%d/%m/%Y" }}</span>
-      </li>
+{% assign publicacoes_recentes = site.publicacoes | sort: "ano" | reverse | limit: 3 %}
+
+{% if publicacoes_recentes.size > 0 %}
+  <div class="home-publicacoes">
+    {% for pub in publicacoes_recentes %}
+      <div class="home-publicacao-item">
+        <div class="home-publicacao-info">
+          <h3 class="home-publicacao-titulo">
+            {% if pub.link %}
+              <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">
+                {{ pub.titulo }}
+                <span class="icone-externo">↗</span>
+              </a>
+            {% elsif pub.arquivo %}
+              <a href="{{ pub.arquivo | relative_url }}" target="_blank" rel="noopener noreferrer">
+                {{ pub.titulo }}
+                <span class="icone-externo">↗</span>
+              </a>
+            {% elsif pub.url %}
+              <a href="{{ pub.url | relative_url }}">{{ pub.titulo }}</a>
+            {% else %}
+              <span>{{ pub.titulo }}</span>
+            {% endif %}
+          </h3>
+          
+          {% if pub.autores %}
+            <p class="home-publicacao-autores">{{ pub.autores }}</p>
+          {% endif %}
+          
+          <div class="home-publicacao-meta">
+            {% if pub.ano %}
+              <span class="home-publicacao-ano">{{ pub.ano }}</span>
+            {% endif %}
+            
+            {% if pub.colecao %}
+              <span class="home-publicacao-badge">
+                {% include badge-colecao.html colecoes=pub.colecao %}
+              </span>
+            {% endif %}
+          </div>
+          
+          {% if pub.descricao %}
+            <p class="home-publicacao-descricao">{{ pub.descricao | truncate: 100 }}</p>
+          {% endif %}
+        </div>
+      </div>
     {% endfor %}
-  </ul>
-  <p><a href="{{ '/publicacoes/' | relative_url }}" class="link-ver-todos">Ver todas as publicações →</a></p>
+  </div>
+  
+  <p class="link-ver-todos">
+    <a href="{{ '/publicacoes/' | relative_url }}">Ver todas as publicações →</a>
+  </p>
+  
 {% else %}
   <p class="aviso-vazio">Nenhuma publicação cadastrada ainda.</p>
 {% endif %}
