@@ -51,5 +51,5 @@ permalink: /
 
 <!-- \[preencher — chamada para /colecoes/ctpm/visite/] -->
 
-<a href="{{ '/colecoes/ctpm/visite/' | relative\_url }}" class="botao">Conhecer a visita a Coleção</a>
+<a href="{{ '/colecoes/ctpm/visite/' | relative\_url }}" class="botao">Conheça a visita da Coleção</a>
 
