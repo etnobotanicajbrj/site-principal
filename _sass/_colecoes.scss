@@ -12,7 +12,7 @@ $cor-rbetno-borda: #5DCAA5;
 $cor-rbetno-texto: #04342C;
 
 // ===========================================================
-// BADGES DE COLEÇÃO
+// BADGES DE COLEÇÃO / PROGRAMA / PESQUISA
 // ===========================================================
 
 .badge-colecao {
@@ -39,8 +39,15 @@ $cor-rbetno-texto: #04342C;
     border: 1px solid #5DCAA5;
   }
 
-  // Programa / Pesquisa (NOVO)
+  // Programa (NOVO)
   &.badge-programa {
+    background: #FFF3E0;
+    color: #E65100;
+    border: 1px solid #FFB74D;
+  }
+
+  // Pesquisa (NOVO)
+  &.badge-pesquisa {
     background: #E8F0FE;
     color: #1A3A6B;
     border: 1px solid #8AA9D6;
