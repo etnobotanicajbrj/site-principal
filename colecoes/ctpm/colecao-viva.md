@@ -1,28 +1,38 @@
 ---
-title: "Plantas da Coleção Viva"
-sigla: "CTPM"
-sigla_significado: "Coleção Temática de Plantas Medicinais"
-diretoria_nome: "Diretoria de Conhecimento, Ambiente e Tecnologia"
-sigla_diretoria: "DICAT"
-cor: "ctpm"
-layout: colecao-viva
+title: "Coleção Viva"
+layout: default
 permalink: /colecoes/ctpm/colecao-viva/
-descricao: "Explore o acervo vivo da Coleção Temática de Plantas Medicinais. Conheça as espécies que compõem a exposição a céu aberto 'Saberes e Olhares Diversos'."
 ---
 
-<!-- Responsáveis: Karen e Catarina -->
+<!-- ===========================================================
+     BANNER MÍNIMO
+     =========================================================== -->
+
+<h1 style="text-align: center; margin-bottom: 4px;">Plantas da Coleção Viva</h1>
+<p style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0; margin-bottom: 32px;">
+  CTPM · Coleção Temática de Plantas Medicinais
+</p>
+
+<!-- ===========================================================
+     BARRA DE BUSCA (somente o campo)
+     =========================================================== -->
 
 <div class="busca-plantas">
   <input 
     type="text" 
     id="busca-planta-input" 
-    placeholder="🔍 Buscar por nome popular, nome científico ou uso..." 
+    placeholder=" 🔍 Buscar por nome popular, nome científico ou uso...  " 
     aria-label="Buscar planta"
   >
 </div>
 
+<!-- ===========================================================
+     GRADE DE PLANTAS (apenas 10)
+     =========================================================== -->
+
 <div class="grade-plantas" id="grade-plantas">
-  {% for planta in site.plantas %}
+  {% assign plantas_mostrar = site.plantas | limit: 10 %}
+  {% for planta in plantas_mostrar %}
     <a href="{{ planta.url | relative_url }}"
        class="card-planta"
        data-busca="{{ planta.nome_popular | downcase }} {{ planta.nome_cientifico | downcase }} {{ planta.usos | join: ' ' | downcase }}">
@@ -46,7 +56,9 @@ descricao: "Explore o acervo vivo da Coleção Temática de Plantas Medicinais. 
   {% endfor %}
 </div>
 
-<p id="sem-resultado" style="display:none;">🌱 Nenhuma planta encontrada. Tente outro termo.</p>
+<p id="sem-resultado" style="display:none; text-align:center; color:#888; padding:32px 0;">
+  Nenhuma planta encontrada. Tente outro termo.
+</p>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
