@@ -1,36 +1,73 @@
 <header class="cabecalho-site">
-  <div class="logo">
-    <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
-  </div>
+  <!-- MARCA: logo + nome do site -->
+  <a href="{{ '/' | relative_url }}" class="marca-site">
+    <img 
+      src="{{ '/assets/images/logo.png' | relative_url }}" 
+      alt="{{ site.title }}" 
+      class="logo-site"
+      loading="lazy"
+    >
+    <span class="logo-link">{{ site.title }}</span>
+  </a>
 
-  <nav class="menu-principal">
-    {% for item in site.data.navigation.main %}
-      {% if item.children %}
-        <!-- Item com submenu -->
-        <div class="menu-item-dropdown {% if page.url contains item.url %}active{% endif %}">
-          <span>{{ item.title }}</span>
-          <div class="submenu">
-            {% for filho in item.children %}
-              {% if filho.children %}
-                <!-- Sub-submenu -->
-                <div class="submenu-item-dropdown {% if page.url contains filho.url %}active{% endif %}">
-                  <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
-                  <div class="sub-submenu">
-                    {% for neto in filho.children %}
-                      <a href="{{ neto.url | relative_url }}" {% if page.url contains neto.url %}class="active"{% endif %}>{{ neto.title }}</a>
-                    {% endfor %}
+  <!-- ÁREA DE NAVEGAÇÃO (menu + Instagram) -->
+  <div class="area-navegacao">
+    
+    <!-- MENU PRINCIPAL -->
+    <nav class="menu-principal" aria-label="Menu principal">
+      {% for item in site.data.navigation.main %}
+        {% if item.children %}
+          <div class="menu-item-dropdown {% if page.url contains item.url %}active{% endif %}">
+            <span>{{ item.title }}</span>
+            <div class="submenu">
+              {% for filho in item.children %}
+                {% if filho.children %}
+                  <div class="submenu-item-dropdown {% if page.url contains filho.url %}active{% endif %}">
+                    <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
+                    <div class="sub-submenu">
+                      {% for neto in filho.children %}
+                        <a href="{{ neto.url | relative_url }}" {% if page.url contains neto.url %}class="active"{% endif %}>{{ neto.title }}</a>
+                      {% endfor %}
+                    </div>
                   </div>
-                </div>
-              {% else %}
-                <a href="{{ filho.url | relative_url }}" {% if page.url contains filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
-              {% endif %}
-            {% endfor %}
+                {% else %}
+                  <a href="{{ filho.url | relative_url }}" {% if page.url contains filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      {% else %}
-        <!-- Item sem submenu -->
-        <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
-      {% endif %}
-    {% endfor %}
-  </nav>
+        {% else %}
+          <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    <!-- ÍCONE DO INSTAGRAM -->
+    <div class="redes-sociais">
+      <a 
+        href="https://instagram.com/seu-perfil" 
+        class="icone-instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram do Grupo de Estudos em Etnobotânica"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="20" 
+          height="20" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
+
+  </div>
 </header>
