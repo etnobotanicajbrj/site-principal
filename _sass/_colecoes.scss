@@ -188,13 +188,12 @@ $cor-rbetno-texto: #04342C;
 }
 
 // ===========================================================
-// GRADE DE PLANTAS — VERSÃO NEUTRA (tons de cinza)
-// INSERIR AQUI AS NOVAS REGRAS PARA A COLEÇÃO VIVA
+// GRADE DE PLANTAS — 10 plantas por padrão
 // ===========================================================
 
 .grade-plantas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
   margin: 16px 0;
 }
@@ -272,27 +271,30 @@ $cor-rbetno-texto: #04342C;
 }
 
 // ===========================================================
-// BUSCA DE PLANTAS — VERSÃO NEUTRA
+// BUSCA DE PLANTAS — APENAS A BARRA
 // ===========================================================
 
-.busca-plantas input {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid #D8D8D8;
-  font-size: 0.95rem;
+.busca-plantas {
   margin-bottom: 16px;
-  background: #fff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-  &:focus {
-    outline: none;
-    border-color: #B0B0B0;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
-  }
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #D8D8D8;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-  &::placeholder {
-    color: #AAAAAA;
+    &:focus {
+      outline: none;
+      border-color: #B0B0B0;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+    }
+
+    &::placeholder {
+      color: #AAAAAA;
+    }
   }
 }
 
