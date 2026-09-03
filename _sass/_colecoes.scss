@@ -1,6 +1,9 @@
-// Identidade visual das duas coleções + badges de uso das plantas.
-// Ajuste os valores hexadecimais se decidirem outra paleta.
+// ===========================================================
+// COLEÇÕES — IDENTIDADE VISUAL
+// Cores específicas para CTPM e RBetno + badges
+// ===========================================================
 
+// --- Cores das coleções -------------------------------------
 $cor-ctpm-fundo: #FAECE7;
 $cor-ctpm-borda: #F0997B;
 $cor-ctpm-texto: #712B13;
@@ -9,62 +12,476 @@ $cor-rbetno-fundo: #E1F5EE;
 $cor-rbetno-borda: #5DCAA5;
 $cor-rbetno-texto: #04342C;
 
+// ===========================================================
+// BADGES — para identificar coleção e uso das plantas
+// ===========================================================
+
 .badge-colecao {
   display: inline-block;
   font-size: 0.75rem;
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-right: 4px;
 
-  &.badge-ctpm { background: $cor-ctpm-fundo; color: $cor-ctpm-texto; }
-  &.badge-rbetno { background: $cor-rbetno-fundo; color: $cor-rbetno-texto; }
+  &.badge-ctpm {
+    background: $cor-ctpm-fundo;
+    color: $cor-ctpm-texto;
+    border: 1px solid $cor-ctpm-borda;
+  }
+
+  &.badge-rbetno {
+    background: $cor-rbetno-fundo;
+    color: $cor-rbetno-texto;
+    border: 1px solid $cor-rbetno-borda;
+  }
 }
 
 .badge-uso {
   display: inline-block;
   font-size: 0.75rem;
-  padding: 3px 8px;
-  border-radius: 6px;
-  margin-right: 4px;
+  padding: 2px 10px;
+  border-radius: 12px;
   background: $cor-ctpm-fundo;
   color: $cor-ctpm-texto;
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+// ===========================================================
+// CARDS DE COLEÇÃO — ESTILO BANNER (fundo claro, borda verde)
+// ===========================================================
+
+.colecoes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 32px 0;
+  width: 100%;
 }
 
 .card-colecao {
-  border-radius: 12px;
-  padding: 16px 20px;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $cor-fundo;
+  border: 2px solid $cor-primaria;
+  border-radius: 16px;
+  padding: 28px 32px;
+  text-decoration: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(47, 107, 79, 0.06);
 
-  &.card-ctpm { background: $cor-ctpm-fundo; border: 1px solid $cor-ctpm-borda; color: $cor-ctpm-texto; }
-  &.card-rbetno { background: $cor-rbetno-fundo; border: 1px solid $cor-rbetno-borda; color: $cor-rbetno-texto; }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(47, 107, 79, 0.12);
+    border-color: $cor-primaria-escura;
+    text-decoration: none !important;
+  }
+
+  // Badge (sigla) no card
+  .sigla {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $cor-primaria;
+    background: rgba(47, 107, 79, 0.08);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+  }
+
+  h3 {
+    color: $cor-primaria-escura;
+    font-size: 1.3rem;
+    margin: 0 0 8px 0;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .descricao-colecao {
+    font-size: 0.95rem;
+    color: $cor-texto;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+  }
+
+  .botao-card {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: $cor-primaria;
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+    text-decoration: none;
+
+    &:hover {
+      background: $cor-primaria-escura;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+  }
+
+  // Variação para CTPM (sobrescreve o estilo padrão)
+  &.card-ctpm {
+    border-color: $cor-ctpm-borda;
+    background: $cor-ctpm-fundo;
+    color: $cor-ctpm-texto;
+
+    &:hover {
+      border-color: darken($cor-ctpm-borda, 15%);
+    }
+
+    .sigla {
+      color: $cor-ctpm-texto;
+      background: rgba($cor-ctpm-texto, 0.08);
+    }
+
+    h3 {
+      color: $cor-ctpm-texto;
+    }
+
+    .botao-card {
+      background: $cor-ctpm-texto;
+
+      &:hover {
+        background: darken($cor-ctpm-texto, 10%);
+      }
+    }
+  }
+
+  // Variação para RBetno
+  &.card-rbetno {
+    border-color: $cor-rbetno-borda;
+    background: $cor-rbetno-fundo;
+    color: $cor-rbetno-texto;
+
+    &:hover {
+      border-color: darken($cor-rbetno-borda, 15%);
+    }
+
+    .sigla {
+      color: $cor-rbetno-texto;
+      background: rgba($cor-rbetno-texto, 0.08);
+    }
+
+    h3 {
+      color: $cor-rbetno-texto;
+    }
+
+    .botao-card {
+      background: $cor-rbetno-texto;
+
+      &:hover {
+        background: darken($cor-rbetno-texto, 10%);
+      }
+    }
+  }
 }
+
+// ===========================================================
+// PÁGINA DE COLEÇÕES (lista de coleções)
+// ===========================================================
+
+.pagina-colecoes {
+  .colecao-item {
+    background: $cor-fundo;
+    border: 2px solid $cor-primaria;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(47, 107, 79, 0.10);
+    }
+
+    .sigla-colecao {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $cor-primaria;
+      background: rgba(47, 107, 79, 0.08);
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: $cor-primaria-escura;
+      font-size: 1.6rem;
+      margin: 0 0 12px 0;
+      border-bottom: none;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .descricao-colecao {
+      font-size: 1.05rem;
+      color: $cor-texto;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .botao-colecao {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 8px;
+      background: $cor-primaria;
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        background: $cor-primaria-escura;
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+    }
+
+    // Variação para CTPM
+    &.colecao-ctpm {
+      border-color: $cor-ctpm-borda;
+      background: $cor-ctpm-fundo;
+
+      .sigla-colecao {
+        color: $cor-ctpm-texto;
+        background: rgba($cor-ctpm-texto, 0.08);
+      }
+
+      h2 {
+        color: $cor-ctpm-texto;
+      }
+
+      .botao-colecao {
+        background: $cor-ctpm-texto;
+
+        &:hover {
+          background: darken($cor-ctpm-texto, 10%);
+        }
+      }
+    }
+
+    // Variação para RBetno
+    &.colecao-rbetno {
+      border-color: $cor-rbetno-borda;
+      background: $cor-rbetno-fundo;
+
+      .sigla-colecao {
+        color: $cor-rbetno-texto;
+        background: rgba($cor-rbetno-texto, 0.08);
+      }
+
+      h2 {
+        color: $cor-rbetno-texto;
+      }
+
+      .botao-colecao {
+        background: $cor-rbetno-texto;
+
+        &:hover {
+          background: darken($cor-rbetno-texto, 10%);
+        }
+      }
+    }
+  }
+}
+
+// ===========================================================
+// GRADE DE PLANTAS (Coleção Viva)
+// ===========================================================
 
 .grade-plantas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
 }
 
 .card-planta {
   display: block;
-  border: 1px solid #ddd;
+  border: 1px solid $cor-borda;
   border-radius: 12px;
-  padding: 12px;
+  padding: 16px;
   text-decoration: none;
-  color: inherit;
+  color: $cor-texto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
 
-  img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
-  .nome-popular { font-weight: 500; margin: 0; }
-  .nome-cientifico { color: #666; margin: 2px 0 6px; }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .nome-popular {
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.95rem;
+    color: $cor-primaria-escura;
+  }
+
+  .nome-cientifico {
+    color: $cor-texto-suave;
+    margin: 2px 0 6px;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  .badge-uso {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: $cor-fundo;
+    color: $cor-texto-suave;
+    margin-top: 4px;
+  }
 }
 
-.busca-plantas input {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 16px;
+// ===========================================================
+// BUSCA DE PLANTAS
+// ===========================================================
+
+.busca-plantas {
+  position: relative;
+  margin-bottom: 24px;
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid $cor-borda;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+      box-shadow: 0 0 0 4px rgba(47, 107, 79, 0.10);
+    }
+
+    &::placeholder {
+      color: $cor-texto-suave;
+    }
+  }
+
+  .resultado-busca {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: $cor-texto-suave;
+  }
 }
+
+// ===========================================================
+// BANNER INTERNO (para páginas de coleção)
+// ===========================================================
+
+.banner-home {
+  background: $cor-fundo;
+  border: 2px solid $cor-primaria;
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin: 16px 0 32px 0;
+  text-align: center;
+
+  h1, h2, h3 {
+    color: $cor-primaria-escura;
+    margin: 0 0 8px 0;
+    border-bottom: none;
+  }
+
+  p, .banner-descricao {
+    font-size: 1.1rem;
+    color: $cor-texto;
+    margin: 0;
+    max-width: 700px;
+    margin: 0 auto;
+
+    strong {
+      color: $cor-primaria;
+    }
+  }
+
+  .sigla {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $cor-primaria;
+    background: rgba(47, 107, 79, 0.08);
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .botao {
+    margin-top: 16px;
+  }
+
+  // Variação para CTPM
+  &.banner-ctpm {
+    border-color: $cor-ctpm-borda;
+    background: $cor-ctpm-fundo;
+
+    h1, h2, h3 {
+      color: $cor-ctpm-texto;
+    }
+
+    .sigla {
+      color: $cor-ctpm-texto;
+      background: rgba($cor-ctpm-texto, 0.08);
+    }
+
+    p strong {
+      color: $cor-ctpm-texto;
+    }
+  }
+
+  // Variação para RBetno
+  &.banner-rbetno {
+    border-color: $cor-rbetno-borda;
+    background: $cor-rbetno-fundo;
+
+    h1, h2, h3 {
+      color: $cor-rbetno-texto;
+    }
+
+    .sigla {
+      color: $cor-rbetno-texto;
+      background: rgba($cor-rbetno-texto, 0.08);
+    }
+
+    p strong {
+      color: $cor-rbetno-texto;
+    }
+  }
+}
+
+// ===========================================================
+// MENU PRINCIPAL (compatível com o resto do site)
+// ===========================================================
 
 .menu-principal {
   display: flex;
@@ -86,13 +503,16 @@ $cor-rbetno-texto: #04342C;
       padding: 8px;
       min-width: 260px;
       z-index: 10;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
       a {
         display: block;
         padding: 8px 12px;
         border-radius: 6px;
         white-space: nowrap;
+        color: $cor-texto;
+        text-decoration: none;
+        transition: background 0.15s ease;
 
         &:hover {
           background: $cor-fundo;
@@ -102,15 +522,31 @@ $cor-rbetno-texto: #04342C;
     }
 
     &:hover .submenu,
-    &:focus-within .submenu { display: flex; }
+    &:focus-within .submenu {
+      display: flex;
+    }
   }
 }
 
+// ===========================================================
+// RODAPÉ
+// ===========================================================
+
 .rodape-site {
   margin-top: 40px;
-  padding: 20px;
-  border-top: 1px solid #ddd;
+  padding: 24px 20px;
+  border-top: 1px solid $cor-borda;
   font-size: 0.85rem;
-  color: #666;
-}
+  color: $cor-texto-suave;
+  text-align: center;
+  background: #fff;
 
+  a {
+    color: $cor-primaria;
+
+    &:hover {
+      color: $cor-primaria-escura;
+      text-decoration: underline;
+    }
+  }
+}
