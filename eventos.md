@@ -8,7 +8,7 @@ permalink: /eventos/
      =========================================================== -->
 
 <div class="banner-pagina">
-  <h1>📅 Eventos</h1>
+  <h1>Eventos</h1>
   <p>Confira os próximos eventos e reviva os encontros passados do nosso grupo.</p>
 </div>
 
@@ -16,7 +16,7 @@ permalink: /eventos/
      PRÓXIMOS EVENTOS
      =========================================================== -->
 
-<h2>🔜 Próximos eventos</h2>
+<h2>Próximos eventos</h2>
 
 {% assign hoje = site.time | date: "%Y-%m-%d" %}
 {% assign eventos_futuros = site.eventos | where_exp: "evento", "evento.data >= hoje" | sort: "data" %}
@@ -27,7 +27,9 @@ permalink: /eventos/
       <div class="evento-item">
         <div class="evento-data">
           <span class="evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="evento-mes">{{ evento.data | date: "%b" }}</span>
+          <span class="evento-mes">
+            {% include date-pt.html date=evento.data format="mes_abbr" %}
+          </span>
           <span class="evento-ano">{{ evento.data | date: "%Y" }}</span>
         </div>
         
@@ -40,6 +42,10 @@ permalink: /eventos/
           
           <p class="evento-descricao">{{ evento.descricao }}</p>
           <p class="evento-local">📍 {{ evento.local }}</p>
+          
+          <p class="evento-data-completa">
+            📅 {% include date-pt.html date=evento.data format="dia_mes_ano" %}
+          </p>
           
           {% if evento.inscricao %}
             <a href="{{ evento.inscricao }}" class="botao" target="_blank" rel="noopener noreferrer">
@@ -58,7 +64,7 @@ permalink: /eventos/
      EVENTOS PASSADOS COM CARROSSEL
      =========================================================== -->
 
-<h2>📸 Eventos passados</h2>
+<h2>Eventos passados</h2>
 
 {% assign eventos_passados = site.eventos | where_exp: "evento", "evento.data < hoje" | sort: "data" | reverse %}
 
@@ -74,7 +80,7 @@ permalink: /eventos/
           {% endif %}
           
           <p class="evento-data-passado">
-            📅 {{ evento.data | date: "%d/%m/%Y" }}
+            📅 {% include date-pt.html date=evento.data format="dia_mes_ano" %}
             {% if evento.local %}
               — 📍 {{ evento.local }}
             {% endif %}
@@ -83,7 +89,7 @@ permalink: /eventos/
           <p class="evento-descricao">{{ evento.descricao }}</p>
         </div>
         
-        <!-- Carrossel de 3 fotos (se houver) -->
+        <!-- Carrossel de 3 fotos -->
         {% if evento.fotos %}
           <div class="carrossel-eventos" data-carousel="{{ evento.title | slugify }}">
             <div class="carrossel-container">
@@ -127,17 +133,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (slides.length === 0) return;
     
     function mostrarSlide(indice) {
-      slides.forEach((slide, i) => {
+      slides.forEach(function(slide, i) {
         slide.style.display = i === indice ? 'block' : 'none';
       });
       
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('ativo', i === indice);
+      dots.forEach(function(dot, i) {
+        if (i === indice) {
+          dot.classList.add('ativo');
+        } else {
+          dot.classList.remove('ativo');
+        }
       });
     }
     
-    const btnAnterior = carrossel.querySelector('.carrossel-btn-anterior');
-    const btnProximo = carrossel.querySelector('.carrossel-btn-proximo');
+    var btnAnterior = carrossel.querySelector('.carrossel-btn-anterior');
+    var btnProximo = carrossel.querySelector('.carrossel-btn-proximo');
     
     if (btnAnterior) {
       btnAnterior.addEventListener('click', function() {
@@ -153,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    dots.forEach((dot, i) => {
+    dots.forEach(function(dot, i) {
       dot.addEventListener('click', function() {
         indiceAtual = i;
         mostrarSlide(indiceAtual);
