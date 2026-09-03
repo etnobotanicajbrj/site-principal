@@ -4,8 +4,8 @@ data: 2026-08-27
 horario: 14:30
 local: "CTPM, Online"
 descricao: "Venha participar do nosso encontro mensal!"
-responsavel: Mateus Salim
-inscricao: "https://docs.google.com/forms/d/e/1FAIpQLSdEAd1eOSZjt74DRC3vqyRfDMqYz9spIhONKEk1jiMtsxEH6Q/viewform"   
+palestrantes: Mateus Salim
+inscricao: "https://docs.google.com/forms/d/e/1FAIpQLSdEAd1eOSZjt74DRC3vqyRfDMqYz9spIhONKEk1jiMtsxEH6Q/viewform"  
 ---
 
 Nesta edição teremos a alegria de debater o tema **"Vivências do Campo e Diálogo de Saberes: Agroecologia, Etnobotânica e Práticas Tradicionais na Zona Rural Fluminense"**.
