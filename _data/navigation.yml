@@ -25,9 +25,9 @@ main:
 
   - title: "Quem Somos"
     children:
-      - title: "O Grupo de Pesquisa"
+      - title: "Grupo de Pesquisa"
         url: /quem-somos/grupo-pesquisa
-      - title: "O Programa"
+      - title: "Programa de Extensão"
         url: /quem-somos/programa
       - title: "Nossa Equipe"
         url: /quem-somos/equipe
