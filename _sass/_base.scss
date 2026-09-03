@@ -1230,7 +1230,7 @@ img {
   align-items: stretch;
   background: #fff;
   border-radius: 10px;
-  border: 1px solid #E3E0D8;
+  border: 1px solid $cor-borda;
   padding: 14px 18px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
@@ -1240,7 +1240,6 @@ img {
   }
 }
 
-// --- Data do evento ---
 .home-evento-data {
   display: flex;
   flex-direction: column;
@@ -1248,14 +1247,14 @@ img {
   justify-content: center;
   min-width: 50px;
   padding-right: 16px;
-  border-right: 2px solid #E3E0D8;
+  border-right: 2px solid $cor-borda;
   flex-shrink: 0;
 }
 
 .home-evento-dia {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #204A37;
+  color: $cor-primaria-escura;
   line-height: 1.2;
 }
 
@@ -1266,7 +1265,6 @@ img {
   letter-spacing: 0.5px;
 }
 
-// --- Informações do evento ---
 .home-evento-info {
   flex: 1;
   display: flex;
@@ -1279,15 +1277,14 @@ img {
   font-size: 0.95rem;
   font-weight: 600;
   font-family: Georgia, "Times New Roman", serif;
-  color: #204A37;
+  color: $cor-primaria-escura;
 
   a {
-    color: #204A37;
+    color: $cor-primaria-escura;
     text-decoration: none;
-    transition: color 0.2s ease;
 
     &:hover {
-      color: #2F6B4F;
+      color: $cor-primaria;
       text-decoration: underline;
     }
   }
@@ -1299,13 +1296,23 @@ img {
   }
 }
 
+.home-evento-palestrantes {
+  font-size: 0.85rem;
+  color: $cor-texto;
+  margin: 2px 0 0 0;
+
+  strong {
+    color: $cor-primaria-escura;
+    font-weight: 700;
+  }
+}
+
 .home-evento-descricao {
   font-size: 0.85rem;
-  color: #5B6B58;
+  color: $cor-texto-suave;
   margin: 2px 0 0 0;
 }
 
-// --- Ações do evento (botão + local) ---
 .home-evento-acoes {
   display: flex;
   flex-wrap: wrap;
@@ -1320,7 +1327,7 @@ img {
   gap: 4px;
   padding: 4px 14px;
   border-radius: 6px;
-  background: #2F6B4F;
+  background: $cor-primaria;
   color: #fff !important;
   font-size: 0.8rem;
   font-weight: 500;
@@ -1328,7 +1335,7 @@ img {
   transition: background 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    background: #204A37;
+    background: $cor-primaria-escura;
     transform: translateY(-1px);
     text-decoration: none;
   }
@@ -1344,38 +1351,6 @@ img {
   color: #888;
 }
 
-.home-evento-palestrantes {
-  font-size: 0.85rem;
-  color: #1F2A1E;
-  margin: 2px 0 0 0;
-
-  strong {
-    color: #204A37;
-    font-weight: 700;
-  }
-}
-
-
-// ===========================================================
-// LINK "VER TODOS"
-// ===========================================================
-
-.link-ver-todos {
-  margin-top: 8px;
-  text-align: right;
-
-  a {
-    font-weight: 500;
-    color: #2F6B4F;
-    text-decoration: none;
-    font-size: 0.95rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
 // ===========================================================
 // PÁGINA DE EVENTOS
 // ===========================================================
@@ -1384,7 +1359,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 16px 0;
+  margin: 16px 0 32px 0;
 }
 
 .evento-item {
@@ -1392,7 +1367,7 @@ img {
   gap: 20px;
   background: #fff;
   border-radius: 12px;
-  border: 1px solid #E3E0D8;
+  border: 1px solid $cor-borda;
   padding: 20px 24px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
@@ -1409,14 +1384,14 @@ img {
   justify-content: center;
   min-width: 60px;
   padding-right: 20px;
-  border-right: 2px solid #E3E0D8;
+  border-right: 2px solid $cor-borda;
   flex-shrink: 0;
 }
 
 .evento-dia {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #204A37;
+  color: $cor-primaria-escura;
   line-height: 1.2;
 }
 
@@ -1427,6 +1402,11 @@ img {
   letter-spacing: 0.5px;
 }
 
+.evento-ano {
+  font-size: 0.7rem;
+  color: #AAA;
+}
+
 .evento-info {
   flex: 1;
 }
@@ -1434,20 +1414,23 @@ img {
 .evento-info h3 {
   margin: 0 0 4px 0;
   font-size: 1.2rem;
-  color: #204A37;
+  color: $cor-primaria-escura;
   font-family: Georgia, "Times New Roman", serif;
 }
 
 .evento-palestrantes {
   font-size: 0.9rem;
-  color: #2F6B4F;
+  color: $cor-texto;
   margin: 0 0 4px 0;
-  font-weight: 500;
+
+  strong {
+    color: $cor-primaria-escura;
+  }
 }
 
 .evento-descricao {
   font-size: 0.95rem;
-  color: #1F2A1E;
+  color: $cor-texto;
   margin: 0 0 4px 0;
 }
 
@@ -1455,4 +1438,261 @@ img {
   font-size: 0.85rem;
   color: #888;
   margin: 0 0 12px 0;
+}
+
+.evento-data-completa {
+  font-size: 0.9rem;
+  color: $cor-texto-suave;
+  margin: 4px 0 8px 0;
+}
+
+// ===========================================================
+// EVENTOS PASSADOS COM CARROSSEL
+// ===========================================================
+
+.eventos-passados {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 16px 0 32px 0;
+}
+
+.evento-passado-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid $cor-borda;
+  padding: 20px 24px;
+}
+
+.evento-passado-info {
+  margin-bottom: 16px;
+}
+
+.evento-passado-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  color: $cor-primaria-escura;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.evento-data-passado {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 8px 0;
+}
+
+// ===========================================================
+// CARROSSEL
+// ===========================================================
+
+.carrossel-eventos {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $cor-fundo;
+}
+
+.carrossel-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.carrossel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &.carrossel-btn-anterior {
+    left: 8px;
+  }
+
+  &.carrossel-btn-proximo {
+    right: 8px;
+  }
+}
+
+.carrossel-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carrossel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #D8D8D8;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &.ativo {
+    background: $cor-primaria;
+  }
+
+  &:hover {
+    background: #B0B0B0;
+  }
+}
+
+// ===========================================================
+// VISITA AUTOGUIADA
+// ===========================================================
+
+.visita-destaque {
+  background: #fff;
+  border: 1px solid $cor-borda;
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin: 32px 0 16px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  h2 {
+    margin: 0 0 12px 0;
+    border-bottom: none;
+    color: $cor-primaria-escura;
+    font-size: 1.5rem;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    font-size: 1.05rem;
+    color: $cor-texto;
+    line-height: 1.6;
+  }
+
+  .botao {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: $cor-primaria;
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      background: $cor-primaria-escura;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+  }
+}
+
+// ===========================================================
+// RODAPÉ
+// ===========================================================
+
+.rodape-site {
+  background: #fff;
+  border-top: 1px solid $cor-borda;
+  padding: 24px 0;
+  text-align: center;
+
+  a { color: $cor-primaria; }
+}
+
+// ===========================================================
+// RESPONSIVIDADE GERAL
+// ===========================================================
+
+@media (max-width: 600px) {
+  .banner-home,
+  .banner-pagina {
+    padding: 20px 16px;
+  }
+
+  .banner-home h1,
+  .banner-pagina h1 {
+    font-size: 1.4rem;
+  }
+
+  .banner-home .banner-descricao {
+    font-size: 0.95rem;
+  }
+
+  .visita-destaque {
+    padding: 20px 16px;
+  }
+
+  .visita-destaque p {
+    font-size: 0.95rem;
+  }
+
+  .home-evento-item,
+  .evento-item {
+    flex-direction: column;
+    padding: 14px 16px;
+  }
+
+  .home-evento-data,
+  .evento-data {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 2px solid $cor-borda;
+    padding-right: 0;
+    padding-bottom: 8px;
+    min-width: auto;
+    gap: 8px;
+  }
+
+  .home-evento-dia,
+  .evento-dia {
+    font-size: 1.2rem;
+  }
+
+  .carrossel-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .evento-passado-item {
+    padding: 14px 16px;
+  }
+
+  .evento-info h3 {
+    font-size: 1rem;
+  }
+
+  .evento-passado-info h3 {
+    font-size: 1rem;
+  }
 }
