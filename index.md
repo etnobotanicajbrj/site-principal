@@ -162,19 +162,17 @@ permalink: /
 
 <h2>📅 Próximos eventos</h2>
 
-{% assign hoje = site.time | date: "%Y-%m-%d" %}
+{% assign hoje = "now" | date: "%Y-%m-%d" %}
 {% assign eventos_proximos = site.eventos | where_exp: "evento", "evento.data >= hoje" | sort: "data" | limit: 3 %}
 
 {% if eventos_proximos.size > 0 %}
   <div class="home-eventos">
     {% for evento in eventos_proximos %}
       <div class="home-evento-item">
-        <!-- Data em português -->
+        <!-- Data -->
         <div class="home-evento-data">
           <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="home-evento-mes">
-            {% include date-pt.html date=evento.data format="mes_abbr" %}
-          </span>
+          <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
         </div>
         
         <!-- Informações -->
