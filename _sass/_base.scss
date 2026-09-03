@@ -1375,3 +1375,84 @@ img {
     }
   }
 }
+
+// ===========================================================
+// PÁGINA DE EVENTOS
+// ===========================================================
+
+.lista-eventos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.evento-item {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E3E0D8;
+  padding: 20px 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #B0B0B0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.evento-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding-right: 20px;
+  border-right: 2px solid #E3E0D8;
+  flex-shrink: 0;
+}
+
+.evento-dia {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #204A37;
+  line-height: 1.2;
+}
+
+.evento-mes {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+.evento-info {
+  flex: 1;
+}
+
+.evento-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  color: #204A37;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.evento-palestrantes {
+  font-size: 0.9rem;
+  color: #2F6B4F;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.evento-descricao {
+  font-size: 0.95rem;
+  color: #1F2A1E;
+  margin: 0 0 4px 0;
+}
+
+.evento-local {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 12px 0;
+}
