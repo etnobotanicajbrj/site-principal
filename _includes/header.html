@@ -1,16 +1,18 @@
 <header class="cabecalho-site">
-  <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
+  <div class="logo">
+    <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
+  </div>
 
   <nav class="menu-principal">
     {% for item in site.data.navigation.main %}
       {% if item.children %}
-        <!-- Item com dropdown -->
+        <!-- Item com submenu -->
         <div class="menu-item-dropdown {% if page.url contains item.url %}active{% endif %}">
           <span>{{ item.title }}</span>
           <div class="submenu">
             {% for filho in item.children %}
               {% if filho.children %}
-                <!-- Sub-submenu (nível 3) -->
+                <!-- Sub-submenu -->
                 <div class="submenu-item-dropdown {% if page.url contains filho.url %}active{% endif %}">
                   <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
                   <div class="sub-submenu">
@@ -20,15 +22,14 @@
                   </div>
                 </div>
               {% else %}
-                <!-- Submenu (nível 2) -->
                 <a href="{{ filho.url | relative_url }}" {% if page.url contains filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
               {% endif %}
             {% endfor %}
           </div>
         </div>
       {% else %}
-        <!-- Item sem dropdown -->
-        <a href="{{ item.url | relative_url }}" {% if page.url contains item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        <!-- Item sem submenu -->
+        <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
       {% endif %}
     {% endfor %}
   </nav>
