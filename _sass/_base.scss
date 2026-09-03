@@ -419,14 +419,14 @@ a {
 // CARDS DE COLEÇÃO (Home) — um em cima do outro
 // ===========================================================
 
-.colecoes-grid {
+.colecoes-grid-home {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin: 24px 0 32px 0;
 }
 
-.card-colecao {
+.card-colecao-home {
   position: relative;
   overflow: hidden;
   min-height: 440px;        // Altura menor para ficar mais compacto
@@ -451,7 +451,7 @@ a {
 }
 
 // --- SLIDER DE IMAGENS (fundo) ------------------------------
-.imagem-colecao-slider {
+.imagem-colecao-slider-home {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -479,7 +479,7 @@ a {
 }
 
 // --- CONTEÚDO DO CARD ---------------------------------------
-.conteudo-card-colecao {
+.conteudo-card-colecao-home {
   position: relative;
   z-index: 2;
   padding: 20px 24px 20px;
@@ -505,14 +505,14 @@ a {
     margin: 0 0 6px 0;
   }
 
-  .descricao-colecao {
+  .descricao-colecao-home {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.9);
     margin: 0 0 12px 0;
     line-height: 1.4;
   }
 
-  .botao-card {
+  .botao-card-home {
     display: inline-block;
     padding: 6px 16px;
     border-radius: 6px;
@@ -538,7 +538,7 @@ img {
 }
 
 // --- Cards de coleção respeitam o container ----------------
-.colecoes-grid {
+.colecoes-grid-home {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -546,7 +546,7 @@ img {
   width: 100%;           // ← GARANTE QUE OCUPA 100% DO CONTAINER
 }
 
-.card-colecao {
+.card-colecao-home {
   // ... resto do CSS
   width: 100%;           // ← GARANTE QUE OCUPA 100% DO CONTAINER
   max-width: 100%;       // ← NÃO ULTRAPASSA O CONTAINER
