@@ -8,11 +8,11 @@ permalink: /publicacoes/
      =========================================================== -->
 
 <div class="filtro-colecao">
-  <button class="filtro-btn ativo" data-colecao="todas">📚 Todas</button>
-  <button class="filtro-btn" data-colecao="ctpm">🌿 CTPM</button>
-  <button class="filtro-btn" data-colecao="rbetno">🌐 RBetno</button>
-  <button class="filtro-btn" data-colecao="programa">📊 Programa</button>
-  <button class="filtro-btn" data-colecao="pesquisa">🔬 Pesquisa</button>
+  <button class="filtro-btn ativo" data-colecao="todas">Todas</button>
+  <button class="filtro-btn" data-colecao="ctpm">CTPM</button>
+  <button class="filtro-btn" data-colecao="rbetno">RBetno</button>
+  <button class="filtro-btn" data-colecao="programa">Programa</button>
+  <button class="filtro-btn" data-colecao="pesquisa">Pesquisa</button>
 </div>
 
 <!-- ===========================================================
