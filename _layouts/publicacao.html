@@ -1,0 +1,210 @@
+---
+layout: default
+---
+
+<!-- ===========================================================
+     PÁGINA INDIVIDUAL DE PUBLICAÇÃO
+     Suporta: link (externo) ou arquivo (interno) ou ambos
+     =========================================================== -->
+
+<article class="publicacao">
+  <!-- TÍTULO -->
+  <h1>{{ page.titulo }}</h1>
+  
+  <!-- META DADOS -->
+  <div class="meta-publicacao">
+    <!-- Badges de coleção -->
+    {% if page.colecao %}
+      {% include badge-colecao.html colecoes=page.colecao %}
+    {% endif %}
+    
+    <!-- Data -->
+    {% if page.data %}
+      <span class="data-publicacao">{{ page.data | date: "%d/%m/%Y" }}</span>
+    {% endif %}
+    
+    <!-- Tipo -->
+    {% if page.tipo %}
+      <span class="tipo-publicacao">{{ page.tipo }}</span>
+    {% endif %}
+  </div>
+  
+  <!-- DESCRIÇÃO / RESUMO (opcional) -->
+  {% if page.descricao %}
+    <div class="descricao-publicacao">
+      <p>{{ page.descricao }}</p>
+    </div>
+  {% endif %}
+  
+  <!-- CONTEÚDO PRINCIPAL (Markdown) -->
+  <div class="conteudo-publicacao">
+    {{ content }}
+  </div>
+  
+  <!-- ===========================================================
+       AÇÕES: LINK EXTERNO ou DOWNLOAD
+       =========================================================== -->
+  
+  <div class="acoes-publicacao">
+    {% if page.link %}
+      <!-- Se tiver link externo, abre em nova aba -->
+      <a href="{{ page.link }}" class="botao botao-link" target="_blank" rel="noopener noreferrer">
+        📖 Acessar publicação online
+        <span class="icone-externo">↗</span>
+      </a>
+    {% endif %}
+    
+    {% if page.arquivo %}
+      <!-- Se tiver arquivo interno (PDF, etc.), oferece download/visualização -->
+      <a href="{{ page.arquivo | relative_url }}" class="botao botao-arquivo" target="_blank" rel="noopener noreferrer">
+        📄 Baixar / Visualizar arquivo
+        <span class="icone-externo">↗</span>
+      </a>
+    {% endif %}
+    
+    <!-- Se não tiver nem link nem arquivo, exibe aviso -->
+    {% unless page.link or page.arquivo %}
+      <p class="aviso-vazio">Esta publicação não possui arquivo disponível online.</p>
+    {% endunless %}
+  </div>
+</article>
+
+<!-- ===========================================================
+     ESTILOS EMBUTIDOS (ou coloque no main.scss)
+     =========================================================== -->
+
+<style>
+  .publicacao {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  .publicacao h1 {
+    color: #204A37;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #E3E0D8;
+    padding-bottom: 12px;
+  }
+
+  .meta-publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: #FBFAF7;
+    border-radius: 8px;
+    border: 1px solid #E3E0D8;
+  }
+
+  .data-publicacao {
+    font-size: 0.85rem;
+    color: #5B6B58;
+  }
+
+  .tipo-publicacao {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    background: #F0F0F0;
+    padding: 2px 12px;
+    border-radius: 10px;
+  }
+
+  .descricao-publicacao {
+    background: #fff;
+    padding: 16px 20px;
+    border-left: 4px solid #2F6B4F;
+    border-radius: 4px;
+    margin: 16px 0 24px 0;
+    color: #1F2A1E;
+    font-style: italic;
+  }
+
+  .descricao-publicacao p {
+    margin: 0;
+  }
+
+  .conteudo-publicacao {
+    margin: 24px 0;
+    line-height: 1.8;
+  }
+
+  .conteudo-publicacao h2 {
+    color: #204A37;
+    border-bottom: 1px solid #E3E0D8;
+    padding-bottom: 6px;
+    margin-top: 1.6em;
+  }
+
+  .acoes-publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #E3E0D8;
+  }
+
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .botao:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .botao-link {
+    background: #2F6B4F;
+  }
+
+  .botao-link:hover {
+    background: #204A37;
+  }
+
+  .botao-arquivo {
+    background: #5B6B58;
+  }
+
+  .botao-arquivo:hover {
+    background: #4A5A47;
+  }
+
+  .icone-externo {
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+
+  .aviso-vazio {
+    color: #888;
+    font-style: italic;
+    padding: 16px 0;
+  }
+
+  @media (max-width: 600px) {
+    .publicacao h1 {
+      font-size: 1.4rem;
+    }
+
+    .acoes-publicacao {
+      flex-direction: column;
+    }
+
+    .botao {
+      justify-content: center;
+    }
+  }
+</style>
