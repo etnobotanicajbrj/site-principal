@@ -52,3 +52,42 @@ exclude:
   - estrutura-site-etnobotanica.md
   - quadro-kanban-github-projects.md
   - vendor/
+
+# ===========================================================
+# DATAS EM PORTUGUÊS
+# ===========================================================
+
+# Configuração de locale para português
+lang: pt-BR
+
+# Formato de data padrão
+date_format: "%d/%m/%Y"
+
+# Mapeamento de meses para português (usado nos filtros date)
+month_names:
+  - Janeiro
+  - Fevereiro
+  - Março
+  - Abril
+  - Maio
+  - Junho
+  - Julho
+  - Agosto
+  - Setembro
+  - Outubro
+  - Novembro
+  - Dezembro
+
+month_abbr:
+  - Jan
+  - Fev
+  - Mar
+  - Abr
+  - Mai
+  - Jun
+  - Jul
+  - Ago
+  - Set
+  - Out
+  - Nov
+  - Dez
