@@ -8,15 +8,15 @@ permalink: /eventos/
      =========================================================== -->
 
 <div class="banner-pagina">
-  <h1>📅 Eventos</h1>
-  <p>Confira os próximos eventos e reviva os encontros passados do nosso grupo.</p>
+  <h1>Eventos e Atividades</h1>
+  <p>Confira os próximos eventos e reviva os encontros e atividades passados realizadas pelo nosso grupo.</p>
 </div>
 
 <!-- ===========================================================
      PRÓXIMOS EVENTOS
      =========================================================== -->
 
-<h2>🔜 Próximos eventos</h2>
+<h2>Próximos eventos</h2>
 
 {% assign hoje = "now" | date: "%Y-%m-%d" %}
 {% assign count = 0 %}
@@ -66,7 +66,7 @@ permalink: /eventos/
      EVENTOS PASSADOS COM CARROSSEL
      =========================================================== -->
 
-<h2>📸 Eventos passados</h2>
+<h2>Eventos passados</h2>
 
 {% assign count_passados = 0 %}
 
