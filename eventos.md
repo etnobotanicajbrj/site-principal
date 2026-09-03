@@ -8,7 +8,7 @@ permalink: /eventos/
      =========================================================== -->
 
 <div class="banner-pagina">
-  <h1>Eventos</h1>
+  <h1>📅 Eventos</h1>
   <p>Confira os próximos eventos e reviva os encontros passados do nosso grupo.</p>
 </div>
 
@@ -16,9 +16,10 @@ permalink: /eventos/
      PRÓXIMOS EVENTOS
      =========================================================== -->
 
-<h2>Próximos eventos</h2>
+<h2>🔜 Próximos eventos</h2>
 
 {% assign hoje = "now" | date: "%Y-%m-%d" %}
+{% assign count = 0 %}
 
 <div class="lista-eventos">
   {% for evento in site.eventos | sort: "data" %}
@@ -52,15 +53,22 @@ permalink: /eventos/
           {% endif %}
         </div>
       </div>
+      {% assign count = count | plus: 1 %}
     {% endif %}
   {% endfor %}
+  
+  {% if count == 0 %}
+    <p class="aviso-vazio">Nenhum evento futuro agendado no momento.</p>
+  {% endif %}
 </div>
 
 <!-- ===========================================================
      EVENTOS PASSADOS COM CARROSSEL
      =========================================================== -->
 
-<h2>Eventos passados</h2>
+<h2>📸 Eventos passados</h2>
+
+{% assign count_passados = 0 %}
 
 <div class="eventos-passados">
   {% for evento in site.eventos | sort: "data" | reverse %}
@@ -108,8 +116,13 @@ permalink: /eventos/
           </div>
         {% endif %}
       </div>
+      {% assign count_passados = count_passados | plus: 1 %}
     {% endif %}
   {% endfor %}
+  
+  {% if count_passados == 0 %}
+    <p class="aviso-vazio">Nenhum evento passado cadastrado ainda.</p>
+  {% endif %}
 </div>
 
 <!-- ===========================================================
