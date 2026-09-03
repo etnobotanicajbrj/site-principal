@@ -169,10 +169,12 @@ permalink: /
   <div class="home-eventos">
     {% for evento in eventos_proximos %}
       <div class="home-evento-item">
-        <!-- Data -->
+        <!-- Data em português -->
         <div class="home-evento-data">
           <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
+          <span class="home-evento-mes">
+            {% include date-pt.html date=evento.data format="mes_abbr" %}
+          </span>
         </div>
         
         <!-- Informações -->
@@ -190,7 +192,6 @@ permalink: /
             {% endif %}
           </h3>
           
-          <!-- Palestrantes -->
           {% if evento.palestrantes %}
             <p class="home-evento-palestrantes">
               <strong>Palestrante:</strong> {{ evento.palestrantes }}
