@@ -1,7 +1,7 @@
 ---
 title: "Coleção Temática de Plantas Medicinais"
 sigla: "CTPM"
-diretoria: "Dicat"
+diretoria: "Diretoria de Conhecimento, Ambiente e Tecnologia - DICAT"
 cor: "ctpm"
 layout: colecao
 permalink: /colecoes/ctpm/
@@ -21,18 +21,11 @@ A **Coleção Temática de Plantas Medicinais** do JBRJ é um espaço único de 
 - Oferecer visitação guiada e autoguiada para o público
 - Promover o diálogo entre conhecimentos científicos e tradicionais
 
-### Canteiros temáticos
+### Canteiros
 
-A coleção está organizada em **15 canteiros temáticos**, que representam diferentes biomas e usos:
+A coleção está organizada em **33 canteiros temáticos**, que representam diferentes temas e usos:
 
-- Amazônia
-- Cerrado
-- Mata Atlântica
-- Caatinga
-- Plantas exóticas
-- Fitoterápicos
 
----
 
 ## Visite a CTPM
 
