@@ -8,12 +8,15 @@
 </head>
 <body>
   {% include header.html %}
+
   <main>
-    {{ content }}
+    <div class="container">   <!-- ← ESSE DIV É FUNDAMENTAL -->
+      {{ content }}
+    </div>
   </main>
+
   {% include footer.html %}
 
-  <!-- SCRIPTS -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/carousel.js' | relative_url }}"></script>
 </body>
