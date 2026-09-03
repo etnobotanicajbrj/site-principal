@@ -750,3 +750,140 @@ img {
     border-radius: 10px;
   }
 }
+
+// ===========================================================
+// FILTRO DE PUBLICAÇÕES
+// ===========================================================
+
+.filtro-colecao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 24px 0;
+}
+
+.filtro-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #D8D8D8;
+  background: #fff;
+  color: #666;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #F5F5F5;
+    border-color: #B0B0B0;
+  }
+
+  &.ativo {
+    background: #2F6B4F;
+    color: #fff;
+    border-color: #2F6B4F;
+    font-weight: 500;
+  }
+
+  // Cores específicas quando ativo
+  &.ativo[data-colecao="ctpm"] {
+    background: #712B13;
+    border-color: #712B13;
+  }
+
+  &.ativo[data-colecao="rbetno"] {
+    background: #04342C;
+    border-color: #04342C;
+  }
+
+  &.ativo[data-colecao="programa"] {
+    background: #1A3A6B;
+    border-color: #1A3A6B;
+  }
+}
+
+// ===========================================================
+// LISTA DE PUBLICAÇÕES
+// ===========================================================
+
+.lista-publicacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.item-publicacao {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #E3E0D8;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #B0B0B0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .titulo-publicacao {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .titulo-publicacao a {
+    font-weight: 500;
+    color: #204A37;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #2F6B4F;
+      text-decoration: underline;
+    }
+
+    .icone-externo {
+      font-size: 0.7rem;
+      opacity: 0.5;
+      margin-left: 2px;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover .icone-externo {
+      opacity: 1;
+    }
+  }
+
+  .titulo-publicacao .sem-link {
+    font-weight: 500;
+    color: #888;
+  }
+
+  .data-publicacao {
+    font-size: 0.8rem;
+    color: #888;
+    background: #F5F5F5;
+    padding: 2px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .tipo-publicacao {
+    font-size: 0.7rem;
+    color: #888;
+    background: #F0F0F0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .indicador-acesso {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-left: auto;
+  }
+}
