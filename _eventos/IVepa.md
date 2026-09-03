@@ -1,15 +1,13 @@
 ---
-titulo: "IV Etnobotânica de Portas Abertas - EPA/JBRJ"
+titulo: "IV Etnobotânica de Portas Abertas (EPA)"
 data: 2026-08-27
-horario: 14:30
-local: "CTPM, Online"
-descricao: "Venha participar do nosso encontro mensal!"
-palestrantes: Mateus Salim
-inscricao: "https://docs.google.com/forms/d/e/1FAIpQLSdEAd1eOSZjt74DRC3vqyRfDMqYz9spIhONKEk1jiMtsxEH6Q/viewform"  
+local: "Jardim Botânico do Rio de Janeiro"
+descricao: "Venha participar do nosso encontro mensal! Um dia de troca de saberes, oficinas e visita à Coleção Viva."
+palestrantes: "Me. Mateus Salim"
+inscricao: "https://docs.google.com/forms/d/e/1FAIpQLSdEAd1eOSZjt74DRC3vqyRfDMqYz9spIhONKEk1jiMtsxEH6Q/viewform"
+link: "/eventos/IVepa/"
+fotos:
+  - "/assets/images/eventos/iv-epa-1.jpg"
+  - "/assets/images/eventos/iv-epa-2.jpg"
+  - "/assets/images/eventos/iv-epa-3.jpg"
 ---
-
-Nesta edição teremos a alegria de debater o tema **"Vivências do Campo e Diálogo de Saberes: Agroecologia, Etnobotânica e Práticas Tradicionais na Zona Rural Fluminense"**.
-
-A palestra e a roda de conversa serão conduzidas pelo **Me. Mateus Vieira da Cunha Salim**, desenvolve pesquisas em Etnobotânica e Agroecologia, dedicando-se às interações entre biodiversidade e sistemas agrícolas tradicionais. Atua em ações de educação, extensão, divulgação científica e consultoria, promovendo a integração entre a ciência e o conhecimento tradicional para o fortalecimento de comunidades e a sustentabilidade no campo.
-
-A nossa dinâmica ocorrerá presencialmente, mas com transmissão on-line, permitindo a participação de todos os interessados.
