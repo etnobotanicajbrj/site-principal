@@ -168,10 +168,13 @@ permalink: /
   <div class="home-eventos">
     {% for evento in eventos_proximos %}
       <div class="home-evento-item">
+        <!-- Data -->
         <div class="home-evento-data">
           <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
           <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
         </div>
+        
+        <!-- Informações -->
         <div class="home-evento-info">
           <h3 class="home-evento-titulo">
             {% if evento.link %}
@@ -185,7 +188,21 @@ permalink: /
               <span>{{ evento.titulo }}</span>
             {% endif %}
           </h3>
+          
           <p class="home-evento-descricao">{{ evento.descricao | default: "Venha participar!" }}</p>
+          
+          <div class="home-evento-acoes">
+            {% if evento.inscricao %}
+              <a href="{{ evento.inscricao }}" class="home-evento-botao" target="_blank" rel="noopener noreferrer">
+                📝 Inscrever-se
+                <span class="icone-externo">↗</span>
+              </a>
+            {% endif %}
+            
+            {% if evento.local %}
+              <span class="home-evento-local">📍 {{ evento.local }}</span>
+            {% endif %}
+          </div>
         </div>
       </div>
     {% endfor %}
