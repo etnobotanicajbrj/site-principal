@@ -163,55 +163,59 @@ permalink: /
 <h2>📅 Próximos eventos</h2>
 
 {% assign hoje = "now" | date: "%Y-%m-%d" %}
-{% assign eventos_proximos = site.eventos | where_exp: "evento", "evento.data >= hoje" | sort: "data" | limit: 3 %}
+{% assign eventos_proximos = site.eventos | sort: "data" %}
 
 {% if eventos_proximos.size > 0 %}
   <div class="home-eventos">
     {% for evento in eventos_proximos %}
-      <div class="home-evento-item">
-        <!-- Data -->
-        <div class="home-evento-data">
-          <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
-        </div>
-        
-        <!-- Informações -->
-        <div class="home-evento-info">
-          <h3 class="home-evento-titulo">
-            {% if evento.link %}
-              <a href="{{ evento.link }}" target="_blank" rel="noopener noreferrer">
-                {{ evento.titulo }}
-                <span class="icone-externo">↗</span>
-              </a>
-            {% elsif evento.url %}
-              <a href="{{ evento.url | relative_url }}">{{ evento.titulo }}</a>
-            {% else %}
-              <span>{{ evento.titulo }}</span>
-            {% endif %}
-          </h3>
+      {% assign data_evento = evento.data | date: "%Y-%m-%d" %}
+      {% if data_evento >= hoje and count < 3 %}
+        <div class="home-evento-item">
+          <!-- Data -->
+          <div class="home-evento-data">
+            <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
+            <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
+          </div>
           
-          {% if evento.palestrantes %}
-            <p class="home-evento-palestrantes">
-              <strong>Palestrante:</strong> {{ evento.palestrantes }}
-            </p>
-          {% endif %}
-          
-          <p class="home-evento-descricao">{{ evento.descricao | default: "Venha participar!" }}</p>
-          
-          <div class="home-evento-acoes">
-            {% if evento.inscricao %}
-              <a href="{{ evento.inscricao }}" class="home-evento-botao" target="_blank" rel="noopener noreferrer">
-                📝 Inscrever-se
-                <span class="icone-externo">↗</span>
-              </a>
+          <!-- Informações -->
+          <div class="home-evento-info">
+            <h3 class="home-evento-titulo">
+              {% if evento.link %}
+                <a href="{{ evento.link }}" target="_blank" rel="noopener noreferrer">
+                  {{ evento.titulo }}
+                  <span class="icone-externo">↗</span>
+                </a>
+              {% elsif evento.url %}
+                <a href="{{ evento.url | relative_url }}">{{ evento.titulo }}</a>
+              {% else %}
+                <span>{{ evento.titulo }}</span>
+              {% endif %}
+            </h3>
+            
+            {% if evento.palestrantes %}
+              <p class="home-evento-palestrantes">
+                <strong>Palestrante:</strong> {{ evento.palestrantes }}
+              </p>
             {% endif %}
             
-            {% if evento.local %}
-              <span class="home-evento-local">📍 {{ evento.local }}</span>
-            {% endif %}
+            <p class="home-evento-descricao">{{ evento.descricao | default: "Venha participar!" }}</p>
+            
+            <div class="home-evento-acoes">
+              {% if evento.inscricao %}
+                <a href="{{ evento.inscricao }}" class="home-evento-botao" target="_blank" rel="noopener noreferrer">
+                  📝 Inscrever-se
+                  <span class="icone-externo">↗</span>
+                </a>
+              {% endif %}
+              
+              {% if evento.local %}
+                <span class="home-evento-local">📍 {{ evento.local }}</span>
+              {% endif %}
+            </div>
           </div>
         </div>
-      </div>
+        {% assign count = count | plus: 1 %}
+      {% endif %}
     {% endfor %}
   </div>
   
