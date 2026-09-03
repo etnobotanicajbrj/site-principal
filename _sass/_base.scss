@@ -413,12 +413,12 @@ a {
 }
 
 // ===========================================================
-// CARDS DE COLEÇÃO (Home) — com imagens em rotação
+// CARDS DE COLEÇÃO (Home) — um em cima do outro
 // ===========================================================
 
 .colecoes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 24px;
   margin: 24px 0 32px 0;
 }
@@ -426,7 +426,7 @@ a {
 .card-colecao {
   position: relative;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 220px;        // Altura menor para ficar mais compacto
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -479,7 +479,7 @@ a {
 .conteudo-card-colecao {
   position: relative;
   z-index: 2;
-  padding: 24px 20px 20px;
+  padding: 20px 24px 20px;
   color: #fff;
 
   .sigla {
@@ -491,15 +491,15 @@ a {
     background: rgba(255, 255, 255, 0.15);
     padding: 2px 12px;
     border-radius: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     backdrop-filter: blur(4px);
     color: rgba(255, 255, 255, 0.85);
   }
 
   h3 {
     color: #fff;
-    font-size: 1.2rem;
-    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    margin: 0 0 6px 0;
   }
 
   .descricao-colecao {
@@ -526,6 +526,27 @@ a {
       text-decoration: none;
     }
   }
+}
+
+// --- Garantir que imagens não ultrapassem -------------------
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// --- Cards de coleção respeitam o container ----------------
+.colecoes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 32px 0;
+  width: 100%;           // ← GARANTE QUE OCUPA 100% DO CONTAINER
+}
+
+.card-colecao {
+  // ... resto do CSS
+  width: 100%;           // ← GARANTE QUE OCUPA 100% DO CONTAINER
+  max-width: 100%;       // ← NÃO ULTRAPASSA O CONTAINER
 }
 
 // ===========================================================
