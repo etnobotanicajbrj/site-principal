@@ -1,15 +1,10 @@
 ---
-title: "Visite a Coleção"
+title: "Roteiro de Visita Autoguiada Coleção Temática de Plantas Medicinais"
 sigla: "CTPM"
-diretoria: "Dicat"
-cor: ctpm
+diretoria: "Diretoria de Conhecimento, Ambiente e Tecnologia - DICAT"
+cor: "ctpm"
 layout: colecao
-permalink: /colecoes/ctpm/visite/
+permalink: /colecoes/ctpm/
+descricao: "Descubra as Plantas Medicinais no Jardim Botânico do Rio de Janeiro"
 ---
 
-<!--
-  Migrar aqui o conteúdo da página "Visite" do repositório antigo
-  (medicinais_jbrj.github.io) — o roteiro autoguiado completo, incluindo
-  os áudios. O repositório antigo continua acessível como memória, então
-  é só copiar o conteúdo de lá para cá.
--->
