@@ -162,19 +162,17 @@ permalink: /
 
 <h2>📅 Próximos eventos</h2>
 
-{% assign eventos_proximos = site.eventos | where_exp: "evento", "evento.data >= site.time" | sort: "data" | limit: 3 %}
-
-{% assign meses = "jan,fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez" | split: "," %}
+{% assign hoje = site.time | date: "%Y-%m-%d" %}
+{% assign eventos_proximos = site.eventos | where_exp: "evento", "evento.data >= hoje" | sort: "data" | limit: 3 %}
 
 {% if eventos_proximos.size > 0 %}
   <div class="home-eventos">
     {% for evento in eventos_proximos %}
-      {% assign mes_num = evento.data | date: "%m" | minus: 1 %}
       <div class="home-evento-item">
         <!-- Data -->
         <div class="home-evento-data">
           <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="home-evento-mes">{{ meses[mes_num] }}</span>
+          <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
         </div>
         
         <!-- Informações -->
@@ -192,7 +190,7 @@ permalink: /
             {% endif %}
           </h3>
           
-          <!-- Palestrantes (sem ícone) -->
+          <!-- Palestrantes -->
           {% if evento.palestrantes %}
             <p class="home-evento-palestrantes">
               <strong>Palestrante:</strong> {{ evento.palestrantes }}
@@ -225,7 +223,6 @@ permalink: /
 {% else %}
   <p class="aviso-vazio">Nenhum evento cadastrado ainda.</p>
 {% endif %}
-
 
 <!-- ===========================================================
      VISITA AUTOGUIADA
