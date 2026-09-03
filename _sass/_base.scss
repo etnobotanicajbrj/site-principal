@@ -60,33 +60,207 @@ a {
 }
 
 // --- Cabeçalho -------------------------------------------------
+
+/* ===== MENU PRINCIPAL ===== */
 .cabecalho-site {
+  background: #1a3c34;
+  color: #fff;
+  padding: 0.5rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 18px 24px;
-  border-bottom: 1px solid $cor-borda;
-  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo-link {
-  font-family: Georgia, serif;
+  color: #fff;
+  text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 600;
-  color: $cor-primaria-escura;
-
-  &:hover { text-decoration: none; color: $cor-primaria; }
+  font-weight: bold;
 }
 
-.menu-principal a,
-.menu-principal span {
-  color: $cor-texto;
-  font-size: 0.95rem;
+.menu-principal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.menu-principal a:hover { color: $cor-primaria; }
+.menu-principal > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.menu-principal > a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== DROPDOWN (NÍVEL 1) ===== */
+.menu-item-dropdown {
+  position: relative;
+}
+
+.menu-item-dropdown > span {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.menu-item-dropdown > span:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item-dropdown > span::after {
+  content: " ▾";
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+/* ===== SUBMENU (NÍVEL 2) ===== */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #1a3c34;
+  padding: 0.3rem 0;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+.menu-item-dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu > a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.submenu > a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== SUB-SUBMENU (NÍVEL 3) ===== */
+.submenu-item-dropdown {
+  position: relative;
+}
+
+.submenu-item-dropdown > a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.submenu-item-dropdown > a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.submenu-item-dropdown > a::after {
+  content: " ▸";
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.sub-submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: #1a3c34;
+  padding: 0.3rem 0;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+.submenu-item-dropdown:hover .sub-submenu {
+  display: block;
+}
+
+.sub-submenu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.sub-submenu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== MENU MOBILE ===== */
+@media (max-width: 768px) {
+  .cabecalho-site {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-principal {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .menu-principal > a {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .menu-item-dropdown > span {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .sub-submenu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .submenu-item-dropdown > a::after {
+    content: " ▾";
+  }
+
+  .submenu-item-dropdown:hover .sub-submenu {
+    display: none;
+  }
+
+  .submenu-item-dropdown.active .sub-submenu {
+    display: block;
+  }
+}
 
 // --- Rodapé (ajuste fino sobre o que já existia em _colecoes.scss) ---
 .rodape-site {
