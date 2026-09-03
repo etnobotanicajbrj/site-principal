@@ -1,16 +1,36 @@
 ---
-title: "Eventos e Atividades"
+title: "Eventos"
 permalink: /eventos/
 ---
 
-<!-- Responsáveis: Thalita e Kaique -->
+<!-- ===========================================================
+     LISTA DE EVENTOS
+     =========================================================== -->
 
 <div class="lista-eventos">
-  {% assign eventos_ordenados = site.eventos | sort: "data" | reverse %}
-  {% for evento in eventos_ordenados %}
-    <div class="item-evento">
-      <p class="data-evento">{{ evento.data | date: "%d/%m/%Y" }}</p>
-      <a href="{{ evento.url | relative_url }}">{{ evento.titulo }}</a>
+  {% for evento in site.eventos | sort: "data" %}
+    <div class="evento-item">
+      <div class="evento-data">
+        <span class="evento-dia">{{ evento.data | date: "%d" }}</span>
+        <span class="evento-mes">{{ evento.data | date: "%b" }}</span>
+      </div>
+      
+      <div class="evento-info">
+        <h3>{{ evento.titulo }}</h3>
+        
+        {% if evento.palestrantes %}
+          <p class="evento-palestrantes">Palestrante {{ evento.palestrantes }}</p>
+        {% endif %}
+        
+        <p class="evento-descricao">{{ evento.descricao }}</p>
+        <p class="evento-local">📍 {{ evento.local }}</p>
+        
+        {% if evento.inscricao %}
+          <a href="{{ evento.inscricao }}" class="botao" target="_blank" rel="noopener noreferrer">
+            📝 Inscrever-se
+          </a>
+        {% endif %}
+      </div>
     </div>
   {% endfor %}
 </div>
