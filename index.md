@@ -189,6 +189,13 @@ permalink: /
             {% endif %}
           </h3>
           
+          <!-- PALESTRANTES (NOVO) -->
+          {% if evento.palestrantes %}
+            <p class="home-evento-palestrantes">
+              🎤 {{ evento.palestrantes }}
+            </p>
+          {% endif %}
+          
           <p class="home-evento-descricao">{{ evento.descricao | default: "Venha participar!" }}</p>
           
           <div class="home-evento-acoes">
