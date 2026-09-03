@@ -1,84 +1,35 @@
-<!-- ===========================================================
-     CABEÇALHO DO SITE
-     Contém: logo, nome do site, menu de navegação e ícone Instagram
-     =========================================================== -->
 <header class="cabecalho-site">
-  
-  <!-- MARCA: logo + nome do site -->
-  <a href="{{ '/' | relative_url }}" class="marca-site">
-    <!-- COLOCAR A LOGO AQUI: substitua "logo.png" pelo nome do arquivo -->
-    <img 
-      src="{{ '/assets/images/logo.png' | relative_url }}" 
-      alt="{{ site.title }}" 
-      class="logo-site"
-      loading="lazy"
-    >
-    <span class="logo-link">{{ site.title }}</span>
-  </a>
+  <a href="{{ '/' | relative_url }}" class="logo-link">{{ site.title }}</a>
 
-  <!-- ÁREA DE NAVEGAÇÃO (menu + Instagram) -->
-  <div class="area-navegacao">
-    
-    <!-- MENU PRINCIPAL com 3 níveis -->
-    <nav class="menu-principal" aria-label="Menu principal">
-      {% for item in site.data.navigation.main %}
-        {% if item.children %}
-          <!-- Item com submenu (nível 1) -->
-          <div class="menu-item-dropdown {% if page.url == item.url %}active{% endif %}">
-            <span>{{ item.title }}</span>
-            <div class="submenu">
-              {% for filho in item.children %}
-                {% if filho.children %}
-                  <!-- Item com sub-submenu (nível 3) -->
-                  <div class="submenu-item-dropdown {% if page.url == filho.url %}active{% endif %}">
-                    <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
-                    <div class="sub-submenu">
-                      {% for neto in filho.children %}
-                        <a href="{{ neto.url | relative_url }}" {% if page.url == neto.url %}class="active"{% endif %}>{{ neto.title }}</a>
-                      {% endfor %}
-                    </div>
+  <nav class="menu-principal">
+    {% for item in site.data.navigation.main %}
+      {% if item.children %}
+        <!-- Item com dropdown -->
+        <div class="menu-item-dropdown {% if page.url contains item.url %}active{% endif %}">
+          <span>{{ item.title }}</span>
+          <div class="submenu">
+            {% for filho in item.children %}
+              {% if filho.children %}
+                <!-- Sub-submenu (nível 3) -->
+                <div class="submenu-item-dropdown {% if page.url contains filho.url %}active{% endif %}">
+                  <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
+                  <div class="sub-submenu">
+                    {% for neto in filho.children %}
+                      <a href="{{ neto.url | relative_url }}" {% if page.url contains neto.url %}class="active"{% endif %}>{{ neto.title }}</a>
+                    {% endfor %}
                   </div>
-                {% else %}
-                  <!-- Item sem sub-submenu (nível 2) -->
-                  <a href="{{ filho.url | relative_url }}" {% if page.url == filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
-                {% endif %}
-              {% endfor %}
-            </div>
+                </div>
+              {% else %}
+                <!-- Submenu (nível 2) -->
+                <a href="{{ filho.url | relative_url }}" {% if page.url contains filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
+              {% endif %}
+            {% endfor %}
           </div>
-        {% else %}
-          <!-- Item sem submenu (nível 1) -->
-          <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
-
-    <!-- ÍCONE DO INSTAGRAM -->
-    <div class="redes-sociais">
-      <a 
-        href="https://www.instagram.com/etnobotanicajbrj?igsi=MWxvMzA3Mms4a3AwMA==" 
-        class="icone-instagram"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram do Grupo de Estudos em Etnobotânica"
-      >
-        <!-- Ícone do Instagram em SVG -->
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="20" 
-          height="20" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          stroke-width="2" 
-          stroke-linecap="round" 
-          stroke-linejoin="round"
-        >
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-    </div>
-
-  </div>
+        </div>
+      {% else %}
+        <!-- Item sem dropdown -->
+        <a href="{{ item.url | relative_url }}" {% if page.url contains item.url %}class="active"{% endif %}>{{ item.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
 </header>
