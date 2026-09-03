@@ -1,7 +1,8 @@
 ---
 title: "Coleção Temática de Plantas Medicinais"
 sigla: "CTPM"
-diretoria: "Diretoria de Conhecimento, Ambiente e Tecnologia - DICAT"
+diretoria_nome: "Diretoria de Conhecimento, Ambiente e Tecnologia"
+sigla_diretoria: "DICAT"
 cor: "ctpm"
 layout: colecao
 permalink: /colecoes/ctpm/
