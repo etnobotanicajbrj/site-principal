@@ -48,6 +48,21 @@ $cor-rbetno-texto: #04342C;
   &.uso-construtivo { background: #FBE9E7; color: #BF360C; }
 }
 
+ // Programa / Pesquisa (NOVO)
+  &.badge-programa {
+    background: #E8F0FE;
+    color: #1A3A6B;
+    border: 1px solid #8AA9D6;
+  }
+
+  // Outros (fallback)
+  &.badge-outro {
+    background: #F0F0F0;
+    color: #666;
+    border: 1px solid #D8D8D8;
+  }
+}
+
 // ===========================================================
 // CARDS DE COLEÇÃO (na página principal)
 // ===========================================================
