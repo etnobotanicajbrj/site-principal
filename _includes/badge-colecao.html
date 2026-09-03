@@ -1,6 +1,6 @@
 <!-- ===========================================================
-     BADGE DE COLEÇÃO
-     Exibe o badge correspondente à coleção ou programa
+     BADGE DE COLEÇÃO / PROGRAMA / PESQUISA
+     Exibe o badge correspondente à categoria
      =========================================================== -->
 
 {% if include.colecoes %}
@@ -14,12 +14,12 @@
     {% elsif colecao_trim == "rbetno" %}
       <span class="badge-colecao badge-rbetno">RBetno</span>
     
-    {% elsif colecao_trim == "programa" or colecao_trim == "pesquisa" %}
+    {% elsif colecao_trim == "programa" %}
       <span class="badge-colecao badge-programa">Programa</span>
-
-    {% elsif colecao_trim == "programa" or colecao_trim == "pesquisa" %}
-      <span class="badge-colecao badge-programa">Pesquisa</span>
-
+    
+    {% elsif colecao_trim == "pesquisa" %}
+      <span class="badge-colecao badge-pesquisa">Pesquisa</span>
+    
     {% else %}
       <span class="badge-colecao badge-outro">{{ colecao_trim }}</span>
     {% endif %}
