@@ -9,8 +9,10 @@ permalink: /colecoes/ctpm/colecao-viva/
      =========================================================== -->
 
 <h1 style="text-align: center; margin-bottom: 4px;">Plantas da Coleção Viva</h1>
-<p style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0; margin-bottom: 32px;">
+<p style="text-align: center; color: #888; font-size: 0.7rem; margin-top: 0; margin-bottom: 32px;">
   CTPM / DICAT · Coleção Temática de Plantas Medicinais
+</p>
+<p style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0; margin-bottom: 32px;">
   Acesse aqui o acervo da Coleção com fotos, descrições e outras informações sobre cada planta.
 </p>
 
