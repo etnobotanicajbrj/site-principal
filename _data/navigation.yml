@@ -5,7 +5,7 @@ main:
   - title: "Coleções"
     children:
       - title: "Coleção Temática de Plantas Medicinais (CTPM)"
-        url: /colecoes/ctpm/
+        url: /colecoes/ctpm/index
         children:                    # ← UM ÚNICO children, com a indentação correta
           - title: "Sobre a Coleção"
             url: /colecoes/ctpm/index
@@ -15,7 +15,7 @@ main:
             url: /colecoes/ctpm/colecao-viva
       
       - title: "Coleção de Etnobotânica (RBetno)"
-        url: /colecoes/rbetno/
+        url: /colecoes/rbetno/index
 
   - title: "Publicações"
     url: /publicacoes/
