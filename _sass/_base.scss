@@ -1346,13 +1346,12 @@ img {
 
 .home-evento-palestrantes {
   font-size: 0.85rem;
-  color: #2F6B4F;
+  color: #1F2A1E;
   margin: 2px 0 0 0;
-  font-weight: 500;
 
-  // Ícone de microfone
-  &::before {
-    content: "🎤 ";
+  strong {
+    color: #204A37;
+    font-weight: 700;
   }
 }
 
