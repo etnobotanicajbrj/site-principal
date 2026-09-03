@@ -723,25 +723,48 @@ img {
 }
 
 // ===========================================================
-// VISITA AUTOGUIADA (DESTAQUE)
+// VISITA AUTOGUIADA — COM MESMO PADRÃO DOS TÓPICOS
 // ===========================================================
 
 .visita-destaque {
-  background: $cor-fundo;
-  border: 1px solid $cor-borda;
-  border-radius: 16px;
+  background: #fff;                    // Fundo branco (igual aos cards)
+  border: 1px solid $cor-borda;        // Borda igual aos outros elementos
+  border-radius: 16px;                // Mesmo arredondamento dos cards
   padding: 32px 40px;
   margin: 32px 0 16px 0;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); // Sombra suave
 
   h2 {
     margin: 0 0 12px 0;
-    border-bottom: none;
+    border-bottom: none;              // Remove a linha do h2 padrão
+    color: $cor-primaria-escura;
+    font-size: 1.5rem;
   }
 
   p {
     max-width: 600px;
     margin: 0 auto 20px auto;
     font-size: 1.05rem;
+    color: $cor-texto;
+    line-height: 1.6;
+  }
+
+  .botao {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: $cor-primaria;
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      background: $cor-primaria-escura;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
   }
 }
