@@ -63,42 +63,32 @@ a {
 
 /* ===== MENU PRINCIPAL ===== */
 .cabecalho-site {
-  background: #1a3c34;
-  color: #fff;
-  padding: 0.5rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid $cor-borda;
+  background: #fff;
 }
 
 .logo-link {
-  color: #fff;
-  text-decoration: none;
+  font-family: Georgia, serif;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
+  color: $cor-primaria-escura;
+
+  &:hover { text-decoration: none; color: $cor-primaria; }
 }
 
-.menu-principal {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.menu-principal a,
+.menu-principal span {
+  color: $cor-texto;
+  font-size: 0.95rem;
 }
 
-.menu-principal > a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.menu-principal > a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.menu-principal a:hover { color: $cor-primaria; }
 
 /* ===== DROPDOWN (NÍVEL 1) ===== */
 .menu-item-dropdown {
@@ -130,7 +120,7 @@ a {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #1a3c34;
+  background: $cor-fundo;
   padding: 0.3rem 0;
   border-radius: 0 0 6px 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -143,7 +133,7 @@ a {
 
 .submenu > a {
   display: block;
-  color: #fff;
+  color: $cor-texto;
   text-decoration: none;
   padding: 0.4rem 1.2rem;
   font-size: 0.9rem;
@@ -161,7 +151,7 @@ a {
 
 .submenu-item-dropdown > a {
   display: block;
-  color: #fff;
+  color: $cor-texto;
   text-decoration: none;
   padding: 0.4rem 1.2rem;
   font-size: 0.9rem;
@@ -184,7 +174,7 @@ a {
   top: 0;
   left: 100%;
   min-width: 200px;
-  background: #1a3c34;
+  background: $cor-fundo;
   padding: 0.3rem 0;
   border-radius: 0 6px 6px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -197,7 +187,7 @@ a {
 
 .sub-submenu a {
   display: block;
-  color: #fff;
+  color: $cor-texto;
   text-decoration: none;
   padding: 0.4rem 1.2rem;
   font-size: 0.85rem;
