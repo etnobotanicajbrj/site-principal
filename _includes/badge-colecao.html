@@ -1,10 +1,25 @@
-{% comment %}
-  Uso: {% include badge-colecao.html colecoes=page.colecoes %}
-{% endcomment %}
-{% for c in include.colecoes %}
-  {% if c == "ctpm" %}
-    <span class="badge-colecao badge-ctpm">CTPM</span>
-  {% elsif c == "rbetno" %}
-    <span class="badge-colecao badge-rbetno">RBetno</span>
-  {% endif %}
-{% endfor %}
+<!-- ===========================================================
+     BADGE DE COLEÇÃO
+     Exibe o badge correspondente à coleção ou programa
+     =========================================================== -->
+
+{% if include.colecoes %}
+  {% assign colecoes = include.colecoes | split: ',' %}
+  {% for colecao in colecoes %}
+    {% assign colecao_trim = colecao | strip %}
+    
+    {% if colecao_trim == "ctpm" %}
+      <span class="badge-colecao badge-ctpm">🌿 CTPM</span>
+    
+    {% elsif colecao_trim == "rbetno" %}
+      <span class="badge-colecao badge-rbetno">🌐 RBetno</span>
+    
+    {% elsif colecao_trim == "programa" or colecao_trim == "pesquisa" %}
+      <span class="badge-colecao badge-programa">📊 Programa</span>
+    
+    {% else %}
+      <span class="badge-colecao badge-outro">{{ colecao_trim }}</span>
+    {% endif %}
+    
+  {% endfor %}
+{% endif %}
