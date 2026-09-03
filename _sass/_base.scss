@@ -1,25 +1,23 @@
 // ===========================================================
-// Estilo base do site — cores, tipografia, layout geral.
+// ESTILO BASE DO SITE
+// Cores, tipografia, layout geral e componentes
 // ===========================================================
 
 // --- Paleta institucional -----------------------------------
 $cor-fundo: #FBFAF7;
 $cor-texto: #1F2A1E;
 $cor-texto-suave: #5B6B58;
-$cor-primaria: #2F6B4F;      // verde institucional JBRJ
+$cor-primaria: #2F6B4F;          // verde institucional JBRJ
 $cor-primaria-escura: #204A37;
 $cor-borda: #E3E0D8;
 $cor-link: #2F6B4F;
 $cor-link-hover: #204A37;
 
-// NOVO — tons translúcidos usados no hover/estado ativo do menu.
-// Importante: o cabeçalho tem fundo BRANCO, então o "translúcido"
-// precisa ser uma cor ESCURA com opacidade baixa (não branco
-// translúcido, que fica invisível sobre fundo branco).
-$cor-hover-fundo: rgba(47, 107, 79, 0.08);   // $cor-primaria a 8%
-$cor-ativo-fundo: rgba(47, 107, 79, 0.14);   // $cor-primaria a 14%, para a página atual
+// --- Tons translúcidos para hover/ativo do menu ------------
+$cor-hover-fundo: rgba(47, 107, 79, 0.08);   // 8% para hover
+$cor-ativo-fundo: rgba(47, 107, 79, 0.14);   // 14% para página ativa
 
-// --- Reset básico ---------------------------------------------
+// --- Reset básico -------------------------------------------
 * { box-sizing: border-box; }
 
 html, body {
@@ -35,7 +33,7 @@ body {
   font-size: 16px;
 }
 
-// --- Tipografia -------------------------------------------------
+// --- Tipografia ---------------------------------------------
 h1, h2, h3, h4 {
   font-family: Georgia, "Times New Roman", serif;
   color: $cor-primaria-escura;
@@ -65,7 +63,7 @@ a {
 }
 
 // ===========================================================
-// CABEÇALHO
+// CABEÇALHO COM LOGO, MENU E INSTAGRAM
 // ===========================================================
 
 .cabecalho-site {
@@ -79,8 +77,7 @@ a {
   background: #fff;
 }
 
-// NOVO — agrupa a logo (imagem) + o nome do site, lado a lado.
-// Corresponde ao <div class="marca-site"> do header.html.
+// --- MARCA (logo + nome) ------------------------------------
 .marca-site {
   display: flex;
   align-items: center;
@@ -90,8 +87,6 @@ a {
   &:hover { text-decoration: none; }
 }
 
-// NOVO — tamanho controlado da logo. Ajuste max-height conforme
-// a proporção real do arquivo de logo que vocês vão usar.
 .logo-site {
   height: 40px;
   width: auto;
@@ -105,8 +100,7 @@ a {
   color: $cor-primaria-escura;
 }
 
-// NOVO — agrupa o menu de navegação + o ícone do Instagram,
-// para poder alinhar os dois à direita do cabeçalho.
+// --- ÁREA DE NAVEGAÇÃO --------------------------------------
 .area-navegacao {
   display: flex;
   align-items: center;
@@ -114,8 +108,7 @@ a {
   flex-wrap: wrap;
 }
 
-// NOVO — ícone de rede social (Instagram). O SVG já vem colorido
-// via "currentColor" no header.html, então a cor é controlada aqui.
+// --- ÍCONE INSTAGRAM ----------------------------------------
 .redes-sociais {
   display: flex;
   align-items: center;
@@ -139,19 +132,16 @@ a {
 }
 
 // ===========================================================
-// MENU PRINCIPAL — itens de topo (com ou sem submenu)
+// MENU PRINCIPAL — COM 3 NÍVEIS E ESTADO ATIVO
 // ===========================================================
 
 .menu-principal {
   display: flex;
-  gap: 4px;               // ALTERADO: gap menor, pois agora cada item tem padding próprio
+  gap: 4px;
   align-items: center;
 }
 
-// ALTERADO — regra unificada para QUALQUER item de nível 1 do menu,
-// seja um link simples (<a>) ou o gatilho de um dropdown (<span>).
-// Antes, o hover só existia no <span> do dropdown; agora os dois
-// têm o mesmo comportamento visual (a "caixa translúcida" pedida).
+// --- ITENS DE NÍVEL 1 ---------------------------------------
 .menu-principal > a,
 .menu-item-dropdown > span {
   display: inline-block;
@@ -164,16 +154,15 @@ a {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
+// Hover — caixa levemente translúcida
 .menu-principal > a:hover,
 .menu-item-dropdown > span:hover {
-  background: $cor-hover-fundo;   // ALTERADO: era rgba(255,255,255,0.1), invisível em fundo branco
+  background: $cor-hover-fundo;
   color: $cor-primaria;
   text-decoration: none;
 }
 
-// NOVO — classe "active", aplicada pelo header.html via Liquid
-// na página em que o visitante está no momento. Fica com fundo
-// mais forte e texto em negrito, pra "ficar marcada" como pedido.
+// Ativo — página atual
 .menu-principal > a.active,
 .menu-item-dropdown.active > span {
   background: $cor-ativo-fundo;
@@ -181,6 +170,7 @@ a {
   font-weight: 600;
 }
 
+// --- INDICADOR DE SUBMENU -----------------------------------
 .menu-item-dropdown {
   position: relative;
 }
@@ -191,19 +181,22 @@ a {
   opacity: 0.7;
 }
 
-/* ===== SUBMENU (NÍVEL 2) ===== */
+// ===========================================================
+// SUBMENU (NÍVEL 2) — fundo branco com sombra
+// ===========================================================
+
 .submenu {
   display: none;
-  flex-direction: column;       // ALTERADO: garante 1 item por linha
+  flex-direction: column;
   position: absolute;
   top: 100%;
   left: 0;
   min-width: 260px;
-  background: #fff;             // ALTERADO: fundo branco (era $cor-fundo, ficava quase igual ao hover)
+  background: #fff;
   border: 1px solid $cor-borda;
   padding: 6px;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);   // ALTERADO: sombra mais sutil
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
   z-index: 1000;
 }
 
@@ -232,7 +225,10 @@ a {
   font-weight: 600;
 }
 
-/* ===== SUB-SUBMENU (NÍVEL 3) — mantido para uso futuro ===== */
+// ===========================================================
+// SUB-SUBMENU (NÍVEL 3)
+// ===========================================================
+
 .submenu-item-dropdown {
   position: relative;
 }
@@ -290,7 +286,15 @@ a {
   background: $cor-hover-fundo;
 }
 
-/* ===== MENU MOBILE ===== */
+.sub-submenu a.active {
+  background: $cor-ativo-fundo;
+  font-weight: 600;
+}
+
+// ===========================================================
+// MENU MOBILE (responsivo)
+// ===========================================================
+
 @media (max-width: 768px) {
   .cabecalho-site {
     flex-direction: column;
@@ -314,7 +318,7 @@ a {
   .menu-principal > a,
   .menu-item-dropdown > span {
     padding: 0.6rem 0.5rem;
-    border-bottom: 1px solid $cor-borda;   // ALTERADO: era rgba(255,255,255,0.05), invisível em fundo claro
+    border-bottom: 1px solid $cor-borda;
     border-radius: 0;
   }
 
@@ -330,20 +334,27 @@ a {
 
   .redes-sociais {
     margin-top: 8px;
+    align-self: center;
   }
 }
 
 // ===========================================================
 // RODAPÉ
 // ===========================================================
+
 .rodape-site {
   background: #fff;
   border-top: 1px solid $cor-borda;
+  padding: 24px 0;
+  text-align: center;
 
   a { color: $cor-primaria; }
 }
 
-// --- Botões / links de destaque (uso geral no site) -----------
+// ===========================================================
+// BOTÕES E ELEMENTOS GERAIS
+// ===========================================================
+
 .botao {
   display: inline-block;
   padding: 10px 18px;
@@ -351,8 +362,18 @@ a {
   background: $cor-primaria;
   color: #fff !important;
   font-weight: 500;
+  transition: background 0.2s ease;
 
-  &:hover { background: $cor-primaria-escura; text-decoration: none; }
+  &:hover {
+    background: $cor-primaria-escura;
+    text-decoration: none;
+  }
+}
+
+.botao-grande {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }
 
 .aviso-vazio {
@@ -361,31 +382,72 @@ a {
 }
 
 // ===========================================================
-// CARDS DE COLEÇÃO (usados na Home)
+// BANNER / INTRODUÇÃO DA HOME
 // ===========================================================
 
-// Ajuste fino: títulos dentro dos cards de coleção não devem herdar
-// a margem grande dos h3 gerais da página.
-.card-colecao h3 {
-  margin-top: 4px;
-  margin-bottom: 0;
+.banner-home {
+  background: linear-gradient(135deg, $cor-primaria-escura, $cor-primaria);
+  color: #fff;
+  padding: 32px 40px;
+  border-radius: 16px;
+  margin: 16px 0 32px 0;
+  text-align: center;
+
+  h1 {
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-size: 1.8rem;
+  }
+
+  .banner-descricao {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin: 0;
+    max-width: 700px;
+    margin: 0 auto;
+
+    strong {
+      color: #d4e8d4;
+    }
+  }
 }
 
-// NOVO — o card de coleção passa a poder conter uma imagem em
-// rotação (ver .imagem-colecao-slider) por baixo do texto.
-// position: relative + overflow: hidden são obrigatórios para
-// a imagem de fundo (position: absolute) ficar contida no card.
+// ===========================================================
+// CARDS DE COLEÇÃO (Home) — com imagens em rotação
+// ===========================================================
+
+.colecoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 24px 0 32px 0;
+}
+
 .card-colecao {
   position: relative;
   overflow: hidden;
-  min-height: 220px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;   // empurra o texto para a base do card
+  justify-content: flex-end;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none !important;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-decoration: none !important;
+  }
+
+  h3 {
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
 }
 
-// NOVO — a "moldura" onde as fotos da coleção vão passar.
-// Fica atrás do texto (z-index menor), preenchendo o card inteiro.
+// --- SLIDER DE IMAGENS (fundo) ------------------------------
 .imagem-colecao-slider {
   position: absolute;
   inset: 0;
@@ -400,35 +462,262 @@ a {
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
 
-    // A classe "ativa" é alternada via JavaScript (assets/js/carousel.js)
-    // para criar o efeito de crossfade entre as fotos.
     &.ativa { opacity: 1; }
+  }
+
+  // Degradê escuro na base
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 65%);
+    z-index: 1;
   }
 }
 
-// NOVO — camada escura por cima da foto, só para o texto continuar
-// legível independente de qual foto estiver passando no momento.
-.imagem-colecao-slider::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 65%);
-  z-index: 1;
-}
-
-// NOVO — o conteúdo de texto do card (sigla, título, descrição)
-// precisa ficar acima da foto e do degradê (z-index maior).
+// --- CONTEÚDO DO CARD ---------------------------------------
 .conteudo-card-colecao {
   position: relative;
   z-index: 2;
+  padding: 24px 20px 20px;
   color: #fff;
 
-  .sigla { color: rgba(255,255,255,0.85); }
-  h3 { color: #fff; }
+  .sigla {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    backdrop-filter: blur(4px);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+  }
+
+  .descricao-colecao {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  .botao-card {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      text-decoration: none;
+    }
+  }
 }
 
-.descricao-colecao {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.9);
-  margin: 6px 0 0;
+// ===========================================================
+// LISTA DE PUBLICAÇÕES
+// ===========================================================
+
+.lista-publicacoes {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid $cor-borda;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    a {
+      font-weight: 500;
+      color: $cor-primaria;
+      text-decoration: none;
+
+      &:hover {
+        color: $cor-primaria-escura;
+        text-decoration: underline;
+      }
+    }
+
+    .data-publicacao {
+      font-size: 0.85rem;
+      color: $cor-texto-suave;
+      background: $cor-fundo;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+  }
+}
+
+.link-ver-todos {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 500;
+  color: $cor-primaria;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ===========================================================
+// EVENTO EM DESTAQUE NA HOME (COM IMAGEM DINÂMICA)
+// ===========================================================
+
+.evento-destaque-home {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid $cor-borda;
+  margin: 16px 0 24px 0;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .evento-imagem {
+    position: relative;
+    min-height: 200px;
+    background: $cor-fundo;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 200px;
+    }
+
+    .evento-data-destaque {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: $cor-primaria;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+
+  .evento-info {
+    padding: 20px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.3rem;
+      color: $cor-primaria-escura;
+    }
+
+    .evento-local {
+      font-size: 0.95rem;
+      color: $cor-texto-suave;
+      margin: 0 0 8px 0;
+    }
+
+    .evento-descricao {
+      margin: 0 0 16px 0;
+      color: $cor-texto;
+      line-height: 1.5;
+    }
+
+    .botao {
+      align-self: flex-start;
+    }
+  }
+}
+
+// ===========================================================
+// LISTA DE EVENTOS (secundários)
+// ===========================================================
+
+.lista-eventos {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid $cor-borda;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    a {
+      font-weight: 500;
+      color: $cor-primaria;
+      text-decoration: none;
+
+      &:hover {
+        color: $cor-primaria-escura;
+        text-decoration: underline;
+      }
+    }
+
+    .data-evento {
+      font-size: 0.85rem;
+      color: $cor-texto-suave;
+      background: $cor-fundo;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+
+    .local-evento {
+      font-size: 0.85rem;
+      color: $cor-texto-suave;
+    }
+  }
+}
+
+// ===========================================================
+// VISITA AUTOGUIADA (DESTAQUE)
+// ===========================================================
+
+.visita-destaque {
+  background: $cor-fundo;
+  border: 1px solid $cor-borda;
+  border-radius: 16px;
+  padding: 32px 40px;
+  margin: 32px 0 16px 0;
+  text-align: center;
+
+  h2 {
+    margin: 0 0 12px 0;
+    border-bottom: none;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    font-size: 1.05rem;
+  }
 }
