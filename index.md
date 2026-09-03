@@ -170,8 +170,9 @@ permalink: /
      VISITA AUTOGUIADA
      =========================================================== -->
 
+<h2>🚶 Visita autoguiada</h2>
+  
 <div class="visita-destaque">
-  <h2>🚶 Visita autoguiada</h2>
   <p>
     Explore a <strong>Coleção Temática de Plantas Medicinais</strong> por conta própria!
     Um roteiro com texto e áudio para você conhecer cerca de 170 espécies medicinais.
