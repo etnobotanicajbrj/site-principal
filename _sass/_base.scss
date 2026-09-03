@@ -887,3 +887,215 @@ img {
     margin-left: auto;
   }
 }
+
+// ===========================================================
+// FILTRO DE PUBLICAÇÕES
+// ===========================================================
+
+.filtro-colecao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 24px 0;
+}
+
+.filtro-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #D8D8D8;
+  background: #fff;
+  color: #666;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #F5F5F5;
+    border-color: #B0B0B0;
+  }
+
+  &.ativo {
+    background: #2F6B4F;
+    color: #fff;
+    border-color: #2F6B4F;
+    font-weight: 500;
+  }
+
+  &.ativo[data-colecao="ctpm"] {
+    background: #712B13;
+    border-color: #712B13;
+  }
+
+  &.ativo[data-colecao="rbetno"] {
+    background: #04342C;
+    border-color: #04342C;
+  }
+
+  &.ativo[data-colecao="programa"] {
+    background: #1A3A6B;
+    border-color: #1A3A6B;
+  }
+}
+
+// ===========================================================
+// GRADE DE PUBLICAÇÕES
+// ===========================================================
+
+.grid-publicacoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.card-publicacao {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E3E0D8;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #B0B0B0;
+  }
+}
+
+// ===========================================================
+// THUMBNAIL (imagem)
+// ===========================================================
+
+.thumbnail-publicacao {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #FBFAF7;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &.sem-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #D8D8D8;
+    background: #F5F5F5;
+  }
+}
+
+// ===========================================================
+// CONTEÚDO DO CARD
+// ===========================================================
+
+.conteudo-card-publicacao {
+  padding: 16px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badges-publicacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.tipo-publicacao {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #888;
+  background: #F0F0F0;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.titulo-publicacao {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #204A37;
+
+  a {
+    color: #204A37;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #2F6B4F;
+      text-decoration: underline;
+    }
+  }
+
+  .icone-externo {
+    font-size: 0.7rem;
+    opacity: 0.5;
+    margin-left: 2px;
+  }
+}
+
+.autores-publicacao {
+  font-size: 0.85rem;
+  color: #5B6B58;
+  margin: 0;
+  font-style: italic;
+}
+
+.ano-publicacao {
+  font-size: 0.8rem;
+  color: #888;
+  background: #F5F5F5;
+  padding: 2px 10px;
+  border-radius: 10px;
+  align-self: flex-start;
+}
+
+.descricao-publicacao {
+  font-size: 0.9rem;
+  color: #1F2A1E;
+  margin: 4px 0 0 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.indicador-acesso {
+  font-size: 0.8rem;
+  color: #2F6B4F;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+// ===========================================================
+// RESPONSIVO
+// ===========================================================
+
+@media (max-width: 600px) {
+  .grid-publicacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnail-publicacao {
+    height: 140px;
+  }
+
+  .conteudo-card-publicacao {
+    padding: 14px 16px 16px;
+  }
+
+  .titulo-publicacao {
+    font-size: 0.95rem;
+  }
+}
