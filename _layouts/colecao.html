@@ -142,17 +142,33 @@ layout: default
      =========================================================== -->
 
 <article class="banner-colecao">
-  <span class="sigla-colecao">{{ page.sigla }} . {{ page.diretoria | default: "D" }}</span>
+  <!-- DIRETORIA (nome completo + sigla) -->
+  <p class="diretoria">
+    {{ page.diretoria_nome | default: page.diretoria | default: "Diretoria" }}
+    {% if page.sigla_diretoria %}
+    <span class="sigla-diretoria">— {{ page.sigla_diretoria }}</span>
+    {% endif %}
+  </p>
+
+  <!-- TÍTULO DA COLEÇÃO -->
   <h1>{{ page.title }}</h1>
-  {% if page.diretoria %}
-  <p class="diretoria">{{ page.diretoria }}</p>
-  {% endif %}
+
+  <!-- SIGLA DA COLEÇÃO (minúsculo, sutil) -->
+  <p class="sigla-colecao">
+    {{ page.sigla | downcase }} 
+    {% if page.sigla_significado %}
+    <span class="sigla-significado">· {{ page.sigla_significado }}</span>
+    {% endif %}
+  </p>
+
+  <!-- DESCRIÇÃO -->
   <p class="descricao">{{ page.descricao | default: "Conheça esta coleção." }}</p>
+
+  <!-- BOTÃO (opcional) -->
   {% if page.botao_texto and page.botao_link %}
   <a href="{{ page.botao_link | relative_url }}" class="botao-banner">{{ page.botao_texto }}</a>
   {% endif %}
 </article>
-
 <!-- ===========================================================
      INFORMAÇÕES ADICIONAIS (cards com números)
      =========================================================== -->
