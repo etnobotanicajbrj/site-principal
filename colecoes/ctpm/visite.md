@@ -4,7 +4,7 @@ sigla: "CTPM"
 diretoria: "Diretoria de Conhecimento, Ambiente e Tecnologia - DICAT"
 cor: "ctpm"
 layout: colecao
-permalink: /colecoes/ctpm/
+permalink: /colecoes/ctpm/visite
 descricao: "Descubra as Plantas Medicinais no Jardim Botânico do Rio de Janeiro"
 ---
 
