@@ -1,0 +1,27 @@
+<!-- ===========================================================
+     FORMATA DATA EM PORTUGUÊS
+     Uso: {% include date-pt.html date=evento.data format="dia_mes_ano" %}
+     =========================================================== -->
+
+{% assign data = include.date | date: "%Y-%m-%d" %}
+{% assign ano = data | slice: 0, 4 %}
+{% assign mes = data | slice: 5, 2 %}
+{% assign dia = data | slice: 8, 2 %}
+
+{% assign meses = "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro" | split: "," %}
+{% assign meses_abbr = "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez" | split: "," %}
+
+{% assign mes_nome = meses[mes | minus: 1] %}
+{% assign mes_abbr = meses_abbr[mes | minus: 1] %}
+
+{% if include.format == "dia_mes_ano" %}
+  {{ dia }} de {{ mes_nome }} de {{ ano }}
+{% elsif include.format == "dia_mes_abbr" %}
+  {{ dia }} {{ mes_abbr }} {{ ano }}
+{% elsif include.format == "mes_ano" %}
+  {{ mes_nome }} de {{ ano }}
+{% elsif include.format == "dia_mes" %}
+  {{ dia }} de {{ mes_nome }}
+{% else %}
+  {{ dia }}/{{ mes }}/{{ ano }}
+{% endif %}
