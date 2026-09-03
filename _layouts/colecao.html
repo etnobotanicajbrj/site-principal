@@ -1,10 +1,207 @@
 ---
 layout: default
 ---
-<article class="card-colecao card-{{ page.cor | default: 'ctpm' }}">
-  <p class="sigla">{{ page.sigla }} &middot; {{ page.diretoria }}</p>
+
+<!-- ===========================================================
+     PÁGINA DE COLEÇÃO — LAYOUT REUTILIZÁVEL
+     Usa as variáveis do front matter: sigla, diretoria, cor
+     =========================================================== -->
+
+{% if page.cor == "ctpm" %}
+  {% assign cor_fundo = "#FAECE7" %}
+  {% assign cor_borda = "#F0997B" %}
+  {% assign cor_texto = "#712B13" %}
+  {% assign cor_badge = "#712B13" %}
+{% elsif page.cor == "rbetno" %}
+  {% assign cor_fundo = "#E1F5EE" %}
+  {% assign cor_borda = "#5DCAA5" %}
+  {% assign cor_texto = "#04342C" %}
+  {% assign cor_badge = "#04342C" %}
+{% else %}
+  {% assign cor_fundo = "#FBFAF7" %}
+  {% assign cor_borda = "#2F6B4F" %}
+  {% assign cor_texto = "#204A37" %}
+  {% assign cor_badge = "#2F6B4F" %}
+{% endif %}
+
+<style>
+  /* ===========================================================
+     BANNER DA COLEÇÃO
+     =========================================================== */
+  .banner-colecao {
+    background: {{ cor_fundo }};
+    border: 2px solid {{ cor_borda }};
+    border-radius: 16px;
+    padding: 32px 40px;
+    margin: 16px 0 32px 0;
+    text-align: center;
+  }
+
+  .banner-colecao h1 {
+    color: {{ cor_texto }};
+    margin: 0 0 8px 0;
+    font-size: 1.8rem;
+    border-bottom: none;
+  }
+
+  .banner-colecao .sigla-colecao {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {{ cor_badge }};
+    background: rgba({{ cor_texto | remove: '#' | slice: 0, 2 }}, {{ cor_texto | remove: '#' | slice: 2, 2 }}, {{ cor_texto | remove: '#' | slice: 4, 2 }}, 0.08);
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .banner-colecao .diretoria {
+    font-size: 0.9rem;
+    color: {{ cor_texto }};
+    opacity: 0.7;
+    margin: 0 0 12px 0;
+  }
+
+  .banner-colecao .descricao {
+    font-size: 1.05rem;
+    color: {{ cor_texto }};
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .banner-colecao .botao-banner {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    background: {{ cor_texto }};
+    color: #fff !important;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .banner-colecao .botao-banner:hover {
+    background: {{ cor_texto }};
+    opacity: 0.85;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  /* ===========================================================
+     BADGE DE USO
+     =========================================================== */
+  .badge-uso {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-right: 4px;
+    background: {{ cor_fundo }};
+    color: {{ cor_texto }};
+    border: 1px solid {{ cor_borda }};
+  }
+
+  /* ===========================================================
+     GRADE DE INFORMAÇÕES
+     =========================================================== */
+  .grid-info-colecao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .card-info-colecao {
+    background: {{ cor_fundo }};
+    border: 1px solid {{ cor_borda }};
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .card-info-colecao .numero {
+    font-size: 2rem;
+    font-weight: 700;
+    color: {{ cor_texto }};
+    display: block;
+  }
+
+  .card-info-colecao .rotulo {
+    font-size: 0.85rem;
+    color: {{ cor_texto }};
+    opacity: 0.7;
+  }
+</style>
+
+<!-- ===========================================================
+     BANNER DA COLEÇÃO
+     =========================================================== -->
+
+<article class="banner-colecao">
+  <span class="sigla-colecao">{{ page.sigla }} . {{ page.diretoria | default: "D" }}</span>
   <h1>{{ page.title }}</h1>
+  {% if page.diretoria %}
+  <p class="diretoria">{{ page.diretoria }}</p>
+  {% endif %}
+  <p class="descricao">{{ page.descricao | default: "Conheça esta coleção." }}</p>
+  {% if page.botao_texto and page.botao_link %}
+  <a href="{{ page.botao_link | relative_url }}" class="botao-banner">{{ page.botao_texto }}</a>
+  {% endif %}
 </article>
+
+<!-- ===========================================================
+     INFORMAÇÕES ADICIONAIS (cards com números)
+     =========================================================== -->
+
+{% if page.curadoria or page.total_especies or page.total_biomas %}
+<div class="grid-info-colecao">
+  {% if page.curadoria %}
+  <div class="card-info-colecao">
+    <span class="rotulo">Curadoria</span>
+    <span class="numero">{{ page.curadoria }}</span>
+  </div>
+  {% endif %}
+  {% if page.total_especies %}
+  <div class="card-info-colecao">
+    <span class="rotulo">Espécies</span>
+    <span class="numero">{{ page.total_especies }}</span>
+  </div>
+  {% endif %}
+  {% if page.total_biomas %}
+  <div class="card-info-colecao">
+    <span class="rotulo">Biomas</span>
+    <span class="numero">{{ page.total_biomas }}</span>
+  </div>
+  {% endif %}
+  {% if page.canteiros %}
+  <div class="card-info-colecao">
+    <span class="rotulo">Canteiros</span>
+    <span class="numero">{{ page.canteiros }}</span>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
+<!-- ===========================================================
+     BADGES DE USO (se houver)
+     =========================================================== -->
+
+{% if page.usos %}
+<div style="margin: 16px 0; display: flex; flex-wrap: wrap; gap: 8px;">
+  <strong style="margin-right: 8px;">Usos:</strong>
+  {% for uso in page.usos %}
+  <span class="badge-uso">{{ uso }}</span>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- ===========================================================
+     CONTEÚDO PRINCIPAL DA COLEÇÃO
+     =========================================================== -->
 
 <div class="conteudo-colecao">
   {{ content }}
