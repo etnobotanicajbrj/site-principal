@@ -1212,3 +1212,83 @@ img {
     }
   }
 }
+
+// ===========================================================
+// EVENTOS NA HOME
+// ===========================================================
+
+.home-eventos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 8px 0;
+}
+
+.home-evento-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #E3E0D8;
+  padding: 14px 18px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #B0B0B0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.home-evento-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  padding-right: 16px;
+  border-right: 2px solid #E3E0D8;
+  flex-shrink: 0;
+}
+
+.home-evento-dia {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #204A37;
+  line-height: 1.2;
+}
+
+.home-evento-mes {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+.home-evento-info {
+  flex: 1;
+}
+
+.home-evento-titulo {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #204A37;
+
+  a {
+    color: #204A37;
+    text-decoration: none;
+
+    &:hover {
+      color: #2F6B4F;
+      text-decoration: underline;
+    }
+  }
+}
+
+.home-evento-descricao {
+  font-size: 0.85rem;
+  color: #5B6B58;
+  margin: 2px 0 0 0;
+}
