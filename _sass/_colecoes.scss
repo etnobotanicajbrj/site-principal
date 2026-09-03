@@ -17,13 +17,41 @@ $cor-rbetno-texto: #04342C;
 
 .badge-colecao {
   display: inline-block;
-  font-size: 0.75rem;
-  padding: 3px 8px;
-  border-radius: 6px;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 12px;
   margin-right: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 
-  &.badge-ctpm { background: $cor-ctpm-fundo; color: $cor-ctpm-texto; }
-  &.badge-rbetno { background: $cor-rbetno-fundo; color: $cor-rbetno-texto; }
+  // CTPM
+  &.badge-ctpm {
+    background: #FAECE7;
+    color: #712B13;
+    border: 1px solid #F0997B;
+  }
+
+  // RBetno
+  &.badge-rbetno {
+    background: #E1F5EE;
+    color: #04342C;
+    border: 1px solid #5DCAA5;
+  }
+
+  // Programa / Pesquisa (NOVO)
+  &.badge-programa {
+    background: #E8F0FE;
+    color: #1A3A6B;
+    border: 1px solid #8AA9D6;
+  }
+
+  // Outros (fallback)
+  &.badge-outro {
+    background: #F0F0F0;
+    color: #666;
+    border: 1px solid #D8D8D8;
+  }
 }
 
 // ===========================================================
@@ -48,21 +76,6 @@ $cor-rbetno-texto: #04342C;
   &.uso-construtivo { background: #FBE9E7; color: #BF360C; }
 }
 
- // Programa / Pesquisa (NOVO)
-  &.badge-programa {
-    background: #E8F0FE;
-    color: #1A3A6B;
-    border: 1px solid #8AA9D6;
-  }
-
-  // Outros (fallback)
-  &.badge-outro {
-    background: #F0F0F0;
-    color: #666;
-    border: 1px solid #D8D8D8;
-  }
-}
-
 // ===========================================================
 // CARDS DE COLEÇÃO (na página principal)
 // ===========================================================
@@ -74,6 +87,117 @@ $cor-rbetno-texto: #04342C;
 
   &.card-ctpm { background: $cor-ctpm-fundo; border: 1px solid $cor-ctpm-borda; color: $cor-ctpm-texto; }
   &.card-rbetno { background: $cor-rbetno-fundo; border: 1px solid $cor-rbetno-borda; color: $cor-rbetno-texto; }
+}
+
+// ===========================================================
+// FILTRO DE PUBLICAÇÕES
+// ===========================================================
+
+.filtro-colecao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 24px 0;
+}
+
+.filtro-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #D8D8D8;
+  background: #fff;
+  color: #666;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #F5F5F5;
+    border-color: #B0B0B0;
+  }
+
+  &.ativo {
+    background: $cor-primaria;
+    color: #fff;
+    border-color: $cor-primaria;
+    font-weight: 500;
+  }
+
+  // Cores específicas quando ativo
+  &.ativo[data-colecao="ctpm"] {
+    background: #712B13;
+    border-color: #712B13;
+  }
+
+  &.ativo[data-colecao="rbetno"] {
+    background: #04342C;
+    border-color: #04342C;
+  }
+
+  &.ativo[data-colecao="programa"] {
+    background: #1A3A6B;
+    border-color: #1A3A6B;
+  }
+}
+
+// ===========================================================
+// LISTA DE PUBLICAÇÕES
+// ===========================================================
+
+.lista-publicacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.item-publicacao {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #E3E0D8;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #B0B0B0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  a {
+    flex: 1;
+    min-width: 150px;
+    font-weight: 500;
+    color: $cor-primaria-escura;
+    text-decoration: none;
+
+    &:hover {
+      color: $cor-primaria;
+      text-decoration: underline;
+    }
+  }
+
+  .data-publicacao {
+    font-size: 0.8rem;
+    color: #888;
+    background: #F5F5F5;
+    padding: 2px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .tipo-publicacao {
+    font-size: 0.7rem;
+    color: #888;
+    background: #F0F0F0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
 }
 
 // ===========================================================
