@@ -386,12 +386,13 @@ a {
 // ===========================================================
 
 .banner-home {
-  background: linear-gradient(135deg, $cor-primaria-escura, $cor-primaria);
+  background: $cor-fundo;
   color: #fff;
   padding: 32px 40px;
   border-radius: 16px;
   margin: 16px 0 32px 0;
   text-align: center;
+  border-color: $cor-borda;
 
   h1 {
     color: #fff;
@@ -426,7 +427,7 @@ a {
 .card-colecao {
   position: relative;
   overflow: hidden;
-  min-height: 220px;        // Altura menor para ficar mais compacto
+  min-height: 440px;        // Altura menor para ficar mais compacto
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
