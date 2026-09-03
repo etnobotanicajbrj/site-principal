@@ -23,12 +23,12 @@ permalink: /
 
 <h2>🪴 Coleções Biológicas</h2>
 
-<div class="colecoes-grid-home">
+<div class="colecoes-grid">
   
   <!-- CARD 1: CTPM -->
-  <a href="{{ '/colecoes/ctpm/index' | relative_url }}" class="card-colecao-home" style="text-decoration:none;">
+  <a href="{{ '/colecoes/ctpm/index' | relative_url }}" class="card-colecao" style="text-decoration:none;">
     <!-- Slider de imagens (fundo) -->
-    <div class="imagem-colecao-slider-home" data-carousel="ctpm">
+    <div class="imagem-colecao-slider" data-carousel="ctpm">
       <img 
         src="{{ '/assets/images/colecoes/ctpm-1.jpg' | relative_url }}" 
         alt="Coleção Temática de Plantas Medicinais - imagem 1"
@@ -48,20 +48,20 @@ permalink: /
     </div>
     
     <!-- Conteúdo do card -->
-    <div class="conteudo-card-colecao-home">
+    <div class="conteudo-card-colecao">
       <span class="sigla">CTPM . Dicat</span>
       <h3>Coleção Temática de Plantas Medicinais</h3>
-      <p class="descricao-colecao-home">
+      <p class="descricao-colecao">
         Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição
           <strong>Saberes e Olhares Diversos</strong>. 
       </p>
-      <span class="botao-card-home">Saiba mais →</span>
+      <span class="botao-card">Saiba mais →</span>
     </div>
   </a>
 
   <!-- CARD 2: RBetno -->
   <a href="{{ '/colecoes/rbetno/index' | relative_url }}" class="card-colecao" style="text-decoration:none;">
-    <div class="imagem-colecao-slider-home" data-carousel="rbetno">
+    <div class="imagem-colecao-slider" data-carousel="rbetno">
       <img 
         src="{{ '/assets/images/colecoes/rbetno-1.jpg' | relative_url }}" 
         alt="RBetno - imagem 1"
@@ -80,13 +80,13 @@ permalink: /
       >
     </div>
     
-    <div class="conteudo-card-colecao-home">
+    <div class="conteudo-card-colecao">
       <span class="sigla">RBetno . Dipeq</span>
       <h3>Coleção de Etnobotânica</h3>
-      <p class="descricao-colecao-home">
+      <p class="descricao-colecao">
         Acervo de plantas úteis, como pertences e materias com informações relacionadas com ao seu uso.
       </p>
-      <span class="botao-card-home">Saiba mais →</span>
+      <span class="botao-card">Saiba mais →</span>
     </div>
   </a>
 
