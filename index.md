@@ -157,54 +157,44 @@ permalink: /
 {% endif %}
 
 <!-- ===========================================================
-     PRÓXIMOS EVENTOS (COM IMAGEM EM DESTAQUE)
+     PRÓXIMOS EVENTOS (Home)
      =========================================================== -->
 
 <h2>📅 Próximos eventos</h2>
 
-{% assign proximos = site.eventos | sort: "data" | limit: 3 %}
-{% if proximos.size > 0 %}
+{% assign eventos_proximos = site.eventos | sort: "data" | limit: 3 %}
 
-  {% assign primeiro = proximos | first %}
-  
-  <!-- Evento em DESTAQUE (o primeiro) com imagem -->
-  <div class="evento-destaque-home">
-    <div class="evento-imagem">
-      <!-- 
-        IMPORTANTE: substitua "evento-mes-atual.jpg" pelo arquivo de imagem do mês.
-        Sugestão: mantenha um padrão como "evento-YYYY-MM.jpg" e atualize mensalmente.
-        Exemplo: evento-2026-09.jpg para setembro de 2026
-      -->
-      <img 
-        src="{{ '/assets/images/eventos/evento-mes-atual.jpg' | relative_url }}" 
-        alt="{{ primeiro.titulo }}"
-        loading="lazy"
-      >
-      <span class="evento-data-destaque">{{ primeiro.data | date: "%d/%m" }}</span>
-    </div>
-    <div class="evento-info">
-      <h3>{{ primeiro.titulo }}</h3>
-      <p class="evento-local">{{ primeiro.local }}</p>
-      <p class="evento-descricao">{{ primeiro.descricao | default: "Venha participar!" }}</p>
-      <a href="{{ primeiro.url | relative_url }}" class="botao">Saiba mais</a>
-    </div>
+{% if eventos_proximos.size > 0 %}
+  <div class="home-eventos">
+    {% for evento in eventos_proximos %}
+      <div class="home-evento-item">
+        <div class="home-evento-data">
+          <span class="home-evento-dia">{{ evento.data | date: "%d" }}</span>
+          <span class="home-evento-mes">{{ evento.data | date: "%b" }}</span>
+        </div>
+        <div class="home-evento-info">
+          <h3 class="home-evento-titulo">
+            {% if evento.link %}
+              <a href="{{ evento.link }}" target="_blank" rel="noopener noreferrer">
+                {{ evento.titulo }}
+                <span class="icone-externo">↗</span>
+              </a>
+            {% elsif evento.url %}
+              <a href="{{ evento.url | relative_url }}">{{ evento.titulo }}</a>
+            {% else %}
+              <span>{{ evento.titulo }}</span>
+            {% endif %}
+          </h3>
+          <p class="home-evento-descricao">{{ evento.descricao | default: "Venha participar!" }}</p>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-
-  <!-- Lista dos demais eventos -->
-  {% if proximos.size > 1 %}
-    <ul class="lista-eventos">
-      {% for evento in proximos offset:1 %}
-        <li>
-          <a href="{{ evento.url | relative_url }}">{{ evento.titulo }}</a>
-          <span class="data-evento">{{ evento.data | date: "%d/%m/%Y" }}</span>
-          <span class="local-evento">{{ evento.local }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <p><a href="{{ '/eventos/' | relative_url }}" class="link-ver-todos">Ver todos os eventos →</a></p>
-
+  
+  <p class="link-ver-todos">
+    <a href="{{ '/eventos/' | relative_url }}">Ver todos os eventos →</a>
+  </p>
+  
 {% else %}
   <p class="aviso-vazio">Nenhum evento cadastrado ainda.</p>
 {% endif %}
