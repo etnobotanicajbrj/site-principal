@@ -9,8 +9,9 @@ permalink: /
      =========================================================== -->
 
 <div class="banner-descricao">
-      Pesquisa, curadoria e extensão em etnobotânica no 
-    <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>. Conheça nossas coleções, publicações e eventos.
+    Pesquisa, curadoria e extensão em etnobotânica no 
+    <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>.
+    Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição à céu aberto Saberes e Olhares Diversos.
   </p>
 </div>
 
@@ -19,7 +20,7 @@ permalink: /
      Cards com imagens em rotação e descrição
      =========================================================== -->
 
-<h2>🪴Coleções Biológicas</h2>
+<h2>🌱 Coleções</h2>
 
 <div class="colecoes-grid">
   
@@ -50,7 +51,7 @@ permalink: /
       <span class="sigla">CTPM . Dicat</span>
       <h3>Coleção Temática de Plantas Medicinais</h3>
       <p class="descricao-colecao">
-        Acervo vivo com cerca de 170 espécies medicinais que compõe a exposição à céu aberto  <i>Saberes e Olhares Diversos<i>.
+        Acervo vivo com cerca de 170 espécies medicinais, entre nativas e exóticas.
       </p>
       <span class="botao-card">Saiba mais →</span>
     </div>
@@ -72,7 +73,7 @@ permalink: /
       >
       <img 
         src="{{ '/assets/images/colecoes/rbetno-3.jpg' | relative_url }}" 
-        alt="Rede de Etnobotânica - imagem 3"
+        alt="RBetno - imagem 3"
         loading="lazy"
       >
     </div>
@@ -111,7 +112,7 @@ permalink: /
 {% endif %}
 
 <!-- ===========================================================
-     PRÓXIMOS EVENTOS (COM IMAGEM DINÂMICA POR MÊS)
+     PRÓXIMOS EVENTOS (COM IMAGEM EM DESTAQUE)
      =========================================================== -->
 
 <h2>📅 Próximos eventos</h2>
@@ -121,25 +122,18 @@ permalink: /
 
   {% assign primeiro = proximos | first %}
   
-  <!-- Evento em DESTAQUE (o primeiro) com imagem dinâmica -->
+  <!-- Evento em DESTAQUE (o primeiro) com imagem -->
   <div class="evento-destaque-home">
     <div class="evento-imagem">
       <!-- 
-        IMAGEM DINÂMICA POR MÊS:
-        - O Liquid detecta o mês e ano atual automaticamente
-        - Basta manter imagens com o padrão: evento-YYYY-MM.jpg
-        - Exemplo para setembro 2026: evento-2026-09.jpg
-        - Se a imagem não existir, usa evento-padrao.jpg como fallback
+        IMPORTANTE: substitua "evento-mes-atual.jpg" pelo arquivo de imagem do mês.
+        Sugestão: mantenha um padrão como "evento-YYYY-MM.jpg" e atualize mensalmente.
+        Exemplo: evento-2026-09.jpg para setembro de 2026
       -->
-      {% assign mes_atual = "now" | date: "%m" %}
-      {% assign ano_atual = "now" | date: "%Y" %}
-      {% assign nome_imagem = "evento-" | append: ano_atual | append: "-" | append: mes_atual | append: ".jpg" %}
-      
       <img 
-        src="{{ '/assets/images/eventos/' | append: nome_imagem | relative_url }}" 
+        src="{{ '/assets/images/eventos/evento-mes-atual.jpg' | relative_url }}" 
         alt="{{ primeiro.titulo }}"
         loading="lazy"
-        onerror="this.src='{{ '/assets/images/eventos/evento-padrao.jpg' | relative_url }}'"
       >
       <span class="evento-data-destaque">{{ primeiro.data | date: "%d/%m" }}</span>
     </div>
