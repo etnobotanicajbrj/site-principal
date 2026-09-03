@@ -8,7 +8,7 @@ permalink: /
      =========================================================== -->
 
 <div class="banner-home">
-  <h2>Bem-vindo ao site do Grupo de Estudos em Etnobotânica — JBRJ</h2>
+  <h2>Bem-vindo ao site do Grupo de Estudos em Etnobotânica</h2>
   <p class="banner-descricao">
     Pesquisa, curadoria e extensão em etnobotânica no 
     <strong>Instituto de Pesquisas Jardim Botânico do Rio de Janeiro</strong>.
@@ -176,7 +176,7 @@ permalink: /
     Explore a <strong>Coleção Temática de Plantas Medicinais</strong> por conta própria!
     Um roteiro com texto e áudio para você conhecer cerca de 170 espécies medicinais.
   </p>
-  <a href="{{ '/colecoes/ctpm/visite/' | relative_url }}" class="botao">
+  <a href="{{ '/colecoes/ctpm/visite/' | relative_url }}" class="botao botao-grande">
     🌿 Iniciar visita autoguiada
   </a>
 </div>
