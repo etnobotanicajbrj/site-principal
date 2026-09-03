@@ -4,26 +4,26 @@ permalink: /publicacoes/
 ---
 
 <!-- ===========================================================
-     FILTRO POR COLEÇÃO / PROGRAMA
+     FILTRO POR COLEÇÃO / PROGRAMA / PESQUISA
      =========================================================== -->
 
 <div class="filtro-colecao">
-  <button class="filtro-btn ativo" data-colecao="todas">Todas</button>
-  <button class="filtro-btn" data-colecao="ctpm">CTPM</button>
-  <button class="filtro-btn" data-colecao="rbetno">RBetno</button>
-  <button class="filtro-btn" data-colecao="programa">Programa</button>
-  <button class="filtro-btn" data-colecao="pesquisa">Pesquisa</button>
+  <button class="filtro-btn ativo" data-colecao="todas">📚 Todas</button>
+  <button class="filtro-btn" data-colecao="ctpm">🌿 CTPM</button>
+  <button class="filtro-btn" data-colecao="rbetno">🌐 RBetno</button>
+  <button class="filtro-btn" data-colecao="programa">📊 Programa</button>
+  <button class="filtro-btn" data-colecao="pesquisa">🔬 Pesquisa</button>
 </div>
 
 <!-- ===========================================================
-     GRADE DE PUBLICAÇÕES (com imagem, autores, ano, descrição)
+     GRADE DE PUBLICAÇÕES
      =========================================================== -->
 
 <div class="grid-publicacoes" id="grid-publicacoes">
   {% for pub in site.publicacoes %}
     <div class="card-publicacao" data-colecao="{{ pub.colecao }}">
       
-      <!-- Thumbnail (imagem) -->
+      <!-- Thumbnail -->
       {% if pub.thumbnail %}
         <div class="thumbnail-publicacao">
           <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.titulo }}" loading="lazy">
@@ -40,11 +40,11 @@ permalink: /publicacoes/
         <div class="badges-publicacao">
           {% include badge-colecao.html colecoes=pub.colecao %}
           {% if pub.tipo %}
-            <span class="tipo-publicacao">{{ pub.tipo }}</span>
+            <span class="tipo-publicacao">{{ pub.tipo | upcase }}</span>
           {% endif %}
         </div>
         
-        <!-- Título com link -->
+        <!-- Título -->
         <h3 class="titulo-publicacao">
           {% if pub.link %}
             <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">
@@ -78,11 +78,15 @@ permalink: /publicacoes/
           <p class="descricao-publicacao">{{ pub.descricao | truncate: 120 }}</p>
         {% endif %}
         
-        <!-- Indicador de acesso -->
-        {% if pub.link or pub.arquivo %}
-          <span class="indicador-acesso">
-            {% if pub.link %}🔗 Acessar online{% elsif pub.arquivo %}📄 Baixar PDF{% endif %}
-          </span>
+        <!-- Link de acesso -->
+        {% if pub.link %}
+          <a href="{{ pub.link }}" class="indicador-acesso" target="_blank" rel="noopener noreferrer">
+            🔗 Acessar online
+          </a>
+        {% elsif pub.arquivo %}
+          <a href="{{ pub.arquivo | relative_url }}" class="indicador-acesso" target="_blank" rel="noopener noreferrer">
+            📄 Baixar PDF
+          </a>
         {% endif %}
       </div>
     </div>
@@ -94,7 +98,7 @@ permalink: /publicacoes/
      =========================================================== -->
 
 <p id="sem-resultado" style="display:none; text-align:center; color:#888; padding:32px 0;">
-  Nenhuma publicação encontrada para este filtro.
+  📚 Nenhuma publicação encontrada para este filtro.
 </p>
 
 <!-- ===========================================================
@@ -104,7 +108,6 @@ permalink: /publicacoes/
 <script>
 document.querySelectorAll('.filtro-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
-    // Atualiza botões
     document.querySelectorAll('.filtro-btn').forEach(function (b) { b.classList.remove('ativo'); });
     btn.classList.add('ativo');
     
