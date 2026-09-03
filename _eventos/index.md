@@ -18,18 +18,16 @@ permalink: /eventos/
 
 <h2>Próximos eventos</h2>
 
-{% assign hoje = site.time | date: "%Y-%m-%d" %}
-{% assign eventos_futuros = site.eventos | where_exp: "evento", "evento.data >= hoje" | sort: "data" %}
+{% assign hoje = "now" | date: "%Y-%m-%d" %}
 
-{% if eventos_futuros.size > 0 %}
-  <div class="lista-eventos">
-    {% for evento in eventos_futuros %}
+<div class="lista-eventos">
+  {% for evento in site.eventos | sort: "data" %}
+    {% assign data_evento = evento.data | date: "%Y-%m-%d" %}
+    {% if data_evento >= hoje %}
       <div class="evento-item">
         <div class="evento-data">
           <span class="evento-dia">{{ evento.data | date: "%d" }}</span>
-          <span class="evento-mes">
-            {% include date-pt.html date=evento.data format="mes_abbr" %}
-          </span>
+          <span class="evento-mes">{{ evento.data | date: "%b" }}</span>
           <span class="evento-ano">{{ evento.data | date: "%Y" }}</span>
         </div>
         
@@ -44,7 +42,7 @@ permalink: /eventos/
           <p class="evento-local">📍 {{ evento.local }}</p>
           
           <p class="evento-data-completa">
-            📅 {% include date-pt.html date=evento.data format="dia_mes_ano" %}
+            📅 {{ evento.data | date: "%d/%m/%Y" }}
           </p>
           
           {% if evento.inscricao %}
@@ -54,11 +52,9 @@ permalink: /eventos/
           {% endif %}
         </div>
       </div>
-    {% endfor %}
-  </div>
-{% else %}
-  <p class="aviso-vazio">Nenhum evento futuro agendado no momento.</p>
-{% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 <!-- ===========================================================
      EVENTOS PASSADOS COM CARROSSEL
@@ -66,11 +62,10 @@ permalink: /eventos/
 
 <h2>Eventos passados</h2>
 
-{% assign eventos_passados = site.eventos | where_exp: "evento", "evento.data < hoje" | sort: "data" | reverse %}
-
-{% if eventos_passados.size > 0 %}
-  <div class="eventos-passados">
-    {% for evento in eventos_passados %}
+<div class="eventos-passados">
+  {% for evento in site.eventos | sort: "data" | reverse %}
+    {% assign data_evento = evento.data | date: "%Y-%m-%d" %}
+    {% if data_evento < hoje %}
       <div class="evento-passado-item">
         <div class="evento-passado-info">
           <h3>{{ evento.titulo }}</h3>
@@ -80,7 +75,7 @@ permalink: /eventos/
           {% endif %}
           
           <p class="evento-data-passado">
-            📅 {% include date-pt.html date=evento.data format="dia_mes_ano" %}
+            📅 {{ evento.data | date: "%d/%m/%Y" }}
             {% if evento.local %}
               — 📍 {{ evento.local }}
             {% endif %}
@@ -113,11 +108,9 @@ permalink: /eventos/
           </div>
         {% endif %}
       </div>
-    {% endfor %}
-  </div>
-{% else %}
-  <p class="aviso-vazio">Nenhum evento passado cadastrado ainda.</p>
-{% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 <!-- ===========================================================
      JAVASCRIPT PARA CARROSSEL
