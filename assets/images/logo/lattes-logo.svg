@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="20" height="20">
+  <rect width="200" height="200" fill="#003366" rx="20"/>
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="white" text-anchor="middle">L</text>
+  <text x="100" y="150" font-family="Arial, sans-serif" font-size="16" fill="#66B5FF" text-anchor="middle" letter-spacing="1">ATTES</text>
+</svg>
