@@ -1,5 +1,4 @@
 ---
-
 nome\_popular: "Espinheira-santa"
 nome\_cientifico: "Maytenus ilicifolia"
 familia: "Celastraceae"
