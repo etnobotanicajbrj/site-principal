@@ -6,16 +6,14 @@ permalink: /contato/
 
 # Contato e Visita
 
-Entre em contato conosco ou agende uma visita às nossas coleções.
+_Entre em contato conosco ou agende uma visita às nossas coleções._
 
 ---
 
 ## E-mail
 
 #### Dra. Viviane S. Fonseca-Kruel (curadora)
-[vfonseca@jbrj.gov.br](mailto:vfonseca@jbrj.gov.br )
-
-[etnobotanicajbrj@gmail.com](mailto:etnobotanicajbrj@gmail.com)
+[vfonseca@jbrj.gov.br](mailto:vfonseca@jbrj.gov.br ) | [etnobotanicajbrj@gmail.com](mailto:etnobotanicajbrj@gmail.com)
 
 ---
 
@@ -50,6 +48,7 @@ Escolha a coleção que deseja visitar e clique no botão abaixo para agendar. A
 
 **Instituto de Pesquisas Jardim Botânico do Rio de Janeiro**  
 _Recomendamos a entrada pelo endereço abaixo:_
+
 Rua Pacheco Leão, 915 - Jardim Botânico  
 Rio de Janeiro - RJ, 22460-030
 
