@@ -1799,3 +1799,226 @@ img {
     }
   }
 }
+
+// ===========================================================
+// PÁGINA DA EQUIPE
+// ===========================================================
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  margin: 24px 0;
+}
+
+.membro-card {
+  background: #fff;
+  border: 1px solid $cor-borda;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px auto;
+    display: block;
+    background: $cor-fundo;
+  }
+
+  .membro-sem-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: $cor-fundo;
+    color: $cor-borda;
+    border: 2px solid $cor-borda;
+  }
+
+  h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    color: $cor-primaria-escura;
+    border-bottom: none;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .membro-funcao {
+    font-size: 0.85rem;
+    color: $cor-texto-suave;
+    margin: 0 0 8px 0;
+  }
+
+  .membro-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .membro-descricao {
+    font-size: 0.9rem;
+    color: $cor-texto;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+  }
+
+  .membro-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .membro-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: $cor-primaria;
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: $cor-fundo;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: rgba(47, 107, 79, 0.08);
+      color: $cor-primaria-escura;
+      text-decoration: none;
+    }
+
+    .link-icon {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ===========================================================
+// BADGES (já existentes, mas mantidos)
+// ===========================================================
+
+.badge-ctpm {
+  background: #FAECE7;
+  color: #712B13;
+  border: 1px solid #F0997B;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-rbetno {
+  background: #E1F5EE;
+  color: #04342C;
+  border: 1px solid #5DCAA5;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+// ===========================================================
+// RESPONSIVO
+// ===========================================================
+
+@media (max-width: 600px) {
+  .equipe-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .membro-card {
+    padding: 16px 12px;
+  }
+
+  .membro-card img,
+  .membro-card .membro-sem-foto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .membro-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .membro-card .membro-funcao {
+    font-size: 0.75rem;
+  }
+
+  .membro-card .membro-descricao {
+    font-size: 0.8rem;
+  }
+
+  .membro-links {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .membro-link {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .equipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ===========================================================
+// LOGOS LATTES E ORCID
+// ===========================================================
+
+.membro-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.membro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: $cor-primaria;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: $cor-fundo;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: rgba(47, 107, 79, 0.08);
+    color: $cor-primaria-escura;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  .link-logo {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+  }
+}
