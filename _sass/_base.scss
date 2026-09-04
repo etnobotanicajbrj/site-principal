@@ -1696,3 +1696,106 @@ img {
     font-size: 1rem;
   }
 }
+
+// ===========================================================
+// BOTÕES DE VISITA (página de contato)
+// ===========================================================
+
+.visita-botoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.visita-card {
+  background: #fff;
+  border: 2px solid #E3E0D8;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  // CTPM
+  &.visita-ctpm {
+    border-color: #F0997B;
+    background: #FAECE7;
+
+    .visita-sigla {
+      color: #712B13;
+      background: rgba(113, 43, 19, 0.08);
+    }
+
+    .botao-visita {
+      background: #712B13;
+
+      &:hover {
+        background: #4A1C0D;
+      }
+    }
+  }
+
+  // RBetno
+  &.visita-rbetno {
+    border-color: #5DCAA5;
+    background: #E1F5EE;
+
+    .visita-sigla {
+      color: #04342C;
+      background: rgba(4, 52, 44, 0.08);
+    }
+
+    .botao-visita {
+      background: #04342C;
+
+      &:hover {
+        background: #021C17;
+      }
+    }
+  }
+
+  .visita-sigla {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  h3 {
+    margin: 12px 0 8px 0;
+    font-size: 1.1rem;
+    color: #204A37;
+    border-bottom: none;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #1F2A1E;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+  }
+
+  .botao-visita {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+  }
+}
