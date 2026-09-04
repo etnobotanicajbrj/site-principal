@@ -1,9 +1,13 @@
+# ===========================================================
+# EQUIPE — DADOS DOS MEMBROS
+# ===========================================================
+
 # Uma entrada por pessoa. Sem página individual — lida direto na
 # seção "Nossa Equipe" dentro de quem-somos/index.md.
 
 - nome: "Dra. Viviane Fonseca Kruel"
   funcao: "Orientadora e Curadora"
-  colecoes: "ctpm, rbetno"
+  colecoes: "ctpm, rbetno, programa, pesquisa"
   foto: /assets/images/equipe/viviane.png
   lattes: "http://lattes.cnpq.br/0560294487722709"
   orcid: "https://orcid.org/0000-0001-8647-9734"
@@ -12,7 +16,7 @@
 
 - nome: "Luisa"
   funcao: "Mestranda"
-  colecoes: "ctpm, rbetno"
+  colecoes: "ctpm, pesquisa, programa"
   foto: /assets/images/equipe/luisa.png
   lattes: "http://lattes.cnpq.br/5593552951372724"
   orcid: "https://orcid.org/0009-0009-1520-1730"
