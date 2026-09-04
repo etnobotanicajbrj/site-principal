@@ -1,6 +1,6 @@
 ---
 title: "Contato e Visita"
-layout: page
+layout: default
 permalink: /contato/
 ---
 
@@ -53,4 +53,4 @@ Rua Pacheco Leão, 915 - Jardim Botânico
 Rio de Janeiro - RJ, 22460-030
 
 ---
-## 📋 Informações importantes
+## Informações importantes
