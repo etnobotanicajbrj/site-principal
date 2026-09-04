@@ -44,7 +44,7 @@ Escolha a coleção que deseja visitar e clique no botão abaixo para agendar. A
 </div>
 
 ---
-## 📍 Endereço
+## Endereço
 
 **Instituto de Pesquisas Jardim Botânico do Rio de Janeiro**  
 _Recomendamos a entrada pelo endereço abaixo:_
