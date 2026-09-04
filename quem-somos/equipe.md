@@ -1,10 +1,11 @@
 ---
-
 title: "Nossa Equipe"
+layout: default
 permalink: /quem-somos/equipe
 ---
 
-  <h2>Nossa Equipe</h2>
+## Nossa Equipe
+
   <div class="grid-equipe">
     {% for pessoa in site.data.equipe %}
       <div class="card-pessoa">
