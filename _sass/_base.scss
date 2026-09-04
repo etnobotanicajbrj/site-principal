@@ -1801,6 +1801,44 @@ img {
 }
 
 // ===========================================================
+// BADGES (CTPM, RBetno, Programa, Pesquisa)
+// ===========================================================
+
+.badge-colecao {
+  display: inline-block;
+  font-size: 0.65rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-ctpm {
+  background: #FAECE7;
+  color: #712B13;
+  border: 1px solid #F0997B;
+}
+
+.badge-rbetno {
+  background: #E1F5EE;
+  color: #04342C;
+  border: 1px solid #5DCAA5;
+}
+
+.badge-programa {
+  background: #FFF3E0;
+  color: #E65100;
+  border: 1px solid #FFB74D;
+}
+
+.badge-pesquisa {
+  background: #E8F0FE;
+  color: #1A3A6B;
+  border: 1px solid #8AA9D6;
+}
+
+// ===========================================================
 // PÁGINA DA EQUIPE
 // ===========================================================
 
@@ -1868,6 +1906,7 @@ img {
     justify-content: center;
     gap: 4px;
     margin-bottom: 10px;
+    min-height: 24px;
   }
 
   .membro-descricao {
@@ -1882,58 +1921,35 @@ img {
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 4px;
   }
 
   .membro-link {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     font-size: 0.8rem;
     color: $cor-primaria;
     text-decoration: none;
     padding: 4px 12px;
     border-radius: 6px;
     background: $cor-fundo;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 
     &:hover {
       background: rgba(47, 107, 79, 0.08);
       color: $cor-primaria-escura;
+      transform: translateY(-1px);
       text-decoration: none;
     }
 
-    .link-icon {
-      font-size: 0.9rem;
+    svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+      flex-shrink: 0;
     }
   }
-}
-
-// ===========================================================
-// BADGES (já existentes, mas mantidos)
-// ===========================================================
-
-.badge-ctpm {
-  background: #FAECE7;
-  color: #712B13;
-  border: 1px solid #F0997B;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.badge-rbetno {
-  background: #E1F5EE;
-  color: #04342C;
-  border: 1px solid #5DCAA5;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
 }
 
 // ===========================================================
@@ -1966,15 +1982,6 @@ img {
 
   .membro-card .membro-descricao {
     font-size: 0.8rem;
-  }
-
-  .membro-links {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .membro-link {
-    justify-content: center;
   }
 }
 
