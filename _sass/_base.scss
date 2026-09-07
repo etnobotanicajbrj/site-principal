@@ -347,10 +347,31 @@ a {
   border-top: 1px solid $cor-borda;
   padding: 24px 0;
   text-align: center;
+  font-size: 0.9rem;
+  color: $cor-texto-suave;
 
-  a { color: $cor-primaria; }
+  a {
+    color: $cor-primaria;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $cor-primaria-escura;
+      text-decoration: underline;
+    }
+  }
+
+  .aviso-licenca {
+    font-size: 0.8rem;
+    margin: 4px 0 0 0;
+    color: $cor-texto-suave;
+
+    em {
+      font-style: italic;
+      color: $cor-texto;
+    }
+  }
 }
-
 // ===========================================================
 // BOTÕES E ELEMENTOS GERAIS
 // ===========================================================
