@@ -12,25 +12,32 @@ layout: default
   <a href="#historia">História do Grupo de Pesquisa</a>
 </nav>
 
-<section id="sobre">
-  <h2>Sobre o Grupo de Pesquisa em Etnobotânica JBRJ</h2>
-  <!-- Responsável: Camila -->
+<section id="sobre"> <!-- \[NÃO EDITAR] -->
+
+  ## Sobre o Grupo de Pesquisa em Etnobotânica JBRJ
   <!-- \[preencher — espelho CNPq: título oficia, descrição] -->
-</section>
+  
+</section> <!-- \[NÃO EDITAR] -->
 
 <section id="objetivos">
-  <h2>Objetivos</h2>
-  <!-- Responsável: Camila -->
+
+  ## Objetivos
+  
   <!-- \[preencher — objetivos gerais e especificos] -->
+
 </section>
 
 <section id="linhas-pesquisa">
-  <h2>Linhas de Pesquisa</h2>
-  <!-- Responsável: Camila -->
+  
+  ## Linhas de Pesquisa
+  
   <!-- \[preencher — linhas de pesquisas do grupo] -->
+
 </section>
 
 <section id="historia">
-  <h2>História do Grupo de Pesquisa</h2>
+  
+  ## História do Grupo de Pesquisa
   <!-- \[preencher historia] -->
+  
 </section>
