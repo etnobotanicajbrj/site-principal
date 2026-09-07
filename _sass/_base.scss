@@ -396,18 +396,18 @@ a {
       text-decoration: none;
 
       &:hover {
-        background: #f5f7fa;
-      }
-
-      &.active {
-        background: #e8edf4;
-        color: #1a3a5a;
-      }
-    }
-
+            background: $cor-hover-fundo;
+          }
+      
+          &.active {
+            background: $cor-ativo-fundo;
+            font-weight: 600;
+          }
+        }
+    
     // Quando o submenu está aberto
     &.open > .menu-link {
-      background: #eef2f7;
+      background: $cor-ativo-fundo;
     }
   }
 
