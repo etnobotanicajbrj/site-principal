@@ -329,7 +329,7 @@ a {
 }
 
 // ===========================================================
-// RESPONSIVO (mobile)
+// RESPONSIVO (mobile) — com diferenciação de níveis
 // ===========================================================
 
 @media (max-width: 768px) {
@@ -375,14 +375,20 @@ a {
       padding: 0.6rem 0.5rem;
       border-radius: 0;
       width: 100%;
+      font-weight: 500;
     }
 
     &.has-submenu > .menu-link::after {
       content: " ▾";
+      font-size: 0.6rem;
+      opacity: 0.7;
     }
   }
 
-  // Submenu mobile
+  // ===========================================================
+  // SUBMENU (NÍVEL 2) — mobile com recuo e fundo
+  // ===========================================================
+
   .submenu {
     display: none;
     position: static;
@@ -390,9 +396,10 @@ a {
     border: none;
     border-radius: 0;
     padding: 0;
-    padding-left: 1.2rem;
-    background: $cor-fundo;
+    padding-left: 0.8rem;
+    background: #f5f5f5;           // Fundo cinza claro para diferenciar
     width: 100%;
+    border-left: 3px solid $cor-primaria;  // Borda lateral verde
 
     .menu-item.open & {
       display: flex;
@@ -400,9 +407,19 @@ a {
 
     .submenu-link {
       white-space: normal;
-      padding: 0.5rem 0.5rem;
+      padding: 0.5rem 0.5rem 0.5rem 1.2rem;
       border-radius: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      font-size: 0.9rem;
+      font-weight: 400;
+
+      // Ícone indicador de nível 2
+      &::before {
+        content: "└─ ";
+        color: $cor-primaria;
+        font-weight: 300;
+        opacity: 0.6;
+      }
     }
 
     .submenu-item {
@@ -410,11 +427,16 @@ a {
 
       &.has-sub-submenu > .submenu-link::after {
         content: " ▾";
+        font-size: 0.6rem;
+        opacity: 0.7;
       }
     }
   }
 
-  // Sub-submenu mobile
+  // ===========================================================
+  // SUB-SUBMENU (NÍVEL 3) — mobile com recuo e fundo
+  // ===========================================================
+
   .sub-submenu {
     display: none;
     position: static;
@@ -422,18 +444,36 @@ a {
     border: none;
     border-radius: 0;
     padding: 0;
-    padding-left: 1.2rem;
-    background: rgba(0, 0, 0, 0.02);
+    padding-left: 0.8rem;
+    background: #ebebeb;           // Fundo mais claro que o nível 2
     width: 100%;
+    border-left: 3px solid $cor-texto-suave;  // Borda lateral cinza
 
     .submenu-item.open & {
       display: flex;
     }
 
     .sub-submenu-link {
-      padding: 0.4rem 0.5rem;
+      padding: 0.4rem 0.5rem 0.4rem 1.8rem;
       border-radius: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: $cor-texto-suave;
+
+      // Ícone indicador de nível 3
+      &::before {
+        content: "• ";
+        color: $cor-texto-suave;
+        font-weight: 300;
+        opacity: 0.6;
+      }
+
+      &.active {
+        background: $cor-ativo-fundo;
+        font-weight: 600;
+        color: $cor-primaria-escura;
+      }
     }
   }
 
