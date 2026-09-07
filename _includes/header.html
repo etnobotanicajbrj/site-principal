@@ -16,7 +16,7 @@
       <span class="logo-link">{{ site.title }}</span>
     </a>
 
-    <!-- Botão hambúrguer -->
+    <!-- Botão hambúrguer (mobile) -->
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
       <span class="menu-toggle-icon">☰</span>
     </button>
@@ -29,17 +29,30 @@
     <nav class="menu-principal" aria-label="Menu principal">
       <ul class="menu">
         {% for item in site.data.navigation.main %}
-          <li class="menu-item {% if item.children %}has-submenu{% endif %}">
+          {% assign is_active = false %}
+          {% if page.url == item.url or page.url contains item.url %}
+            {% assign is_active = true %}
+          {% endif %}
+          
+          <li class="menu-item {% if item.children %}has-submenu{% endif %} {% if is_active %}active{% endif %}">
             {% if item.children %}
-              <span class="menu-link">{{ item.title }}</span>
+              <span class="menu-link {% if is_active %}active{% endif %}">{{ item.title }}</span>
               <ul class="submenu">
                 {% for filho in item.children %}
-                  <li class="submenu-item {% if filho.children %}has-sub-submenu{% endif %}">
-                    <a href="{{ filho.url | relative_url }}" class="submenu-link">{{ filho.title }}</a>
+                  {% assign is_sub_active = false %}
+                  {% if page.url == filho.url or page.url contains filho.url %}
+                    {% assign is_sub_active = true %}
+                  {% endif %}
+                  <li class="submenu-item {% if filho.children %}has-sub-submenu{% endif %} {% if is_sub_active %}active{% endif %}">
+                    <a href="{{ filho.url | relative_url }}" class="submenu-link {% if is_sub_active %}active{% endif %}">{{ filho.title }}</a>
                     {% if filho.children %}
                       <ul class="sub-submenu">
                         {% for neto in filho.children %}
-                          <li><a href="{{ neto.url | relative_url }}" class="sub-submenu-link">{{ neto.title }}</a></li>
+                          {% assign is_subsub_active = false %}
+                          {% if page.url == neto.url or page.url contains neto.url %}
+                            {% assign is_subsub_active = true %}
+                          {% endif %}
+                          <li><a href="{{ neto.url | relative_url }}" class="sub-submenu-link {% if is_subsub_active %}active{% endif %}">{{ neto.title }}</a></li>
                         {% endfor %}
                       </ul>
                     {% endif %}
@@ -47,7 +60,7 @@
                 {% endfor %}
               </ul>
             {% else %}
-              <a href="{{ item.url | relative_url }}" class="menu-link">{{ item.title }}</a>
+              <a href="{{ item.url | relative_url }}" class="menu-link {% if is_active %}active{% endif %}">{{ item.title }}</a>
             {% endif %}
           </li>
         {% endfor %}
