@@ -329,7 +329,7 @@ a {
 }
 
 // ===========================================================
-// RESPONSIVO (mobile) — recuo + fundos diferenciados
+// RESPONSIVO (mobile) — com active funcionando
 // ===========================================================
 
 @media (max-width: 768px) {
@@ -372,7 +372,7 @@ a {
   }
 
   // ===========================================================
-  // NÍVEL 1 — fundo branco, texto escuro
+  // NÍVEL 1 — fundo branco, texto verde escuro
   // ===========================================================
 
   .menu-item {
@@ -390,29 +390,40 @@ a {
       width: 100%;
       font-weight: 600;
       font-size: 0.95rem;
-      color: $cor-primaria;
+      color: $cor-primaria-escura;  // Verde escuro
       background: #ffffff;
       transition: background 0.2s ease, color 0.2s ease;
       text-decoration: none;
 
       &:hover {
-            background: $cor-hover-fundo;
-          }
-      
-          &.active {
-            background: $cor-ativo-fundo;
-            font-weight: 600;
-          }
-        }
-    
+        background: rgba(47, 107, 79, 0.06);
+        color: $cor-primaria;
+      }
+
+      // ACTIVE — marcando a página atual
+      &.active {
+        background: rgba(47, 107, 79, 0.12);
+        color: $cor-primaria-escura;
+        font-weight: 700;
+      }
+    }
+
     // Quando o submenu está aberto
     &.open > .menu-link {
-      background: $cor-ativo-fundo;
+      background: rgba(47, 107, 79, 0.06);
+      color: $cor-primaria;
+    }
+
+    // Quando o item está ativo E aberto
+    &.active.open > .menu-link {
+      background: rgba(47, 107, 79, 0.12);
+      color: $cor-primaria-escura;
+      font-weight: 700;
     }
   }
 
   // ===========================================================
-  // NÍVEL 2 — recuo 1.2rem
+  // NÍVEL 2 — recuo 1.2rem, fundo cinza suave
   // ===========================================================
 
   .submenu {
@@ -424,7 +435,7 @@ a {
     padding: 0;
     padding-left: 0.6rem;
     margin: 0;
-    background: #ffffff;
+    background: #f8f9fa;  // Cinza bem suave
     width: 100%;
 
     .menu-item.open & {
@@ -446,20 +457,23 @@ a {
         border-radius: 0;
         font-size: 0.9rem;
         font-weight: 500;
-        color: $cor-primaria;
+        color: $cor-primaria;  // Verde institucional
         background: transparent;
         transition: background 0.2s ease, color 0.2s ease;
         text-decoration: none;
 
-    &:hover {
-      background: $cor-hover-fundo;
-    }
+        &:hover {
+          background: rgba(47, 107, 79, 0.06);
+          color: $cor-primaria-escura;
+        }
 
-    &.active {
-      background: $cor-ativo-fundo;
-      font-weight: 600;
-    }
-  }
+        // ACTIVE — marcando a página atual no nível 2
+        &.active {
+          background: rgba(47, 107, 79, 0.10);
+          color: $cor-primaria-escura;
+          font-weight: 600;
+        }
+      }
 
       // Quando o sub-submenu está aberto
       &.open > .submenu-link {
@@ -469,7 +483,7 @@ a {
   }
 
   // ===========================================================
-  // NÍVEL 3 recuo 2.4rem
+  // NÍVEL 3 — recuo 2.4rem, fundo cinza mais claro
   // ===========================================================
 
   .sub-submenu {
@@ -481,7 +495,7 @@ a {
     padding: 0;
     padding-left: 0.6rem;
     margin: 0;
-    background: #ffffff ;
+    background: #f1f3f5;  // Cinza um pouco mais claro
     width: 100%;
 
     .submenu-item.open & {
@@ -494,7 +508,7 @@ a {
       border-radius: 0;
       font-size: 0.85rem;
       font-weight: 400;
-      color: #4a5a6a;
+      color: #4a5a6a;  // Cinza escuro
       background: transparent;
       border-bottom: 1px solid #e5e8ed;
       transition: background 0.2s ease, color 0.2s ease;
@@ -504,16 +518,19 @@ a {
         border-bottom: none;
       }
 
-    &:hover {
-      background: $cor-hover-fundo;
-    }
+      &:hover {
+        background: rgba(47, 107, 79, 0.04);
+        color: $cor-primaria;
+      }
 
-    &.active {
-      background: $cor-ativo-fundo;
-      font-weight: 600;
+      // ACTIVE — marcando a página atual no nível 3
+      &.active {
+        background: rgba(47, 107, 79, 0.08);
+        color: $cor-primaria-escura;
+        font-weight: 500;
+      }
     }
   }
-}
 
   // ===========================================================
   // REDES SOCIAIS NO MOBILE
