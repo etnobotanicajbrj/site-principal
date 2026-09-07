@@ -30,8 +30,17 @@
       <ul class="menu">
         {% for item in site.data.navigation.main %}
           {% assign is_active = false %}
-          {% if page.url == item.url or page.url contains item.url %}
-            {% assign is_active = true %}
+          
+          <!-- Para a página inicial, verifica se é exatamente a raiz -->
+          {% if item.url == "/" %}
+            {% if page.url == "/" or page.url == "/index.html" %}
+              {% assign is_active = true %}
+            {% endif %}
+          {% else %}
+            <!-- Para outras páginas, verifica se contém a URL -->
+            {% if page.url contains item.url and item.url != "/" %}
+              {% assign is_active = true %}
+            {% endif %}
           {% endif %}
           
           <li class="menu-item {% if item.children %}has-submenu{% endif %} {% if is_active %}active{% endif %}">
@@ -40,7 +49,7 @@
               <ul class="submenu">
                 {% for filho in item.children %}
                   {% assign is_sub_active = false %}
-                  {% if page.url == filho.url or page.url contains filho.url %}
+                  {% if page.url contains filho.url and filho.url != "/" %}
                     {% assign is_sub_active = true %}
                   {% endif %}
                   <li class="submenu-item {% if filho.children %}has-sub-submenu{% endif %} {% if is_sub_active %}active{% endif %}">
@@ -49,7 +58,7 @@
                       <ul class="sub-submenu">
                         {% for neto in filho.children %}
                           {% assign is_subsub_active = false %}
-                          {% if page.url == neto.url or page.url contains neto.url %}
+                          {% if page.url contains neto.url and neto.url != "/" %}
                             {% assign is_subsub_active = true %}
                           {% endif %}
                           <li><a href="{{ neto.url | relative_url }}" class="sub-submenu-link {% if is_subsub_active %}active{% endif %}">{{ neto.title }}</a></li>
