@@ -22,41 +22,74 @@
   orcid: "https://orcid.org/0000-0001-8647-9734"
   descricao: "Pesquisadora do JBRJ, coordenadora do Grupo de Estudos em Etnobotânica. Atua na interface entre botânica, conservação e patrimônio biocultural."
 
+- nome: "Camila Dantas"
+  funcao: "Mestranda"
+  colecoes: [ctpm, pesquisa, programa]
+  foto: /assets/images/equipe/camila.jpg
+  lattes: “http://lattes.cnpq.br/4396367747910248”
+  orcid: ""
+ descricao: ""
 
-- nome: "Luisa"
+- nome: "Catarina Albuquerque"
+  funcao: "Bolsista Iniciação Científica"
+  colecoes: [ctpm]
+  foto: /assets/images/equipe/catarina.jpg
+  lattes: “”
+  orcid: “”
+  descricao: “”
+
+- nome: "Karen Ertha"
+  funcao: "Estagiária Técnica" 
+  colecoes: [ctpm]
+  foto: /assets/images/equipe/karen.jpg
+  lattes: “”
+  orcid: “”
+  descricao: “”
+
+- nome: "Kaique Caetano"
+  funcao: "Doutorando"
+  colecoes: [ctpm, pesquisa, programa]
+  foto: /assets/images/equipe/kaique.jpg
+  lattes: ""
+  orcid: ""
+  descricao: ""
+
+- nome: "Luisa Ridolph"
   funcao: "Mestranda"
   colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/luisa.png
   lattes: "http://lattes.cnpq.br/5593552951372724"
   orcid: "https://orcid.org/0009-0009-1520-1730"
-  descricao: "" #inserir breve descrição
-
-- nome: "Karen"
-  funcao: "" 
-  colecoes: [ctpm]
-  foto: /assets/images/equipe/karen.jpg
-
-- nome: "Catarina"
-  funcao: ""
-  colecoes: [ctpm]
-  foto: /assets/images/equipe/catarina.jpg
+  descricao: ""
 
 - nome: "Maria Paula"
-  funcao: ""
+  funcao: "Estagiária Técnica"
   colecoes: [rbetno]
   foto: /assets/images/equipe/maria-paula.jpg
+  lattes: “”
+  orcid: “”
+  descricao: “”
 
-- nome: "Kaique"
-  funcao: ""
-  colecoes: [ctpm, pesquisa, programa]
-  foto: /assets/images/equipe/kaique.jpg
+ - nome: "Mateus Salim"
+   funcao: ""
+   colecoes: [programa, pesquisa]
+   foto: /assets/images/equipe/mateus.png
+   lattes: "http://lattes.cnpq.br/0248529376853174"
+   orcid: ""
+  descricao: ""
 
-- nome: "Camila"
-  funcao: ""
-  colecoes: [ctpm, pesquisa, programa]
-  foto: /assets/images/equipe/camila.jpg
+ - nome: "Dra. Nicky van Luijk"
+   funcao: "Colaborador"
+   colecoes: [ctpm, programa, pesquisa]
+   foto: /assets/images/equipe/nicky.png
+   lattes: "http://lattes.cnpq.br/3013537979299517"
+   orcid: ""
+  descricao: ""
 
-- nome: "Thalita"
+- nome: "Thalita Lima"
   funcao: ""
   colecoes: [ctpm, programa, pesquisa]
   foto: /assets/images/equipe/thalita.jpg
+  lattes: “http://lattes.cnpq.br/9806013473257535”
+  orcid: “”
+ descricao: “”
