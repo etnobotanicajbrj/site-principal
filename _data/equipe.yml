@@ -20,10 +20,10 @@
   foto: /assets/images/equipe/luisa.png
   lattes: "http://lattes.cnpq.br/5593552951372724"
   orcid: "https://orcid.org/0009-0009-1520-1730"
-  descricao: ""
+  descricao: "" #inserir breve descrição
 
 - nome: "Karen"
-  funcao: "Coleção Temática de Plantas Medicinais"
+  funcao: " " 
   colecoes: [ctpm]
   foto: /assets/images/equipe/karen.jpg
 
