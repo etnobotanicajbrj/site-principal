@@ -1,45 +1,57 @@
-<header class="cabecalho-site">
-  <!-- MARCA: logo + nome do site -->
-  <a href="{{ '/' | relative_url }}" class="marca-site">
-    <img 
-      src="{{ '/assets/images/logo.png' | relative_url }}" 
-      alt="{{ site.title }}" 
-      class="logo-site"
-      loading="lazy"
-    >
-    <span class="logo-link">{{ site.title }}</span>
-  </a>
+<!-- ===========================================================
+     CABEÇALHO DO SITE
+     =========================================================== -->
 
-  <!-- ÁREA DE NAVEGAÇÃO (menu + Instagram) -->
+<header class="cabecalho-site">
+  
+  <!-- MARCA: logo + nome do site -->
+  <div class="cabecalho-esquerda">
+    <a href="{{ '/' | relative_url }}" class="marca-site">
+      <img 
+        src="{{ '/assets/images/logo.png' | relative_url }}" 
+        alt="{{ site.title }}" 
+        class="logo-site"
+        loading="lazy"
+      >
+      <span class="logo-link">{{ site.title }}</span>
+    </a>
+
+    <!-- Botão hambúrguer -->
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-icon">☰</span>
+    </button>
+  </div>
+
+  <!-- ÁREA DE NAVEGAÇÃO -->
   <div class="area-navegacao">
     
     <!-- MENU PRINCIPAL -->
     <nav class="menu-principal" aria-label="Menu principal">
-      {% for item in site.data.navigation.main %}
-        {% if item.children %}
-          <div class="menu-item-dropdown {% if page.url contains item.url %}active{% endif %}">
-            <span>{{ item.title }}</span>
-            <div class="submenu">
-              {% for filho in item.children %}
-                {% if filho.children %}
-                  <div class="submenu-item-dropdown {% if page.url contains filho.url %}active{% endif %}">
-                    <a href="{{ filho.url | relative_url }}">{{ filho.title }}</a>
-                    <div class="sub-submenu">
-                      {% for neto in filho.children %}
-                        <a href="{{ neto.url | relative_url }}" {% if page.url contains neto.url %}class="active"{% endif %}>{{ neto.title }}</a>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% else %}
-                  <a href="{{ filho.url | relative_url }}" {% if page.url contains filho.url %}class="active"{% endif %}>{{ filho.title }}</a>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        {% else %}
-          <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
-        {% endif %}
-      {% endfor %}
+      <ul class="menu">
+        {% for item in site.data.navigation.main %}
+          <li class="menu-item {% if item.children %}has-submenu{% endif %}">
+            {% if item.children %}
+              <span class="menu-link">{{ item.title }}</span>
+              <ul class="submenu">
+                {% for filho in item.children %}
+                  <li class="submenu-item {% if filho.children %}has-sub-submenu{% endif %}">
+                    <a href="{{ filho.url | relative_url }}" class="submenu-link">{{ filho.title }}</a>
+                    {% if filho.children %}
+                      <ul class="sub-submenu">
+                        {% for neto in filho.children %}
+                          <li><a href="{{ neto.url | relative_url }}" class="sub-submenu-link">{{ neto.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="{{ item.url | relative_url }}" class="menu-link">{{ item.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </nav>
 
     <!-- ÍCONE DO INSTAGRAM -->
@@ -53,8 +65,8 @@
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          width="20" 
-          height="20" 
+          width="22" 
+          height="22" 
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="currentColor" 
