@@ -1,8 +1,8 @@
 # ===========================================================
 # EQUIPE — DADOS DOS MEMBROS
 # ===========================================================
-# edite os campos abaixos entre “” ou [ ]
-# atencao aos campos 
+# edite os campos abaixo entre " " ou [ ]
+# atencao aos campos
 
 # Siga o modelo abaixo para inserir mais pessoas ou campos
 # - nome: ""
@@ -12,7 +12,6 @@
 #   lattes: "" inserir link
 #   orcid: "" inserir link
 #   descricao: "" breve descrição de 2 ou 3 frases recomendação
-
 
 - nome: "Dra. Viviane Fonseca Kruel"
   funcao: "Orientadora e Curadora"
@@ -26,25 +25,25 @@
   funcao: "Mestranda"
   colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/camila.jpg
-  lattes: “http://lattes.cnpq.br/4396367747910248”
+  lattes: "http://lattes.cnpq.br/4396367747910248"
   orcid: ""
- descricao: ""
+  descricao: ""
 
 - nome: "Catarina Albuquerque"
   funcao: "Bolsista Iniciação Científica"
   colecoes: [ctpm]
   foto: /assets/images/equipe/catarina.jpg
-  lattes: “”
-  orcid: “”
-  descricao: “”
+  lattes: ""
+  orcid: ""
+  descricao: ""
 
 - nome: "Karen Ertha"
-  funcao: "Estagiária Técnica" 
+  funcao: "Estagiária Técnica"
   colecoes: [ctpm]
   foto: /assets/images/equipe/karen.jpg
-  lattes: “”
-  orcid: “”
-  descricao: “”
+  lattes: ""
+  orcid: ""
+  descricao: ""
 
 - nome: "Kaique Caetano"
   funcao: "Doutorando"
@@ -66,30 +65,30 @@
   funcao: "Estagiária Técnica"
   colecoes: [rbetno]
   foto: /assets/images/equipe/maria-paula.jpg
-  lattes: “”
-  orcid: “”
-  descricao: “”
-
- - nome: "Mateus Salim"
-   funcao: ""
-   colecoes: [programa, pesquisa]
-   foto: /assets/images/equipe/mateus.png
-   lattes: "http://lattes.cnpq.br/0248529376853174"
-   orcid: ""
+  lattes: ""
+  orcid: ""
   descricao: ""
 
- - nome: "Dra. Nicky van Luijk"
-   funcao: "Colaborador"
-   colecoes: [ctpm, programa, pesquisa]
-   foto: /assets/images/equipe/nicky.png
-   lattes: "http://lattes.cnpq.br/3013537979299517"
-   orcid: ""
+- nome: "Mateus Salim"
+  funcao: ""
+  colecoes: [programa, pesquisa]
+  foto: /assets/images/equipe/mateus.png
+  lattes: "http://lattes.cnpq.br/0248529376853174"
+  orcid: ""
+  descricao: ""
+
+- nome: "Dra. Nicky van Luijk"
+  funcao: "Colaborador"
+  colecoes: [ctpm, programa, pesquisa]
+  foto: /assets/images/equipe/nicky.png
+  lattes: "http://lattes.cnpq.br/3013537979299517"
+  orcid: ""
   descricao: ""
 
 - nome: "Thalita Lima"
   funcao: ""
   colecoes: [ctpm, programa, pesquisa]
   foto: /assets/images/equipe/thalita.jpg
-  lattes: “http://lattes.cnpq.br/9806013473257535”
-  orcid: “”
- descricao: “”
+  lattes: "http://lattes.cnpq.br/9806013473257535"
+  orcid: ""
+  descricao: ""
