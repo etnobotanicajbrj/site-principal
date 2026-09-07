@@ -446,7 +446,7 @@ a {
         border-radius: 0;
         font-size: 0.9rem;
         font-weight: 500;
-        color: #2a3a4a;
+        color: $cor-primaria;
         background: transparent;
         transition: background 0.2s ease, color 0.2s ease;
         text-decoration: none;
@@ -469,7 +469,7 @@ a {
   }
 
   // ===========================================================
-  // NÍVEL 3 — fundo cinza mais claro, recuo 2.4rem
+  // NÍVEL 3 recuo 2.4rem
   // ===========================================================
 
   .sub-submenu {
