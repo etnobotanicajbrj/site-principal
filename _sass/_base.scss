@@ -63,55 +63,238 @@ a {
 }
 
 // ===========================================================
-// CABEÇALHO COM LOGO, MENU E INSTAGRAM
+// CABEÇALHO
 // ===========================================================
 
 .cabecalho-site {
+  background: #fff;
+  border-bottom: 1px solid $cor-borda;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cabecalho-esquerda {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 14px 24px;
-  border-bottom: 1px solid $cor-borda;
-  background: #fff;
+  width: 100%;
 }
 
-// --- MARCA (logo + nome) ------------------------------------
 .marca-site {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
 
   &:hover { text-decoration: none; }
 }
 
 .logo-site {
-  height: 40px;
+  height: 36px;
   width: auto;
   display: block;
 }
 
 .logo-link {
   font-family: Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: $cor-primaria-escura;
 }
 
-// --- ÁREA DE NAVEGAÇÃO --------------------------------------
+// ===========================================================
+// BOTÃO HAMBÚRGUER
+// ===========================================================
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: $cor-primaria-escura;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: $cor-hover-fundo;
+  }
+
+  .menu-toggle-icon {
+    display: block;
+    line-height: 1;
+  }
+}
+
+// ===========================================================
+// ÁREA DE NAVEGAÇÃO
+// ===========================================================
+
 .area-navegacao {
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-// --- ÍCONE INSTAGRAM ----------------------------------------
+// ===========================================================
+// MENU PRINCIPAL (desktop)
+// ===========================================================
+
+.menu-principal {
+  flex: 1;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  position: relative;
+
+  .menu-link {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    color: $cor-texto;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background: $cor-hover-fundo;
+      color: $cor-primaria;
+      text-decoration: none;
+    }
+
+    &.active {
+      background: $cor-ativo-fundo;
+      color: $cor-primaria-escura;
+      font-weight: 600;
+    }
+  }
+
+  &.has-submenu > .menu-link::after {
+    content: " ▾";
+    font-size: 0.6rem;
+    opacity: 0.7;
+  }
+}
+
+// --- SUBMENU (NÍVEL 2) ---
+.submenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid $cor-borda;
+  padding: 6px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+
+  .menu-item:hover &,
+  .menu-item:focus-within & {
+    display: flex;
+  }
+
+  .submenu-link {
+    display: block;
+    color: $cor-texto;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: $cor-hover-fundo;
+    }
+
+    &.active {
+      background: $cor-ativo-fundo;
+      font-weight: 600;
+    }
+  }
+
+  .submenu-item {
+    position: relative;
+
+    &.has-sub-submenu > .submenu-link::after {
+      content: " ▸";
+      font-size: 0.6rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+// --- SUB-SUBMENU (NÍVEL 3) ---
+.sub-submenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid $cor-borda;
+  padding: 6px;
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+
+  .submenu-item:hover &,
+  .submenu-item:focus-within & {
+    display: flex;
+  }
+
+  .sub-submenu-link {
+    display: block;
+    color: $cor-texto;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: $cor-hover-fundo;
+    }
+
+    &.active {
+      background: $cor-ativo-fundo;
+      font-weight: 600;
+    }
+  }
+}
+
+// ===========================================================
+// ÍCONE INSTAGRAM
+// ===========================================================
+
 .redes-sociais {
   display: flex;
   align-items: center;
+  margin-left: 4px;
 }
 
 .icone-instagram {
@@ -122,7 +305,11 @@ a {
   border-radius: 8px;
   transition: background 0.15s ease, color 0.15s ease;
 
-  svg { width: 20px; height: 20px; }
+  svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
 
   &:hover {
     color: $cor-primaria;
@@ -132,209 +319,107 @@ a {
 }
 
 // ===========================================================
-// MENU PRINCIPAL — COM 3 NÍVEIS E ESTADO ATIVO
-// ===========================================================
-
-.menu-principal {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-// --- ITENS DE NÍVEL 1 ---------------------------------------
-.menu-principal > a,
-.menu-item-dropdown > span {
-  display: inline-block;
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  color: $cor-texto;
-  font-size: 0.95rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-// Hover — caixa levemente translúcida
-.menu-principal > a:hover,
-.menu-item-dropdown > span:hover {
-  background: $cor-hover-fundo;
-  color: $cor-primaria;
-  text-decoration: none;
-}
-
-// Ativo — página atual
-.menu-principal > a.active,
-.menu-item-dropdown.active > span {
-  background: $cor-ativo-fundo;
-  color: $cor-primaria-escura;
-  font-weight: 600;
-}
-
-// --- INDICADOR DE SUBMENU -----------------------------------
-.menu-item-dropdown {
-  position: relative;
-}
-
-.menu-item-dropdown > span::after {
-  content: " ▾";
-  font-size: 0.6rem;
-  opacity: 0.7;
-}
-
-// ===========================================================
-// SUBMENU (NÍVEL 2) — fundo branco com sombra
-// ===========================================================
-
-.submenu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 260px;
-  background: #fff;
-  border: 1px solid $cor-borda;
-  padding: 6px;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
-  z-index: 1000;
-}
-
-.menu-item-dropdown:hover .submenu,
-.menu-item-dropdown:focus-within .submenu {
-  display: flex;
-}
-
-.submenu > a {
-  display: block;
-  color: $cor-texto;
-  text-decoration: none;
-  padding: 0.5rem 0.9rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  transition: background 0.15s ease;
-}
-
-.submenu > a:hover {
-  background: $cor-hover-fundo;
-}
-
-.submenu > a.active {
-  background: $cor-ativo-fundo;
-  font-weight: 600;
-}
-
-// ===========================================================
-// SUB-SUBMENU (NÍVEL 3)
-// ===========================================================
-
-.submenu-item-dropdown {
-  position: relative;
-}
-
-.submenu-item-dropdown > a {
-  display: block;
-  color: $cor-texto;
-  text-decoration: none;
-  padding: 0.5rem 0.9rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background 0.15s ease;
-}
-
-.submenu-item-dropdown > a:hover {
-  background: $cor-hover-fundo;
-}
-
-.submenu-item-dropdown > a::after {
-  content: " ▸";
-  font-size: 0.6rem;
-  opacity: 0.7;
-}
-
-.sub-submenu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 220px;
-  background: #fff;
-  border: 1px solid $cor-borda;
-  padding: 6px;
-  border-radius: 0 10px 10px 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
-  z-index: 1000;
-}
-
-.submenu-item-dropdown:hover .sub-submenu {
-  display: flex;
-}
-
-.sub-submenu a {
-  display: block;
-  color: $cor-texto;
-  text-decoration: none;
-  padding: 0.4rem 0.9rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  transition: background 0.15s ease;
-}
-
-.sub-submenu a:hover {
-  background: $cor-hover-fundo;
-}
-
-.sub-submenu a.active {
-  background: $cor-ativo-fundo;
-  font-weight: 600;
-}
-
-// ===========================================================
-// MENU MOBILE (responsivo)
+// RESPONSIVO (mobile)
 // ===========================================================
 
 @media (max-width: 768px) {
-  .cabecalho-site {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 12px 16px;
+  .menu-toggle {
+    display: block;
   }
 
   .area-navegacao {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    width: 100%;
-  }
-
-  .menu-principal {
+    display: none;
     flex-direction: column;
     align-items: stretch;
     width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid $cor-borda;
+    margin-top: 8px;
+
+    &.open {
+      display: flex;
+    }
   }
 
-  .menu-principal > a,
-  .menu-item-dropdown > span {
-    padding: 0.6rem 0.5rem;
-    border-bottom: 1px solid $cor-borda;
-    border-radius: 0;
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
   }
 
-  .submenu,
-  .sub-submenu {
+  .menu-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+    .menu-link {
+      padding: 0.6rem 0.5rem;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    &.has-submenu > .menu-link::after {
+      content: " ▾";
+    }
+  }
+
+  // Submenu mobile
+  .submenu {
+    display: none;
     position: static;
     box-shadow: none;
     border: none;
     border-radius: 0;
+    padding: 0;
     padding-left: 1.2rem;
     background: $cor-fundo;
+    width: 100%;
+
+    .menu-item.open & {
+      display: flex;
+    }
+
+    .submenu-link {
+      white-space: normal;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .submenu-item {
+      width: 100%;
+
+      &.has-sub-submenu > .submenu-link::after {
+        content: " ▾";
+      }
+    }
+  }
+
+  // Sub-submenu mobile
+  .sub-submenu {
+    display: none;
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    padding-left: 1.2rem;
+    background: rgba(0, 0, 0, 0.02);
+    width: 100%;
+
+    .submenu-item.open & {
+      display: flex;
+    }
+
+    .sub-submenu-link {
+      padding: 0.4rem 0.5rem;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
   }
 
   .redes-sociais {
-    margin-top: 8px;
     align-self: center;
+    margin: 8px 0 4px 0;
   }
 }
 
