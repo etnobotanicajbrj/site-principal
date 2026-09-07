@@ -26,31 +26,31 @@
   colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/camila.png
   lattes: "http://lattes.cnpq.br/4396367747910248"
-  orcid: ""
+#  orcid: ""
   descricao: ""
 
 - nome: "Catarina Albuquerque"
   funcao: "Bolsista Iniciação Científica"
   colecoes: [ctpm]
   foto: /assets/images/equipe/catarina.png
-  lattes: ""
-  orcid: ""
+# lattes: ""
+# orcid: ""
   descricao: ""
 
-- nome: "Karen Ertha"
+- nome: "Karen Serrano Erthal"
   funcao: "Estagiária Técnica"
   colecoes: [ctpm]
   foto: /assets/images/equipe/karen.png
-  lattes: ""
-  orcid: ""
+  lattes: "http://lattes.cnpq.br/1723632573878208"
+# orcid: ""
   descricao: ""
 
 - nome: "Kaique Caetano"
   funcao: "Doutorando"
   colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/kaique.png
-  lattes: ""
-  orcid: ""
+# lattes: ""
+# orcid: ""
   descricao: ""
 
 - nome: "Luisa Ridolph"
@@ -65,8 +65,8 @@
   funcao: "Estagiária Técnica"
   colecoes: [rbetno]
   foto: /assets/images/equipe/maria-paula.png
-  lattes: ""
-  orcid: ""
+# lattes: ""
+# orcid: ""
   descricao: ""
 
 - nome: "Mateus Salim"
@@ -74,7 +74,7 @@
   colecoes: [programa, pesquisa]
   foto: /assets/images/equipe/mateus.png
   lattes: "http://lattes.cnpq.br/0248529376853174"
-  orcid: ""
+# orcid: ""
   descricao: ""
 
 - nome: "Dra. Nicky van Luijk"
@@ -82,7 +82,7 @@
   colecoes: [ctpm, programa, pesquisa]
   foto: /assets/images/equipe/nicky.png
   lattes: "http://lattes.cnpq.br/3013537979299517"
-  orcid: ""
+# orcid: ""
   descricao: ""
 
 - nome: "Thalita Lima"
@@ -90,5 +90,5 @@
   colecoes: [ctpm, programa, pesquisa]
   foto: /assets/images/equipe/thalita.png
   lattes: "http://lattes.cnpq.br/9806013473257535"
-  orcid: ""
+# orcid: ""
   descricao: ""
