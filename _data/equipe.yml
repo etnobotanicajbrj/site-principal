@@ -24,7 +24,7 @@
 - nome: "Camila Dantas"
   funcao: "Mestranda"
   colecoes: [ctpm, pesquisa, programa]
-  foto: /assets/images/equipe/camila.jpg
+  foto: /assets/images/equipe/camila.png
   lattes: "http://lattes.cnpq.br/4396367747910248"
   orcid: ""
   descricao: ""
@@ -32,7 +32,7 @@
 - nome: "Catarina Albuquerque"
   funcao: "Bolsista Iniciação Científica"
   colecoes: [ctpm]
-  foto: /assets/images/equipe/catarina.jpg
+  foto: /assets/images/equipe/catarina.png
   lattes: ""
   orcid: ""
   descricao: ""
@@ -40,7 +40,7 @@
 - nome: "Karen Ertha"
   funcao: "Estagiária Técnica"
   colecoes: [ctpm]
-  foto: /assets/images/equipe/karen.jpg
+  foto: /assets/images/equipe/karen.png
   lattes: ""
   orcid: ""
   descricao: ""
@@ -48,7 +48,7 @@
 - nome: "Kaique Caetano"
   funcao: "Doutorando"
   colecoes: [ctpm, pesquisa, programa]
-  foto: /assets/images/equipe/kaique.jpg
+  foto: /assets/images/equipe/kaique.png
   lattes: ""
   orcid: ""
   descricao: ""
@@ -61,10 +61,10 @@
   orcid: "https://orcid.org/0009-0009-1520-1730"
   descricao: ""
 
-- nome: "Maria Paula"
+- nome: "Maria Paula Vasconcelos Mesquita"
   funcao: "Estagiária Técnica"
   colecoes: [rbetno]
-  foto: /assets/images/equipe/maria-paula.jpg
+  foto: /assets/images/equipe/maria-paula.png
   lattes: ""
   orcid: ""
   descricao: ""
@@ -88,7 +88,7 @@
 - nome: "Thalita Lima"
   funcao: ""
   colecoes: [ctpm, programa, pesquisa]
-  foto: /assets/images/equipe/thalita.jpg
+  foto: /assets/images/equipe/thalita.png
   lattes: "http://lattes.cnpq.br/9806013473257535"
   orcid: ""
   descricao: ""
