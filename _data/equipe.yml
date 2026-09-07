@@ -1,9 +1,18 @@
 # ===========================================================
 # EQUIPE — DADOS DOS MEMBROS
 # ===========================================================
+# edite os campos abaixos entre “” ou [ ]
+# atencao aos campos 
 
-# Uma entrada por pessoa. Sem página individual — lida direto na
-# seção "Nossa Equipe" dentro de quem-somos/index.md.
+# Siga o modelo abaixo para inserir mais pessoas ou campos
+# - nome: ""
+#   funcao: ""
+#   colecoes: [ctpm, rbetno, programa, pesquisa] escolha um ou mais
+#   foto: /assets/images/equipe/pessoa.formato
+#   lattes: "" inserir link
+#   orcid: "" inserir link
+#   descricao: "" breve descrição de 2 ou 3 frases recomendação
+
 
 - nome: "Dra. Viviane Fonseca Kruel"
   funcao: "Orientadora e Curadora"
@@ -23,31 +32,31 @@
   descricao: "" #inserir breve descrição
 
 - nome: "Karen"
-  funcao: " " 
+  funcao: "" 
   colecoes: [ctpm]
   foto: /assets/images/equipe/karen.jpg
 
 - nome: "Catarina"
-  funcao: "Coleção Temática de Plantas Medicinais"
+  funcao: ""
   colecoes: [ctpm]
   foto: /assets/images/equipe/catarina.jpg
 
 - nome: "Maria Paula"
-  funcao: "Coleção de Etnobotânica"
+  funcao: ""
   colecoes: [rbetno]
   foto: /assets/images/equipe/maria-paula.jpg
 
 - nome: "Kaique"
-  funcao: "Extensão (EPA e visitas técnicas)"
-  colecoes: [ctpm, rbetno]
+  funcao: ""
+  colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/kaique.jpg
 
 - nome: "Camila"
-  funcao: "Grupo de Pesquisa CNPq"
-  colecoes: [ctpm, rbetno]
+  funcao: ""
+  colecoes: [ctpm, pesquisa, programa]
   foto: /assets/images/equipe/camila.jpg
 
 - nome: "Thalita"
-  funcao: "Apoio à extensão e registro de atividades"
-  colecoes: [ctpm, rbetno]
+  funcao: ""
+  colecoes: [ctpm, programa, pesquisa]
   foto: /assets/images/equipe/thalita.jpg
