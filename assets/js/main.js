@@ -16,14 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Toggle de submenus no mobile (nível 2 e 3)
-  if (window.innerWidth <= 768) {
+  function setupMobileSubmenus() {
+    const isMobile = window.innerWidth <= 768;
     const submenuItems = document.querySelectorAll('.has-submenu, .has-sub-submenu');
-    
+
     submenuItems.forEach(function(item) {
       const link = item.querySelector('.menu-link, .submenu-link');
       
-      if (link) {
-        link.addEventListener('click', function(e) {
+      // Remove eventos antigos para evitar duplicação
+      const newLink = link.cloneNode(true);
+      link.parentNode.replaceChild(newLink, link);
+
+      if (isMobile && newLink) {
+        newLink.addEventListener('click', function(e) {
           e.preventDefault();
           item.classList.toggle('open');
         });
@@ -31,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Fechar menu ao redimensionar para desktop
+  // Executa no carregamento e no redimensionamento
+  setupMobileSubmenus();
+
   window.addEventListener('resize', function() {
     if (window.innerWidth > 768 && nav) {
       nav.classList.remove('open');
@@ -40,5 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         toggle.innerHTML = '☰';
       }
     }
+    setupMobileSubmenus();
   });
 });
