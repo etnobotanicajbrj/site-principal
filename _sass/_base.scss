@@ -412,7 +412,7 @@ a {
   }
 
   // ===========================================================
-  // NÍVEL 2 — fundo cinza azulado suave, recuo 1.2rem
+  // NÍVEL 2 — recuo 1.2rem
   // ===========================================================
 
   .submenu {
@@ -424,7 +424,7 @@ a {
     padding: 0;
     padding-left: 0.6rem;
     margin: 0;
-    background: #f5f7fa;
+    background: #ffffff;
     width: 100%;
 
     .menu-item.open & {
@@ -451,17 +451,15 @@ a {
         transition: background 0.2s ease, color 0.2s ease;
         text-decoration: none;
 
-        &:hover {
-          background: rgba(47, 107, 79, 0.06);
-          color: #1a3a2a;
-        }
+    &:hover {
+      background: $cor-hover-fundo;
+    }
 
-        &.active {
-          background: rgba(47, 107, 79, 0.10);
-          color: #1a3a2a;
-          font-weight: 600;
-        }
-      }
+    &.active {
+      background: $cor-ativo-fundo;
+      font-weight: 600;
+    }
+  }
 
       // Quando o sub-submenu está aberto
       &.open > .submenu-link {
@@ -483,7 +481,7 @@ a {
     padding: 0;
     padding-left: 0.6rem;
     margin: 0;
-    background: #edf0f5;
+    background: #ffffff ;
     width: 100%;
 
     .submenu-item.open & {
@@ -506,18 +504,16 @@ a {
         border-bottom: none;
       }
 
-      &:hover {
-        background: rgba(0, 0, 0, 0.02);
-        color: #2a3a4a;
-      }
+    &:hover {
+      background: $cor-hover-fundo;
+    }
 
-      &.active {
-        background: rgba(47, 107, 79, 0.08);
-        color: #1a3a2a;
-        font-weight: 500;
-      }
+    &.active {
+      background: $cor-ativo-fundo;
+      font-weight: 600;
     }
   }
+}
 
   // ===========================================================
   // REDES SOCIAIS NO MOBILE
