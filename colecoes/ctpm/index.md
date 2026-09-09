@@ -36,4 +36,4 @@ A CTPM está aberta à visitação durante o horário de funcionamento do JBRJ.
 
 Lista de publicações científicas e materiais educativos produzidos a partir da CTPM.
 
-[Ver publicações →](/publicacoes/?colecao=ctpm)
+[Ver publicações →](/publicacoes/?filtro=ctpm)
