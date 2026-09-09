@@ -1,8 +1,8 @@
 ---
-nome\_popular: "Espinheira-santa"
-nome\_cientifico: "Monteverdia ilicifolia (Mart. ex Reissek) Biral."
+nome_popular: "Espinheira-santa"
+nome_cientifico: "Monteverdia ilicifolia (Mart. ex Reissek) Biral."
 familia: "Celastraceae"
-usos: \[digestivo, gastrico]
+usos: [digestivo, gastrico]
 foto: /assets/images/plantas/espinheira-santa.jpg
 audio: /assets/audio/espinheira-santa.mp3
 renisus: true
