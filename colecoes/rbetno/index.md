@@ -12,25 +12,33 @@ botao_link: ""
 
 <!-- Responsáveis: Maria Paula -->
 
-## Sobre a coleção
+## Sobre a Coleção
 
-A **Coleção de Etnobotânica (RBetno)** é um espaço de pesquisa e curadoria dedicado à organização, digitalização e preservação de acervos bioculturais. A coleção reúne plantas úteis, pertences e materiais com informações relacionadas ao seu uso, documentando a relação entre comunidades tradicionais e a flora.
+Implementada em 2012, a **Coleção de Etnobotânica do Jardim Botânico do Rio de Janeiro (RBetno)** é um espaço institucional dedicado à pesquisa, salvaguarda e difusão de acervos bioculturais.
 
-### Objetivos
+A RBetno reúne materiais e informações relacionados às formas de manejo e uso de espécies vegetais por povos indígenas e comunidades tradicionais no Brasil. Para além da preservação de objetos e materiais de origem vegetal, a coleção contribui para a valorização das memórias, práticas e saberes tradicionais, fortalecendo a conservação integrada da sociobiodiversidade.
 
-- Tombamento digital de coleções etnobotânicas
-- Integração de dados e metadados
-- Preservação de saberes tradicionais
-- Pesquisa intercultural e diálogo entre conhecimentos
+**Curadoria:** Dra. Viviane Stern da Fonseca-Kruel
 
-### Acervo
+## Objetivos
 
-A RBetno inclui:
+- **Preservação biocultural:** Salvaguardar memórias, modos de vida e saberes tradicionais relacionados à flora brasileira.
+- **Conservação integrada:** Valorizar a relação entre a diversidade vegetal e as culturas associadas ao uso das plantas, contribuindo para sua conservação conjunta.
+- **Tombamento e documentação digital:** Sistematizar, padronizar e disponibilizar informações e metadados relacionados ao acervo.
+- **Pesquisa intercultural:** Promover o diálogo ético e colaborativo entre a ciência acadêmica e os conhecimentos tradicionais.
 
-- **Espécimes botânicos** de plantas úteis
-- **Objetos e pertences** relacionados ao uso de plantas
-- **Registros audiovisuais** de entrevistas e práticas tradicionais
-- **Documentação digital** com metadados padronizados
+## O Acervo em Números
+
+Atualmente, a RBetno reúne **mais de 300 itens catalogados**, provenientes de **20 estados brasileiros**, e representa uma expressiva diversidade de espécies vegetais, com registros de **59 famílias e 122 gêneros**.
+
+Os materiais do acervo estão relacionados a diferentes formas de uso tradicional das plantas, incluindo:
+
+- **Medicinais**
+- **Alimentares**
+- **Rituais e sagrados**
+- **Artesanais e utilitários**
+
+Além dos materiais que compõem o acervo, a coleção reúne **documentação associada**, como registros de campo, histórias de uso, entrevistas e informações que contextualizam cada peça e sua relação com os conhecimentos e práticas tradicionais.
 
 ---
 
@@ -52,6 +60,12 @@ Os dados da RBetno estão disponíveis para consulta pública, com acesso aos me
 
 ## Publicações relacionadas
 
-Lista de publicações científicas e materiais educativos produzidos a partir da RBetno.
+### Connecting tradition and technology: The digitization of the ethnobotanical collection at the Rio de Janeiro Botanical Garden
+
+Artigo que apresenta o processo de digitalização da Coleção de Etnobotânica do Jardim Botânico do Rio de Janeiro (RBetno), destacando a documentação de materiais, usos de plantas e conhecimentos tradicionais, bem como as etapas de organização, registro e disponibilização dos dados e imagens da coleção.
+
+**Fonseca-Kruel, V. S. et al.** *Connecting tradition and technology: The digitization of the ethnobotanical collection at the Rio de Janeiro Botanical Garden*. **Plants, People, Planet**, v. 8, n. 4, p. 1104–1115, 2026. DOI: 10.1002/ppp3.70105.
+
+[Leia o artigo →](https://nph.onlinelibrary.wiley.com/doi/10.1002/ppp3.70105)
 
 [Ver publicações →](/publicacoes/?colecao=rbetno)
